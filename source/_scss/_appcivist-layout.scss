@@ -219,7 +219,7 @@ button, .button {
     width: 270px;
     @include display-flex(0);
   }
-  
+
   .navigation-content-sticky {
     position: fixed;
     left: 13px;
@@ -397,6 +397,10 @@ button, .button {
         @include gallery(6 of 12);
       }
     }
+
+    .card {
+      width: 49.51456%;
+    }
   }
 }
 
@@ -415,9 +419,11 @@ button, .button {
   @include justify-content(space-between);
 }
 
-.all-ideas div {
-  @include breakpoint(phablet) {
-    @include gallery(4 of 8);
+.all-ideas {
+  .card {
+    @include breakpoint(phablet) {
+      @include gallery(4 of 8);
+    }
   }
 }
 
@@ -427,7 +433,6 @@ button, .button {
       @include gallery(4 of 8);
     }
   }
-  
 }
 
 .all-member-list {
