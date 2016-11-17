@@ -95,6 +95,14 @@ button, .button {
   border-radius: 50px;
 }
 
+// floating helpers
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
 
 // 3.0 NAVIGATION
 .app-container {
@@ -395,6 +403,10 @@ button, .button {
     .proposals {
       contribution-card {
         @include gallery(6 of 12);
+      }
+
+      .card {
+        width: 100%;
       }
     }
 

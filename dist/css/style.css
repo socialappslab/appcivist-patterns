@@ -5861,6 +5861,12 @@ button, .button {
   height: 50px;
   border-radius: 50px; }
 
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
 .app-container {
   height: 100%; }
   @media (min-width: 37.5em) {
@@ -6121,6 +6127,10 @@ button, .button {
       margin-left: 50.32258%;
       margin-right: -100%;
       clear: none; }
+  .ideas-and-proposals .list--proposal .proposals .card, .ideas-and-proposals .list--idea .proposals .card {
+    width: 100%; }
+  .ideas-and-proposals .list--proposal .card, .ideas-and-proposals .list--idea .card {
+    width: 49.51456%; }
 
 .text-created-attachments-similar .proposal-text {
   min-width: 100%; }
@@ -6134,15 +6144,15 @@ button, .button {
   justify-content: space-between; }
 
 @media (min-width: 37.5em) {
-  .all-ideas div {
+  .all-ideas .card {
     width: 49.51456%;
     float: left; }
-    .all-ideas div:nth-child(2n + 1) {
+    .all-ideas .card:nth-child(2n + 1) {
       margin-left: 0;
       margin-right: -100%;
       clear: both;
       margin-left: 0; }
-    .all-ideas div:nth-child(2n + 2) {
+    .all-ideas .card:nth-child(2n + 2) {
       margin-left: 50.48544%;
       margin-right: -100%;
       clear: none; } }
