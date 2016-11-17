@@ -419,9 +419,11 @@ button, .button {
   @include justify-content(space-between);
 }
 
-.all-ideas div {
-  @include breakpoint(phablet) {
-    @include gallery(4 of 8);
+.all-ideas {
+  .card {
+    @include breakpoint(phablet) {
+      @include gallery(4 of 8);
+    }
   }
 }
 
