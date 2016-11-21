@@ -1,0 +1,139 @@
+%navigation {
+
+  @extend %card__shadow;
+
+  z-index: $z__nav;
+
+  background-color: $color__nav_bg;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+  transition-property: width;
+  transition-duration: .25s;
+  transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+  float: left;
+
+  width: 100%;
+  height: $nav__width;
+
+  .nav__container {
+    position: relative;
+  }
+
+  .user {
+    display: none;
+  }
+
+  header,
+  .my_working_groups,
+  .my_campaigns {
+    height: 0;
+    overflow: hidden;
+    transition-property: width, max-height;
+    transition-duration: .25s;
+    transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+  }
+
+  footer {
+    position: absolute;
+    right: 0.5em;
+    top: auto;
+    bottom: 0.5em;
+
+    width: 2em;
+
+  }
+
+  @media (min-width: $bp__md ) {
+
+    width: $nav__width;
+    height: 100%;
+
+    header,
+    .my_working_groups,
+    .my_campaigns {
+      height: auto;
+      max-height: 100%;
+      width: 0;
+    }
+
+    .nav__container {
+      height: 100%;
+    }
+
+    footer {
+      bottom: .5em;
+      left: 0;
+      right: auto;
+      margin-right: 0;
+
+      padding: $padding__base;
+
+      .logo {
+        width: 2em;
+        height: 2em;
+        margin-right: .5em;
+        top: -.5em;
+        position: relative;
+        max-width: 2em;
+      }
+
+      .powered_by {
+        position: absolute;
+      	left: -10000px;
+      	overflow: hidden;
+      	width: 1px;
+      	height: 1px;
+      	white-space: nowrap;
+      }
+    }
+  }
+
+}
+
+%navigation--active {
+
+  height: auto;
+  width: 100%;
+
+  header,
+  .my_working_groups,
+  .my_campaigns {
+    max-height: 100%;
+  }
+
+  .powered_by {
+    @extend %onscreen;
+    width: auto;
+  }
+
+  @media(min-width: $bp__md) {
+
+    width: $nav__width--active;
+    height: 100%;
+
+    header,
+    .my_working_groups,
+    .my_campaigns {
+      width: auto;
+      max-height: 100%;
+    }
+  }
+}
+
+
+
+.navigation {
+  @extend %navigation;
+
+  &.nav--active {
+    @extend %navigation--active;
+  }
+}
+
+.navigation-logged-in {
+  @extend .navigation;
+}
