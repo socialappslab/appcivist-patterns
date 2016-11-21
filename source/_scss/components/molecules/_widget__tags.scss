@@ -1,0 +1,43 @@
+%card__filters {
+
+  @extend %control__strip;
+  padding-top: $padding__base;
+
+  background-color: $color__panel--light;
+
+  .search {
+    position: relative;
+    top: -0.5em;
+  }
+
+  .search {
+    @include span(3 of 12);
+  }
+
+  .filters {
+    @include span(5 of 12);
+  }
+
+  .sort {
+    @include span(4 of 12);
+    float: right;
+  }
+
+  .search_modes,
+  .sort_modes {
+    li {
+      @extend %tag;
+      a {
+        padding-right: 0.5em;
+        &:first-child {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.campaign__filters {
+  @extend %clearfix;
+  @extend %card__filters;
+}

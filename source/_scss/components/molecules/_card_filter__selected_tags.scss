@@ -1,0 +1,7 @@
+%card_filter__selected_tags {
+  @extend %tag_group;
+}
+
+.tags {
+  @extend %card_filter__selected_tags ;
+}
