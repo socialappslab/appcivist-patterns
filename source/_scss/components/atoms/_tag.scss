@@ -1,0 +1,25 @@
+%tag {
+
+  background-color: lighten($color__panel--light, 15%);
+  display: block;
+  float: left;
+  margin-right: .125em;
+  margin-bottom: .125em;
+
+  a {
+    display: block;
+    padding: .25em 1.5em .25em .5em;
+    color: $color__brand-dark;
+    font-size: .875em;
+  }
+
+  &.active,
+  &:focus,
+  &:hover {
+    background-color: $color__brand-dark;
+    a {
+      color: $color__text--reverse;
+    }
+  }
+
+}

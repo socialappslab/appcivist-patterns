@@ -1,0 +1,29 @@
+%control__strip {
+
+  width: 100%;
+  padding-top: 1.5 * $padding__base;
+  padding-left: 1.5 * $padding__base;
+  padding-right: 1.5 * $padding__base;
+  padding-bottom: .25 * $padding__base;
+
+  .heading--header {
+    float: left;
+    font-weight: bold;
+    margin-right: 1.5 * $padding__base;
+  }
+
+  .widget__label {
+    color: $color__brand-dark;
+    margin-bottom: 0.75em;
+  }
+
+  /* hmmm, specific css in a general bit of scss, fix! */
+  .proposals__show_ideas {
+    float: right;
+  }
+
+}
+
+.proposal__header {
+  @extend %control__strip;
+}

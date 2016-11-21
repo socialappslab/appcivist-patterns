@@ -1,0 +1,24 @@
+%page__header {
+
+  background-color: $color__brand-primary;
+  color: #fff;
+
+  padding: 1.5 * $padding__base;
+
+  .heading--header {
+    color: $color__brand-dark;
+  }
+
+  .heading--title {
+    font-size: $typography__title;
+    font-weight: 200;
+  }
+
+  p {
+    max-width: 52em;
+  }
+}
+
+.campaign__header {
+  @extend %page__header;
+}

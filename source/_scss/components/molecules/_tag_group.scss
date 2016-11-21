@@ -1,0 +1,9 @@
+%tag_group {
+  li {
+    @extend %tag;
+  }
+}
+
+.tags {
+  @extend %tag_group;
+}

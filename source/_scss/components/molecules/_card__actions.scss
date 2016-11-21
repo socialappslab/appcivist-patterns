@@ -1,0 +1,32 @@
+%card__actions {
+
+  position: absolute;
+  top: 2.5em;
+  right: .5em;
+
+  ul {
+    li {
+      float: left;
+      margin-right: .5em;
+      .icon {
+        fill: $color__text--reverse;
+      }
+      &:hover {
+        .icon {
+          fill: $color__brand-dark;
+        }
+      }
+    }
+  }
+  // desktop, although some touch detection and js class maybe a good idea eventually.
+  @extend %offscreen--min_md;
+
+}
+
+%card__actions--visible {
+  overflow: auto;
+  width: auto;
+  height: auto;
+  left: auto;
+  white-space: normal;
+}
