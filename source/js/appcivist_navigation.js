@@ -1,7 +1,5 @@
 (function(appcvui, document, window) {
 
-  console.log('appcvui.Navigation anonyfunction');
-
   appcvui.Navigation = function(appContainerSelector, navSelector) {
     this.initialize(appContainerSelector, navSelector);
   }
