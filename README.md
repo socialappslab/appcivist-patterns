@@ -19,13 +19,19 @@ The Grunt Edition comes with the following components:
 
 The Pattern Lab Node - Grunt Edition uses [Node](https://nodejs.org) for core processing, [npm](https://www.npmjs.com/) to manage project dependencies, and [grunt.js](http://gruntjs.com/) to run tasks and interface with the core library. Node version 4 or higher suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation of Node will include npm.
 
-It's also highly recommended that you [install grunt](http://gruntjs.com/getting-started) globally.
-
-***appcivist-patterns*** asumes that you have compass already installed. In order to install compass, follow the steps found [here](http://compass-style.org/install/).
-Compass plugin [Susy](https://www.safaribooksonline.com/library/view/sass-and-compass/9781849694544/ch05s04.html) 
-and [sass-mq](https://github.com/sass-mq/sass-mq) are also required.
 
 ## Installing
+
+There are two methods for downloading and installing the Grunt Edition:
+
+* [Download a pre-built package](#download-a-pre-built-package)
+* [Use npm](#use-npm)
+
+### Download a pre-built package
+
+The fastest way to get started with the Grunt Edition is to [download the pre-built version](https://github.com/pattern-lab/edition-node-grunt/releases) from the [releases page](https://github.com/pattern-lab/edition-node-grunt/releases). The pre-built project comes with the [Base Starterkit for Mustache](https://github.com/pattern-lab/starterkit-mustache-base) installed by default.
+
+**Please note:** Pattern Lab Node uses [npm](https://www.npmjs.com/) to manage project dependencies. To upgrade the Grunt Edition or to install plug-ins you'll need to be familiar with npm.
 
 ### Use npm
 
@@ -39,14 +45,53 @@ and [sass-mq](https://github.com/sass-mq/sass-mq) are also required.
     cd install/location
     npm install
     ```
-
 Running `npm install` from a directory containing a `package.json` file will download all dependencies defined within.
+
+#### Install the Grunt Edition of Pattern Lab Node as a Dependency
+
+Most people want to run Pattern Lab Node standalone and not as a dependency. If you wish to install as a dependency you can do the following:
+
+Use npm's [`install` command](https://docs.npmjs.com/cli/install) with an argument to install the Grunt Edition into a location of your choosing. In Terminal type:
+
+    cd install/location/
+    npm install edition-node-grunt
+
+This will install the Grunt Edition into a directory called `node_modules` in `install/location/`.
+
+It's also highly recommended that you [install grunt](http://gruntjs.com/getting-started) globally.
+```
+npm install grunt -g
+```
+
+## Installing ruby dependencies
+
+***appcivist-patterns*** has the following ruby dependencies:
+
+* [compass](http://compass-style.org/install/). Compass plugin
+* [Susy](https://www.safaribooksonline.com/library/view/sass-and-compass/9781849694544/ch05s04.html)
+* [sass media queries](https://github.com/sass-mq/sass-mq) are also required.
+
+Install [rubygems](https://rubygems.org/pages/download) then run:
+```
+gem install rubygems-update
+update_rubygems
+gem install sass
+gem install sass-mq
+gem install compass
+gem install susy
+```
 
 ## Getting started
 
 To start hacking with ***appcivist-patterns*** a few commands are available to you.
 
-### Helpful Commands
+You can also [work with starterkits using the command line](https://github.com/pattern-lab/patternlab-node/wiki/Importing-Starterkits).
+
+## Updating Pattern Lab
+
+To update Pattern Lab please refer to each component's GitHub repository, and the [master instructions for core](https://github.com/pattern-lab/patternlab-node/wiki/Upgrading). The components are listed at the top of the README.
+
+## Helpful Commands
 
 These are some helpful commands you can use on the command line for working with Pattern Lab.
 
