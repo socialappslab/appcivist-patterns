@@ -35,7 +35,6 @@ compiled into production.
 
 @import "base/extendables";
 
-@import "components/atoms/title";
 @import "components/atoms/button__nav_toggle";
 @import "components/atoms/card__search_field";
 @import "components/atoms/tag";
@@ -43,6 +42,8 @@ compiled into production.
 @import "components/molecules/page__header";
 @import "components/molecules/control__strip";
 @import "components/molecules/tag_group";
+@import "components/molecules/card_filter__available_tags";
+@import "components/molecules/card_filter__selected_tags";
 @import "components/molecules/card__filters";
 @import "components/molecules/card__list";
 @import "components/molecules/card__proposal";
