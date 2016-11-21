@@ -13,7 +13,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
 
   /******************************************************
    * PATTERN LAB CONFIGURATION
@@ -68,7 +68,11 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         options: {
-          compass: true
+          //compass: true,
+          includePaths: [
+            "node_modules/compass-mixins/lib",
+            "node_modules/susy/sass"
+          ]
         },
         files: [{
           expand: true,
