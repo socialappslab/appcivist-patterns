@@ -6247,6 +6247,9 @@ button, .button {
     .action-bar input:checked ~ .action-menu li {
       opacity: 1; }
 
+.action-bar-filters .vote-button {
+  padding: 5px; }
+
 ul.action-menu {
   max-height: 0px; }
   ul.action-menu li {
