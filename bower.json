@@ -1,0 +1,32 @@
+{
+  "name": "appcivist-patterns",
+  "description": "JS Dependencies",
+  "main": "package.json",
+  "authors": [
+    "Thiago de Mello Bueno"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Pattern",
+    "Lab",
+    "Atomic",
+    "Web",
+    "Design",
+    "Node",
+    "Grunt",
+    "Javascript"
+  ],
+  "homepage": "https://github.com/socialappslab/appcivist-patterns",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "basicModal": "^3.3.7"
+  }
+}
