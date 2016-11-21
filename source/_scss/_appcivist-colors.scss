@@ -6,7 +6,6 @@ TABLE OF CONTENTS
 1.0 GENERAL
 2.0 BUTTONS
 3.0 ALERTS
-4.0 NAVIGATION
 /--------------------------------------*/
 
 .color__brand-primary {
@@ -58,19 +57,6 @@ a {
 
 blockquote {
   color: $color__text--primary;
-}
-
-nav, nav a,
-.navigation-anonymous,
-.navigation-anonymous a,
-footer .large-screen-nav,
-footer .large-screen-nav a,
-.navigation-bar, div[navigation-bar] {
-  background-color: $color__brand-primary;
-  color: $color__text--reverse;
-  &:hover {
-    color: darken($color__text--reverse, 10%);
-  }
 }
 
 .overlay-background {
@@ -154,15 +140,6 @@ input[type=submit] {
   }
 }
 
-.small-screen-nav {
-  svg g {
-     fill: $color__text--reverse;
-     &:hover {
-       fill: $color__brand-primary--light;
-     }
-  }
-}
-
 // 3.0 ALERTS
 .alert {
   background: $color__alert-background;
@@ -189,21 +166,6 @@ input[type=submit] {
     background: $color__information-background;
   }
 }
-
-// 4.0 NAVIGATION
-.navigation {
-  &-logged-in {
-    .logo {
-      border-bottom: 1px solid $color__text--reverse;
-    }
-  }
-}
-.submenu {
-  h1 {
-    color: $color__text--reverse;
-  }
-}
-
 
 .panel{
   //border: 1px solid $color__borders;
