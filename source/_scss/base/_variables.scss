@@ -1,0 +1,131 @@
+/*--------------------------------------
+This file contains all variables in use
+throughout the AppCivist Sass files
+
+TABLE OF CONTENTS
+1.0 TYPOGRAPHY
+2.0 LAYOUT
+3.0 COLOR
+4.0 BREAKPOINTS
+/--------------------------------------*/
+
+// 1.0 TYPOGRAPHY
+//Modular Scale
+$ms-base: 16px;
+$ms-ratio: 1.125;
+
+$typography__font-stack--system: 'Lato', sans-serif;
+
+$typography__title: 2.635em; // 42px
+$typography__headline: 1.438em; // 23px
+$typography__subhead: 1.13em; // 18px
+$typography__body: 1em; // 16px
+$typography__small: .88em; // 14px
+$typography__tiny: .81em; // 13px
+
+// 2.0 LAYOUT
+
+$susy: (
+  columns: 12,
+  container: 1200px,
+  gutters: 1/12,
+  global-box-sizing: border-box,
+  debug: (image: show)
+);
+
+$padding__base: 1.875em;
+$nav__width: 6em;
+$nav__width--active: 19em;
+
+// 3.0 COLOR
+$color__brand-primary: #009877;
+$color__brand-primary--light: lighten($color__brand-primary, 20%);
+$color__brand-primary--dark: darken($color__brand-primary, 10%);
+$color__brand-dark: #11493b;
+$color__brand-accent: #ae529e;
+
+$color__text--primary: #465b64;
+$color__text--reverse: #fff;
+
+$color__panel--light: #e5ebe6;
+
+$color__panel_control--subtle: #f7edf5;
+
+$color__nav_bg: #fff;
+
+/*
+  4.0 BREAKPOINTS
+  vanilla breakpoints are easy if you actually think mobile first
+*/
+$bp__xs: 480px;
+$bp__sm: 768px;
+$bp__md: 1024px;
+$bp__lg: 1500px;
+$bp__xl: 1800px;
+
+
+$z__nav: 1000;
+
+
+
+/*
+((((((( ! )))))))
+everything below here may get canned
+*/
+
+$color__brand-accent-red: #B44551;
+$color__brand-accent-green: #46634f;
+$color__brand-accent-yellow: #f0ad4e;
+
+$color__text--secondary: #757575;
+$color__background: $color__brand-primary;
+$color__borders: #E2E2E2;
+$color__borders--dark: darken($color__borders, 20%);
+$color__borders--accent: lighten($color__brand-accent, 20%);
+$color__borders--primary: $color__brand-primary;
+$color__link--active: $color__brand-accent;
+$color__link--hover: darken($color__link--active, 10%);
+$color__valid: #03804d;
+$color__alert: #DE111D;
+$color__alert-background: #f7f9f9;
+$color__error: #b12a0b;
+$color__error-background: #fdded8;
+$color__success: #03804d;
+$color__success-background: #d4f3e6;
+$color__warning: #a59b15;
+$color__warning-background: #fffecf;
+$color__information: #0192d0;
+$color__information-background: #d3f2ff;
+
+@mixin breakpoint($point) {
+
+  @if $point == desktop {
+    @media (min-width: $bp__xl) {
+      @content;
+    }
+  }
+
+  @else if $point == laptop {
+    @media (min-width: $bp__lg) {
+      @content;
+    }
+  }
+
+  @else if $point == tablet {
+    @media (min-width: $bp__md) {
+      @content;
+    }
+  }
+
+  @else if $point == phablet {
+    @media (min-width: $bp__sm)  {
+      @content;
+    }
+ }
+
+ @else if $point == mobileonly {
+    @media (max-width: $bp__sm)  {
+      @content;
+    }
+  }
+}
