@@ -1,3 +1,7 @@
 .screen-reader-only {
   @extend %offscreen;
 }
+
+.hide {
+  display: none !important;
+}

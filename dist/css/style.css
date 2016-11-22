@@ -5648,6 +5648,9 @@ TABLE OF CONTENTS
 ((((((( ! )))))))
 everything below here may get canned
 */
+.hide {
+  display: none !important; }
+
 /*--------------------------------------
 This file contains all typographic styles
 in use throughout the AppCivist Sass files
