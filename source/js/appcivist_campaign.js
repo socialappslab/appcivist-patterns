@@ -1,8 +1,9 @@
-(function(appcvui, document, window) {
+(function(window, document) {
+  var appcvui = window.appcvui || {};
 
   appcvui.Campaign = function(appContainerSelector) {
     this.initialize(appContainerSelector);
-  }
+  };
 
   p = appcvui.Campaign.prototype;
 
@@ -10,11 +11,12 @@
 
   p.initialize = function(appContainerSelector) {
     this.appEl = document.querySelector(appContainerSelector);
-  }
+  };
 
   p.showThemeFilters = function(e) {
     this.addProposalModal = this.appEl.querySelector('#modal__add_proposal');
     console.log("»»»", this.addProposalModal);
-  }
+  };
 
+  window.appcvui = appcvui;
 }( window.appcvui =  window.appcvui || {}, document, window ));

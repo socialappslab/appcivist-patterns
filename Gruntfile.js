@@ -14,6 +14,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   /******************************************************
    * PATTERN LAB CONFIGURATION
@@ -104,10 +106,29 @@ module.exports = function (grunt) {
         files: [
           { expand: true, cwd: path.resolve(paths().public.css), src: '*.css', dest: path.resolve(paths().dist.css) },
           { expand: true, cwd: path.resolve(paths().public.images), src: '*', dest: path.resolve(paths().dist.images) },
-          { expand: true, cwd: path.resolve(paths().public.fonts), src: '*', dest: path.resolve(paths().dist.fonts) },
+          { expand: true, cwd: path.resolve(paths().public.fonts), src: '*', dest: path.resolve(paths().dist.fonts) }
         ]
       }
     },
+
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['source/js/*.js'],
+        dest: 'dist/js/appcivist-patterns.js',
+      }
+    },
+
+    uglify: {
+      dist: {
+        files: {
+          'dist/js/appcivist-patterns.min.js': ['dist/js/appcivist-patterns.js']
+        }
+      }
+    },
+
     /******************************************************
      * SERVER AND WATCH TASKS
     ******************************************************/
@@ -178,8 +199,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['patternlab', 'sass', 'copy:main']);
   grunt.registerTask('patternlab:watch', ['patternlab', 'sass', 'copy:main', 'watch:all']);
-  grunt.registerTask('patternlab:serve', ['patternlab', 'sass', 'copy:main', 'browserSync', 'watch:all']);
-  grunt.registerTask('patternlab:dist', ['patternlab', 'sass', 'patternlab:build', 'copy:main', 'copy:dist']);
+  grunt.registerTask('patternlab:dist', ['patternlab', 'sass', 'patternlab:build', 'copy:main', 'copy:dist', 'concat:dist', 'uglify:dist']);
+  grunt.registerTask('patternlab:serve', ['patternlab:dist', 'browserSync', 'watch:all']);
   grunt.registerTask('patternlab:buildserve', ['patternlab', 'sass', 'patternlab:build', 'copy:main', 'browserSync', 'watch:all']);
 
 };

@@ -28,7 +28,8 @@
       "root" : "./dist",
       "css": "./dist/css",
       "images" : "./dist/images",
-      "fonts" : "./dist/fonts"
+      "fonts" : "./dist/fonts",
+      "js" : "./dist/js"
     },
     "fontAwesome": {
       "root": "./node_modules/font-awesome",
