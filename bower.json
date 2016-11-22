@@ -27,6 +27,6 @@
     "tests"
   ],
   "dependencies": {
-    "basicModal": "^3.3.7"
+    "vex": "^3.0.0"
   }
 }

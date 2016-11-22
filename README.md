@@ -58,9 +58,11 @@ Use npm's [`install` command](https://docs.npmjs.com/cli/install) with an argume
 
 This will install the Grunt Edition into a directory called `node_modules` in `install/location/`.
 
-It's also highly recommended that you [install grunt](http://gruntjs.com/getting-started) globally.
+It's also highly recommended that you [install grunt](http://gruntjs.com/getting-started) and [bower](https://bower.io/) globally.
+
 ```
-npm install grunt -g
+npm install grunt -g;
+npm install bower -g;
 ```
 
 ## Installing ruby dependencies
