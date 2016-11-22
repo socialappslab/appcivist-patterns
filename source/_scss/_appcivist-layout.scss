@@ -25,23 +25,6 @@ figure {
   }
 }
 
-.tags {
-  margin: ms(1) auto;
-  span {
-    line-height: ms(-1);
-    &:after {
-      content: '|';
-      padding-left: ms(-1);
-      padding-right: ms(-2);
-    }
-    &:last-of-type {
-      &:after {
-        content:'';
-      }
-    }
-  }
-}
-
 .labels {
   margin: ms(1) auto;
   span {
@@ -55,7 +38,6 @@ li {
 
 // 2.0 BUTTONS
 button, .button {
-  border-radius: $layout__border-radius;
   padding: ms(1);
   border: 1px solid;
 }
@@ -76,15 +58,9 @@ button, .button {
   border: 1px solid;
 }
 
-.upvote {
-  border-top-left-radius: $layout__border-radius;
-  border-bottom-left-radius: $layout__border-radius;
-  border-right: 0;
-}
-.downvote {
-  border-top-right-radius: $layout__border-radius;
-  border-bottom-right-radius: $layout__border-radius;
-}
+.upvote { border-right: 0; }
+.downvote {}
+
 .middle {
   border-right: 0;
 }
@@ -95,184 +71,13 @@ button, .button {
   border-radius: 50px;
 }
 
-// floating helpers
-.pull-right {
-  float: right;
-}
-
-.pull-left {
-  float: left;
-}
-
-// 3.0 NAVIGATION
-.app-container {
-  height: 100%;
-  @include breakpoint(phablet) {
-    @include flexbox((display: box, box-orient: horizontal));
-    @include flex-direction(row);
-  }
-}
-
-.navigation {
-  &-logged-in {
-    padding: ms(1);
-    .logo {
-      padding-top: 0;
-      padding-bottom: ms(1);
-      span {
-        display:block;
-      }
-    }
-    .logo-small {
-      img {
-        max-height: 100%;
-        max-width: 100%;
-        height: 22px;
-        width: 22px;
-        vertical-align: middle;
-      }
-      span {
-        display:block;
-      }
-      strong {
-        vertical-align: middle;
-      }
-    }
-    .member-card {
-      @include display-flex;
-      padding: 0;
-      figure {
-        margin: ms(1) ms(1) 0 0;
-        border: 1px solid $color__text--reverse;
-        img {
-          margin: 0;
-        }
-      }
-      span {
-        display: block;
-      }
-    }
-    ul {
-      padding: 0 0 0 0;
-      h1 {
-        padding-bottom: ms(-4);
-      }
-      li {
-        padding: 0 0 ms(-2) ms(1);
-        &:last-of-type {
-          //padding-bottom: 0;
-        }
-      }
-    }
-  }
-  &-anonymous {
-    width: 100%;
-    @include display-flex;
-    @include justify-content(space-between);
-    .logo {
-      padding: ms(-1);
-    }
-    .logo-small {
-      img {
-        max-height: 100%;
-        max-width: 100%;
-        height: 22px;
-        width: 22px;
-        vertical-align: middle;
-      }
-      span {
-        display:block;
-      }
-      strong {
-        vertical-align: middle;
-      }
-    }
-    .sign-up {
-      right: 0;
-      position: absolute;
-      padding: ms(1);
-    }
-  }
-
-}
-
-.navigation-logged-in.small-screen-nav {
-  width: 100%;
-  display: block;
-  @include display-flex;
-  @include justify-content(space-between);
-  @include breakpoint(phablet) {
-    display: none;
-  }
-  .logo {
-    border-bottom: 0px;
-    padding-bottom: 0px;
-    span {
-      display:inline;
-    }
-  }
-}
-
-#small-menu {
-  margin-top: 300px;
-  @include breakpoint(phablet) {
-    display: none;
-  }
-}
-
-.large-screen-nav {
-  display: none;
-  @include breakpoint(phablet) {
-    display: block;
-    width: 270px;
-    @include display-flex(0);
-  }
-
-  .navigation-content-sticky {
-    position: fixed;
-    left: 13px;
-    max-width: 245px;
-  }
-}
-
-.app-main {
-   @include breakpoint(tablet) {
-     @include display-flex(1);
-     padding-right: 250px;
-   }
-   &.anonymous {
-     padding: 0;
-   }
-}
-
-.small-nav-button {
-  width: 50px;
-  height: 50px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-
-
 // 4.0 PANELS & CARDS
-
-
 
 .conversation-container {
   margin-bottom: ms(1);
 }
 
-.card {
-  border-radius: $layout__border-radius;
-  margin-bottom: ms(-1);
-  overflow: hidden;
-  padding: ms(-3);
-}
-
 .card-list {
-  border-radius: 0;
-  margin-bottom: ms(-1);
   overflow: hidden;
 }
 
@@ -340,79 +145,16 @@ button, .button {
   margin-left: ms(2);
 }
 
-.panel {
-  min-height: 50px;
-  max-width: 800px;
-  margin: 0;
-  padding: ms(2);
-  @include clearfix;
-  .panel-heading {
-    @include display-flex;
-    p {
-      margin: -4px 0 0 ms(2);
-      padding-bottom: 10px;
-    }
-  }
-  .panel-heading-no-margin {
-    h1 {
-      float: left;
-    }
-    p {
-      margin: -4px 0 0 ms(2);
-      padding-bottom: 10px;
-      float: right;
-    }
-  }
-
-  .panel-heading-relative {
-    position: relative;
-    padding-left: 0;
-    margin-left: 0;
-
-    p {
-      position: absolute;
-      right: 0;
-    }
-  }
-
-  .members-panel {
-    min-width: 36%;
-  }
-}
-
 .latest-activity-relative {
   min-width: 62%;
 }
 
-.anonymous {
-  .panel {
-    max-width: 55em;
-    margin: 0 auto;
-  }
-}
+.anonymous {}
+
+
 .ideas-and-proposals section, .text-created-attachments-similar section {
   @include breakpoint(tablet) {
     @include gallery(3 of 6);
-  }
-}
-
-.ideas-and-proposals {
-  .list--proposal, .list--idea {
-    min-width: 100%;
-
-    .proposals {
-      contribution-card {
-        @include gallery(6 of 12);
-      }
-
-      .card {
-        width: 100%;
-      }
-    }
-
-    .card {
-      width: 49.51456%;
-    }
   }
 }
 
@@ -431,11 +173,9 @@ button, .button {
   @include justify-content(space-between);
 }
 
-.all-ideas {
-  .card {
-    @include breakpoint(phablet) {
-      @include gallery(4 of 8);
-    }
+.all-ideas div {
+  @include breakpoint(phablet) {
+    @include gallery(4 of 8);
   }
 }
 
@@ -445,6 +185,7 @@ button, .button {
       @include gallery(4 of 8);
     }
   }
+
 }
 
 .all-member-list {
@@ -563,36 +304,6 @@ ul.action-menu {
 ol.pagination {
   @include display-flex;
   @include justify-content(center);
-}
-
-footer {
-  @include display-flex;
-  small, #small-menu small {
-    line-height: ms(1);
-    display: block;
-    margin-top: ms(1);
-  }
-  div {
-    padding: ms(3) ms(1) 100px ms(1);
-    @include align-self(flex-end);
-  }
-  .large-screen-nav {
-    min-width: 270px;
-  }
-
-  a, div.large-screen-nav, div.small-screen-nav {
-    color: #465A63 !important;
-    background-color: #F8F8F8 !important;
-  }
-
-  div.large-screen-nav, div.small-screen-nav {
-    text-align: center;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 25px;
-  }
-
 }
 
 .anonymous-footer {

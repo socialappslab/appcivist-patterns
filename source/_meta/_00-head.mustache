@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html class="{{ htmlClass }}">
   <head>
+
     <title>{{ title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-
-    <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     {{{ patternLabHead }}}
     <!-- End Pattern Lab -->
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:200,300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
+
+    <script src="/js/appcivist_navigation.js"></script>
+    <script src="/js/appcivist_ui_core.js"></script>
+
   </head>
   <body class="{{ bodyClass }}">
+
+    <div class="app-container">

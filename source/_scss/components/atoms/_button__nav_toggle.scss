@@ -1,0 +1,13 @@
+.button__nav_toggle {
+
+  border: none;
+  padding: .5 * $padding__base;
+  font-size: 2em;
+  background-color: transparent;
+  color: $color__text--primary;
+
+  &:hover {
+    color: $color__nav_bg;
+    background-color: $color__text--primary;
+  }
+}

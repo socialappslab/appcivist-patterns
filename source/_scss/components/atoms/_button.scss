@@ -1,0 +1,12 @@
+%button {
+
+}
+
+
+%button--round {
+  @extend %button;
+  .icon {
+    border-radius: 50%;
+    background-color: $color__brand-dark;
+  }
+}

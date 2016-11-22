@@ -1,0 +1,14 @@
+%app__container {
+  height: 100%;
+}
+
+.app-container {
+
+  @extend %app__container;
+
+  .app-main {
+    @media (min-width: $bp__sm) {
+      margin-left: $nav__width;
+    }
+  }
+}

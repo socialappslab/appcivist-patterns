@@ -1,0 +1,80 @@
+%proposal__card {
+
+  @extend %grid__responsive;
+
+  .card__wrapper {
+    transition-property: box-shadow;
+    transition-duration: .25s;
+    transition-timing-function: .25s;
+    @extend %card__shadow;
+  }
+
+  padding: 0.25 * $padding__base;
+
+  .card__header {
+
+    padding: $padding__base;
+    background: $color__brand_primary;
+    color: $color__text--reverse;
+    position: relative;
+
+    .heading--headline {
+      font-size: $typography__headline;
+      font-weight: normal;
+      margin-bottom: .5em;
+    }
+
+    a {
+      color: $color__text--reverse;
+    }
+
+    .card__heading_actions {
+      @extend %card__actions;
+    }
+  }
+
+  .card__body {
+    padding: $padding__base;
+    font-size: $typography__subhead;
+    .card__contextual_menu {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .card__wrapper {
+      @extend %card__shadow--darker;
+    }
+    .card__heading_actions {
+      @extend %card__actions--visible;
+    }
+  }
+
+  &--selected {
+    @extend %proposal__card--selected;
+  }
+}
+
+%proposal__card--active {
+  @extend %proposal__card;
+}
+
+%proposal__card--selected {
+  @extend %proposal__card;
+  .card__body,
+  .card__header {
+    background-color: $color__brand-dark;
+    color: #fff;
+  }
+}
+
+
+.proposal__card {
+  @extend %proposal__card;
+  .card {
+    @extend %card__shadow;
+  }
+  &.active {
+    @extend %proposal__card--active;
+  }
+}

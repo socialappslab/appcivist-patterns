@@ -16,12 +16,9 @@ TABLE OF CONTENTS
 body {
   font-family: $typography__font-stack--system;
   font-size: $typography__body;
+  line-height: 1.25;
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
-}
-
-.body--bodycopy {
-  font-size: $typography__body;
 }
 
 a {
@@ -35,68 +32,18 @@ nav a {
   }
 }
 
-.tags {
-  text-transform: uppercase;
-  font-size: $typography__tiny;
-}
-
-// BUTTONS
-button, .button {
-  text-transform: uppercase;
-}
-.tiny.button {
-  font-size: $typography__tiny;
-}
-.large.button {
-  font-size: $typography__tiny;
-}
-
-.vote-button {
-  font-weight: bold;
-}
-
-
-// 2.0 BASE SIZES
-
-.heading--title {
-  font-size: $typography__title;
-}
-.heading--headline {
-  font-size: $typography__headline;
-  font-weight: bold;
-}
-p {
-  font-size: $typography__body;
-  line-height: ms(4);
-}
-small, .heading--small {
-  font-size: $typography__small;
-}
-.heading--header {
-  font-size: $typography__header;
-  line-height: ms(1);
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.heading--subheader, fieldset label {
-  font-size: $typography__subheader;
-  line-height: ms(1);
-  text-transform: uppercase;
-}
-.tiny {
-  font-size: $typography__tiny;
-}
 
 // 3.0 BODY TEXT
-
 
 blockquote {
   font-size: $typography__headline;
   font-style: italic;
 }
-time {
-  font-size: $typography__subheader;
-}
+
+// time {
+//   font-size: $typography__subhead;
+// }
+
 figcaption {
   font-size: $typography__small;
   font-style: italic;
@@ -104,23 +51,7 @@ figcaption {
 
 // 4.0 LISTS
 
-.timeline {
-  text-align: center;
-  text-transform: uppercase;
-}
-
 // 5.0 INLINE STYLES
-
-.panel span, .list-array span {
-  text-align: right;
-}
-
-footer {
-  font-size: $typography__tiny;
-  .app-main small {
-    text-align: center;
-  }
-}
 
 // 6.0 BRAND AND NAV
 
@@ -134,31 +65,5 @@ footer {
   }
   h3 {
     font-weight: 100;
-  }
-}
-.user {
-  span {
-    margin-top: ms(-6);
-    font-weight: 100;
-  }
-}
-.submenu {
-  h1 {
-    font-weight: 100;
-  }
-  li {
-    font-size: $typography__small;
-    line-height: ms(1);
-  }
-}
-
-// CARDS
-.card-info {
-  h1 {
-    line-height: ms(3);
-  }
-  p {
-    line-height: ms(-1);
-    margin-bottom: ms(-4);
   }
 }

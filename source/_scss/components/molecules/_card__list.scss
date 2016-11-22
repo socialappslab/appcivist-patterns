@@ -1,0 +1,19 @@
+%card__list {
+  @extend %clearfix;
+}
+
+.all-proposals,
+.all-ideas {
+
+  @extend %card__list;
+
+  .proposals__header {
+    @extend %control__strip;
+  }
+
+  .list__cards {
+    @extend %clearfix;
+    padding: 1.5 * $padding__base;
+    padding-top: 0;
+  }
+}

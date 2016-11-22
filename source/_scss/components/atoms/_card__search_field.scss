@@ -1,0 +1,37 @@
+%card__search_field {
+  display: inline-block;
+  width: 14em;
+  padding: .125em 0;
+  margin-bottom: .5em;
+  outline: none;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px $color__brand-dark solid;
+
+  background-color: transparent;
+
+  color: $color__brand-dark;
+
+  .search__icon {
+    .svg_icon {
+      fill: $color__brand-dark;
+    }
+  }
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &:-moz-placeholder {
+    color: $color__brand-dark;
+    opacity: 1 !important;
+  }
+
+  &::after {
+    content: "";
+    position: relative;
+  }
+}
+
+.campaign__filters .search__field {
+  @extend %card__search_field;
+}

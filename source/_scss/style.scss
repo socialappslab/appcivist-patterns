@@ -23,10 +23,34 @@ compiled into production.
 @import "pattern-scaffolding";
 @import "patternlab-reset";
 
+
 //--------------------------------------
 // APPCIVIST STYLES
-@import "appcivist-variables";
+
+@import "base/variables";
 @import "appcivist-typography";
 @import "appcivist-layout";
 @import "appcivist-colors";
 @import "appcivist-motion";
+
+@import "base/extendables";
+
+@import "components/atoms/button__nav_toggle";
+@import "components/atoms/card__search_field";
+@import "components/atoms/tag";
+
+@import "components/molecules/page__header";
+@import "components/molecules/control__strip";
+@import "components/molecules/tag_group";
+@import "components/molecules/card_filter__available_tags";
+@import "components/molecules/card_filter__selected_tags";
+@import "components/molecules/card__filters";
+@import "components/molecules/card__list";
+@import "components/molecules/card__proposal";
+@import "components/molecules/card__actions";
+@import "components/molecules/campaign__status";
+
+@import "components/organisms/navigation";
+
+@import "components/templates/campaign";
+@import "components/templates/global";

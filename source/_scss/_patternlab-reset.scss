@@ -85,23 +85,6 @@ input[type="search"]::-webkit-search-decoration {
 /*------------------------------------*\
     #GLOBAL CLASSES
 \*------------------------------------*/
-/**
- * Clearfix
- */
-.cf {
-  *zoom: 1; }
-
-/**
- * Clearfix pseudo-elements
- */
-.cf:before, .cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-
-.cf:after {
-  clear: both; }
 
 /**
  * Completely remove from the flow and screen readers.
