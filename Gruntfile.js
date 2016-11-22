@@ -90,7 +90,7 @@ module.exports = function (grunt) {
     copy: {
       main: {
         files: [
-          { expand: true, cwd: path.resolve(paths().source.js), src: '**/*.js', dest: path.resolve(paths().public.js) },
+          { expand: true, cwd: path.resolve(paths().source.js), src: '**/*', dest: path.resolve(paths().public.js) },
           { expand: true, cwd: path.resolve(paths().source.css), src: '*.css', dest: path.resolve(paths().public.css) },
           { expand: true, cwd: path.resolve(paths().fontAwesome.css), src: '*.css', dest: path.resolve(paths().public.css) },
           { expand: true, cwd: path.resolve(paths().fontAwesome.fonts), src: '*', dest: path.resolve(paths().public.fonts) },
@@ -102,6 +102,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: [
+          { expand: true, cwd: path.resolve(paths().public.js), src: '**/*', dest: path.resolve(paths().dist.js) },
           { expand: true, cwd: path.resolve(paths().public.css), src: '*.css', dest: path.resolve(paths().dist.css) },
           { expand: true, cwd: path.resolve(paths().public.images), src: '*', dest: path.resolve(paths().dist.images) },
           { expand: true, cwd: path.resolve(paths().public.fonts), src: '*', dest: path.resolve(paths().dist.fonts) },
@@ -116,10 +117,10 @@ module.exports = function (grunt) {
         files: [
           'source/_scss/**/*.scss',
           path.resolve(paths().source.patterns + '**/*'),
-          path.resolve(paths().source.fonts + '/*'),
-          path.resolve(paths().source.images + '/*'),
+          path.resolve(paths().source.fonts + '*'),
+          path.resolve(paths().source.images + '*'),
           path.resolve(paths().source.data + '*.json'),
-          path.resolve(paths().source.js + '/*.js'),
+          path.resolve(paths().source.js + '**/*'),
           path.resolve(paths().source.root + '/*.ico')
         ],
         tasks: ['default', 'bsReload:css']
