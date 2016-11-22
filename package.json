@@ -41,5 +41,10 @@
   "scripts": {
     "test": "grunt",
     "start": "grunt patternlab:serve"
+  },
+  "devDependencies": {
+    "compass-mixins": "^0.12.10",
+    "grunt-sass": "^1.2.1",
+    "susy": "^2.2.12"
   }
 }
