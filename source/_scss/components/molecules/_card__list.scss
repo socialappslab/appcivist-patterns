@@ -2,11 +2,12 @@
   @extend %clearfix;
 }
 
-.all-proposals,
-.all-ideas {
+.list--proposals,
+.list--ideas {
 
   @extend %card__list;
 
+  .ideas__header,
   .proposals__header {
     @extend %control__strip;
   }

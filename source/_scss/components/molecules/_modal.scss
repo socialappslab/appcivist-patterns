@@ -1,0 +1,23 @@
+.vex-overlay {
+  animation-duration: .1875s;
+  background-color: rgba(#fff,.8);
+}
+
+.vex-content {
+  @extend %clearfix;
+  @extend %card__shadow--darker;
+  font-family: $typography__base_font !important;
+  padding: 2 * $padding__base;
+  animation-duration: .1875s;
+  .vex-close::before {
+    border-radius: 50%;
+    line-height: 26px;
+    width: 25px;
+    height: 25px;
+  }
+  .vex-close:hover::before,
+  .vex-close:active::before {
+    background-color: $color__brand-dark !important;
+    color: $color__panel--light !important;
+  }
+}

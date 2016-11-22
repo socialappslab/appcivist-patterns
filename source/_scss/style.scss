@@ -28,6 +28,7 @@ compiled into production.
 // APPCIVIST STYLES
 
 @import "base/variables";
+@import "base/utilities";
 @import "appcivist-typography";
 @import "appcivist-layout";
 @import "appcivist-colors";
@@ -39,18 +40,22 @@ compiled into production.
 @import "components/atoms/card__search_field";
 @import "components/atoms/tag";
 
+@import "components/molecules/modal";
 @import "components/molecules/page__header";
 @import "components/molecules/control__strip";
 @import "components/molecules/tag_group";
-@import "components/molecules/card_filter__available_tags";
-@import "components/molecules/card_filter__selected_tags";
-@import "components/molecules/card__filters";
+@import "components/molecules/campaign__filters";
 @import "components/molecules/card__list";
+@import "components/molecules/card";
 @import "components/molecules/card__proposal";
+@import "components/molecules/card__idea";
 @import "components/molecules/card__actions";
+@import "components/molecules/temperature_check";
 @import "components/molecules/campaign__status";
 
+@import "components/organisms/comments";
 @import "components/organisms/navigation";
+@import "components/organisms/footer";
 
 @import "components/templates/campaign";
 @import "components/templates/global";

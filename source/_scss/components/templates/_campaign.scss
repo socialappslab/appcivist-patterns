@@ -1,0 +1,41 @@
+%campaign_cards {
+
+  @extend %clearfix;
+  overflow: hidden;
+
+  .list--proposals,
+  .list--ideas {
+    transition-property: width, left;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+  }
+
+  .list--ideas {
+    position: relative;
+    left: 100%;
+    width: 40%;
+    background-color: $color__panel--lighter;
+  }
+
+  &.show-ideas {
+
+    @extend %clearfix;
+
+    .list--proposals {
+      width: 60%;
+      float: left;
+      .card__proposal {
+        @extend %grid__half_md;
+      }
+    }
+
+    .list--ideas {
+      margin-left: 60%;
+      left: 0;
+    }
+  }
+}
+
+.campaign_cards {
+  @extend %campaign_cards;
+}

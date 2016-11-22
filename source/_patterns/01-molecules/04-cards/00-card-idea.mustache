@@ -1,0 +1,28 @@
+<div class="card__idea">
+  <div class="card__wrapper">
+    <header class="card__header">
+      <p class="heading--category">{{tag.title}}</p>
+      <h1 class="heading--headline">
+        <a href="{{link.templates-single-proposal}}">{{ title.short }}</a>
+      </h1>
+      <div class="card__heading_actions">
+        <ul>
+          <li class="action__toggle_selection">{{> atoms-icon-selection-toggle }}</li>
+          <li class="action__contextual_menu">{{> atoms-icon-cog }}</li>
+        </ul>
+      </div>
+
+      {{> molecules-temperature-check-module}}
+      <div class="card__contextual_menu">
+        <ul>
+          <li><a href="#">Edit</a></li>
+          <li><a href="#">Publish</a></li>
+          <li><a href="#">Give Feedback</a></li>
+          <li><a href="#">Exclude</a></li>
+          <li><a href="#">See history</a></li>
+        </ul>
+      </div>
+
+    </header>
+  </div>
+</div>

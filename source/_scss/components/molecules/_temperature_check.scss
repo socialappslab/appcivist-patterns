@@ -1,0 +1,24 @@
+%temperature_check {
+
+  li {
+    display: inline-block;
+    margin-right: .5em;
+  }
+  
+  a {
+
+    @extend .fa;
+
+    &.thumbs-up {
+      @extend .fa-thumbs-up;
+    }
+
+    &.thumbs-down {
+      @extend .fa-thumbs-down;
+    }
+  }
+}
+
+.temperature_check {
+  @extend %temperature_check;
+}

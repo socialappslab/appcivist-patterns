@@ -1,14 +1,14 @@
-%app__container {
-  height: 100%;
-}
+%appcivist {
 
-.app-container {
+  min-height: 100%;
 
-  @extend %app__container;
-
-  .app-main {
-    @media (min-width: $bp__sm) {
-      margin-left: $nav__width;
+  .appmain {
+    @media (min-width: $bp__md) {
+      margin-left: $nav__width !important;
     }
   }
+}
+
+.appcivist {
+  @extend %appcivist;
 }

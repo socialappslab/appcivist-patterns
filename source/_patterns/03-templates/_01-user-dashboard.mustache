@@ -2,14 +2,14 @@
 <main>
 	<h1 class="heading--jumbo">Hi {{ name.first }}</h1>
 		<div>
-	    <h2 class="heading--headline">Notifications & Recent Activity</h2>
+	    <h2 class="heading--headline">Notifications &amp; Recent Activity</h2>
 	    <div class="card">
 				{{# listItems.three }}
 				{{> molecules-activity-stream }}
 				{{/ listItems.three }}
 			</div>
 	    <h2 class="heading--headline">My Proposals</h2>
-	    {{> molecules-proposal-card }}
+	    {{> molecules-card-proposal }}
 	    <h2 class="heading--headline">My Ideas</h2>
 			<div class="card">
 				{{> atoms-definition-list-item }}

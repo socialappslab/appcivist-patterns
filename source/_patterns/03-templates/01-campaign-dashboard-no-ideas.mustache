@@ -1,6 +1,6 @@
 {{> molecules-navigation }}
 
-<main class="app-main">
+<main class="appmain">
 
 	<article class="campaign">
 
@@ -21,36 +21,41 @@
 			{{> molecules-campaign-sort}}
 		</section>
 
-    <section class="list--proposal all-proposals">
+		<div class="campaign_cards">
 
-			<header class="proposals__header">
-				<h2 class="heading--header">Proposals</h2>
-				<a class="proposals__see_all" href="{{link.templates-all-proposals-view}}">See All</a>
-				<a class="proposals__add_new" href="#">Add New</a>
-				<a class="proposals__show_ideas" href="{{link.templates-campaign-dashboard}}">Show Ideas</a>
-			</header>
+	    <section class="list--proposals">
 
-			<div class="list__cards container__proposals">
-	      {{# listItems.four }}
-	        {{> molecules-proposal-card }}
-	      {{/ listItems.four }}
-	      {{# listItems.seven }}
-	        {{> molecules-proposal-card }}
-	      {{/ listItems.seven }}
-			</div>
-    </section>
+				<header class="proposals__header">
+					<h2 class="heading--header">Proposals</h2>
+					<a class="proposals__see_all" href="{{link.templates-all-proposals-view}}">See All</a>
+					<a class="proposals__add_new" href="#">Add New</a>
+					<a class="proposals__show_ideas" href="{{link.templates-campaign-dashboard}}">Show Ideas</a>
+				</header>
+
+				<div class="list__cards container__proposals">
+		      {{# listItems.four}}
+		        {{> molecules-card-proposal}}
+		      {{/ listItems.four}}
+		      {{# listItems.seven}}
+		        {{> molecules-card-proposal}}
+		      {{/ listItems.seven}}
+				</div>
+
+	    </section>
+
+		</div>
 
 		<section class="panel">
 			<div class="panel-heading">
 				<h1 class="heading--header">Conversations</h1><p class="heading--small"><a href="#">Start a new onversation</a></p>
 			</div>
-			{{> molecules-single-conversation }}
-			{{> molecules-single-conversation }}
+			{{> molecules-single-conversation}}
+			{{> molecules-single-conversation}}
 		</section>
 
 		<div class="panel reply-field">
 			<h1 class="heading--header">Start a Conversation</h1>
-			{{> molecules-comment-form-user }}
+			{{> molecules-comment-form-user}}
 		</div>
 
 	</article>

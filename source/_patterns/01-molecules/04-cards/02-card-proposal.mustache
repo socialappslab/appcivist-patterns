@@ -1,11 +1,9 @@
-<div class="proposal__card">
+<div class="card__proposal">
   <div class="card__wrapper">
     <header class="card__header">
       <p class="heading--category">{{tag.title}}</p>
       <h1 class="heading--headline">
-        <a href="{{ link.templates-single-proposal }}">
-          {{ title.short }}
-        </a>
+        <a href="{{link.templates-single-proposal}}">{{ title.short }}</a>
       </h1>
       <p class="heading--attribution">
         By <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a>
@@ -18,8 +16,10 @@
       </div>
     </header>
     <div class="card__body">
-      {{ excerpt.short }}
-      {{> molecules-voting-consensus-module }}
+      <div class="excerpt">
+        {{ excerpt.short }}
+      </div>
+      {{> molecules-temperature-check-module}}
       <div class="card__contextual_menu">
         <ul>
           <li><a href="#">Edit</a></li>

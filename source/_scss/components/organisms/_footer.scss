@@ -1,0 +1,19 @@
+.footer {
+
+  clear: both;
+  left: 0;
+  right: auto;
+  margin-right: 0;
+
+  padding: $padding__base;
+
+  .logo {
+    width: 2em;
+    height: 2em;
+    margin-right: .5em;
+    top: -.5em;
+    position: relative;
+    max-width: 2em;
+  }
+
+}

@@ -1,0 +1,78 @@
+%campaign__filters {
+
+  @extend %control__strip;
+
+  padding-top: $padding__base;
+  background-color: $color__panel--light;
+
+  .search {
+
+    position: relative;
+    top: -0.5em;
+
+    .search__icon {
+      position: relative;
+      top: .5em;
+      
+      .svg_icon {
+        fill: $color__brand-dark;
+      }
+    }
+  }
+
+  .search_modes,
+  .sort_modes {
+    li {
+      @extend %tag;
+      a {
+        padding-right: 0.5em;
+        &:first-child {
+          float: left;
+        }
+      }
+    }
+  }
+
+  .search,
+  .filters,
+  .sort {
+    @extend %clearfix;
+  }
+
+  @media (min-width: $bp__sm ) {
+    .search {
+      @include span(12 of 12);
+    }
+
+    .filters {
+      @include span(8 of 12);
+    }
+
+    .sort {
+      @include span(4 of 12);
+      float: right;
+    }
+  }
+
+  @media (min-width: $bp__md ) {
+    .search {
+      @include span(4 of 12);
+    }
+
+    .filters {
+      @include span(5 of 12);
+    }
+
+    .sort {
+      @include span(3 of 12);
+      float: right;
+    }
+  }
+
+}
+
+
+.campaign__filters {
+  @extend %clearfix;
+  @extend %campaign__filters;
+}

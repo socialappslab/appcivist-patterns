@@ -19,14 +19,15 @@ var appcvui = ( function(appcvui, document, window){
   }
 
   appcvui.initialize = function(){
-    appcvui.equalHeights('.list__cards .proposal__card header');
-    appcvui.equalHeights('.list__cards .proposal__card .card__body');
-    appcvui.navigation = new appcvui.Navigation('.app-container', '#appcivist__nav');
+    vex.defaultOptions.className = 'vex-theme-plain';
+    appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
+    if( typeof document.querySelector('.campaign') != null ) {
+      appcvui.campaign = new appcvui.Campaign('.campaign');
+    }
   }
 
   document.onreadystatechange = function () {
     if (document.readyState === "interactive") {
-      console.log('document.readyState === interactive');
       appcvui.initialize();
     }
   }
