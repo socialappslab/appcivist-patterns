@@ -5,7 +5,8 @@ patternlab.json
 /sass-cache
 Thumbs.db
 .idea/
-public
+public/
+dist/
 dist/images/favicon_16x16.png.original.png
 dist/images/favicon_32x32.png.original.png
 dist/images/logo.png.original.png
