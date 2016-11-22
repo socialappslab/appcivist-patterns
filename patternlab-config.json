@@ -8,9 +8,9 @@
       "annotations" : "./source/_annotations/",
       "styleguide" : "./node_modules/styleguidekit-assets-default/dist/",
       "patternlabFiles" : "./node_modules/styleguidekit-mustache-default/views/",
-      "js" : "./source/js",
-      "images" : "./source/images",
-      "fonts" : "./source/fonts",
+      "js" : "./source/js/",
+      "images" : "./source/images/",
+      "fonts" : "./source/fonts/",
       "css" : "./source/css/"
     },
     "public" : {
@@ -20,19 +20,19 @@
       "annotations" : "./public/annotations/",
       "styleguide" : "./public/styleguide/",
       "js" : "./public/js",
-      "images" : "./public/images",
-      "fonts" : "./public/fonts",
-      "css" : "./public/css"
+      "images" : "./public/images/",
+      "fonts" : "./public/fonts/",
+      "css" : "./public/css/"
     },
     "dist": {
       "root" : "./dist",
       "css": "./dist/css",
-      "images" : "./dist/images",
-      "fonts" : "./dist/fonts",
-      "js" : "./dist/js"
+      "js" : "./dist/js/",
+      "images" : "./dist/images/",
+      "fonts" : "./dist/fonts/"
     },
     "fontAwesome": {
-      "root": "./node_modules/font-awesome",
+      "root": "./node_modules/font-awesome/",
       "css": "./node_modules/font-awesome/css/",
       "fonts": "./node_modules/font-awesome/fonts/"
     }

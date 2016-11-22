@@ -1,0 +1,55 @@
+{
+  "name": "vex",
+  "version": "3.0.0",
+  "homepage": "http://github.hubspot.com/vex/docs/welcome",
+  "authors": [
+    "Adam Schwartz <aschwartz@hubspot.com>",
+    "Brendan Batliner <brendan@omnipointment.com>",
+    "Mark Stosberg <mark@rideamigos.com>"
+  ],
+  "description": "Beautiful, functional dialogs in vanilla Javascript",
+  "main": [
+    "dist/js/vex.js",
+    "dist/js/vex.combined.js",
+    "dist/css/vex.css",
+    "dist/css/vex-theme-bottom-right-corner.css",
+    "dist/css/vex-theme-default.css",
+    "dist/css/vex-theme-flat-attack.css",
+    "dist/css/vex-theme-os.css",
+    "dist/css/vex-theme-plain.css",
+    "dist/css/vex-theme-top.css",
+    "dist/css/vex-theme-wireframe.css"
+  ],
+  "keywords": [
+    "dialog",
+    "modal",
+    "client-side",
+    "javascript",
+    "css",
+    "themes",
+    "alert",
+    "confirm",
+    "prompt"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "docs",
+    ".gitignore",
+    ".hsdoc",
+    "Gruntfile.js",
+    "component.json",
+    "package.json"
+  ],
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "3544c7386aba85d91b0e68d398a0968e3d8d57c6"
+  },
+  "_source": "https://github.com/HubSpot/vex.git",
+  "_target": "^3.0.0",
+  "_originalSource": "vex",
+  "_direct": true
+}

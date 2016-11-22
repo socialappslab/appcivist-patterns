@@ -14,7 +14,7 @@ TABLE OF CONTENTS
 $ms-base: 16px;
 $ms-ratio: 1.125;
 
-$typography__font-stack--system: 'Lato', sans-serif;
+$typography__base_font: 'Lato', sans-serif;
 
 $typography__title: 2.635em; // 42px
 $typography__headline: 1.438em; // 23px
@@ -48,6 +48,7 @@ $color__text--primary: #465b64;
 $color__text--reverse: #fff;
 
 $color__panel--light: #e5ebe6;
+$color__panel--lighter: #f9faf8;
 
 $color__panel_control--subtle: #f7edf5;
 

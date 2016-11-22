@@ -10,3 +10,7 @@
     background-color: $color__brand-dark;
   }
 }
+
+.campaign__filters .button__add_filter {
+  @extend %button--round;
+}

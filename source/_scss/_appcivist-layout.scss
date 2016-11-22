@@ -102,56 +102,6 @@ button, .button {
   }
 }
 
-
-// 6.0 COMMENTS
-.comment-meta {
-  .member-card {
-    @include display-flex;
-  }
-}
-.comment-text {
-  @include span(10 of 12);
-  p {
-    margin-top: ms(-1);
-  }
-}
-.comment-reply-controls {
-  @include span(12 of 12);
-  @include display-flex;
-  @include justify-content(space-between);
-  margin: ms(1) 0;
-  a.reply-count {
-    margin: 0 ms(2) 0 0;
-    padding-top: 6px;
-  }
-}
-
-.comment-form {
-  margin-top: ms(1);
-  label {
-    padding: ms(1) 0;
-  }
-  .comment-meta {
-    @include span(9 of 12);
-  }
-  input {
-    @include span(3 of 12);
-    float: right;
-  }
-}
-
-.threaded-comments {
-  @include span(12 of 12);
-  margin-left: ms(2);
-}
-
-.latest-activity-relative {
-  min-width: 62%;
-}
-
-.anonymous {}
-
-
 .ideas-and-proposals section, .text-created-attachments-similar section {
   @include breakpoint(tablet) {
     @include gallery(3 of 6);
@@ -177,15 +127,6 @@ button, .button {
   @include breakpoint(phablet) {
     @include gallery(4 of 8);
   }
-}
-
-.all-proposals {
-  .card {
-    @include breakpoint(phablet) {
-      @include gallery(4 of 8);
-    }
-  }
-
 }
 
 .all-member-list {
@@ -304,13 +245,6 @@ ul.action-menu {
 ol.pagination {
   @include display-flex;
   @include justify-content(center);
-}
-
-.anonymous-footer {
-  display: block;
-  margin: 0 auto;
-  padding: ms(2);
-  text-align: center;
 }
 
 .credits {

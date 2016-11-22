@@ -1,0 +1,33 @@
+// 6.0 COMMENTS
+.comment-meta {
+  .member-card {
+  }
+}
+
+.comment-text {
+}
+
+.comment-reply-controls {
+  a.reply-count {
+  }
+}
+
+.comment-form {
+
+  @extend %clearfix;
+
+  label {
+  }
+
+  .comment-meta {
+    @include span(9 of 12);
+  }
+
+  input {
+    @include span(3 of 12);
+  }
+}
+
+.threaded-comments {
+  margin-left: ms(2);
+}

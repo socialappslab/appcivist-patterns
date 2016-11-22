@@ -12,18 +12,11 @@
 
   color: $color__brand-dark;
 
-  .search__icon {
-    .svg_icon {
-      fill: $color__brand-dark;
-    }
-  }
-
   &::-webkit-input-placeholder,
   &::-moz-placeholder,
   &:-ms-input-placeholder,
   &:-moz-placeholder {
     color: $color__brand-dark;
-    opacity: 1 !important;
   }
 
   &::after {

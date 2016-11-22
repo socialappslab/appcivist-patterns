@@ -19,8 +19,7 @@
     "starterkit-mustache-demo": "^4.0.0",
     "styleguidekit-assets-default": "^3.0.0",
     "styleguidekit-mustache-default": "^3.0.0",
-    "susy": "^2.2.12",
-    "vanilla-modal": "^1.3.0"
+    "susy": "^2.2.12"
   },
   "keywords": [
     "Pattern Lab",

@@ -65,6 +65,28 @@
   }
 }
 
+%grid__half_md {
+	@media (min-width: $bp__sm) {
+		@include gallery(6 of 12);
+	}
+	@media (min-width: $bp__md) {
+		@include gallery(6 of 12);
+	}
+	@media (min-width: $bp__lg) {
+		@include gallery(6 of 12);
+	}
+	@media (min-width: $bp__xl) {
+		@include gallery(4 of 12);
+	}
+}
+
+%grid__alt {
+	@media (min-width: $bp__md) {
+    @include gallery(6 of 12);
+  }
+}
+
+
 .screen-reader__label {
-	@extend %offscreen; 
+	@extend %offscreen;
 }

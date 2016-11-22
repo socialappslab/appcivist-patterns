@@ -1,0 +1,37 @@
+%card__idea {
+
+  @extend %card;
+  margin-bottom: 0.5 * $padding__base;
+
+  .card__header {
+    background-color: $color__text--reverse;
+    padding: 0.5 * $padding__base;
+    color: $color__brand-dark;
+    a {
+      color: $color__brand-dark;
+    }
+
+    .card__heading_actions {
+      position: absolute;
+      top: 0.5em;
+      right: .5em;
+      .icon {
+        fill: lighten($color__brand_primary, 30%);
+      }
+      &:hover {
+        .icon {
+          fill: $color__brand_primary;
+        }
+      }
+    }
+  }
+
+  .heading--headline {
+    font-size: $typography__subhead;
+  }
+
+}
+
+.card__idea {
+  @extend %card__idea;
+}
