@@ -4,8 +4,7 @@
 
 		<button class="button__nav_toggle">☰</button>
 
-
-		<header itemprop="location" itemscope itemtype="http://schema.org/Place">
+		<header class="nav_header" itemprop="location" itemscope itemtype="http://schema.org/Place">
 	    <h1>City of Vallejo</h1>
 			<h2>Vallejo, CA</h2>
 		</header>
@@ -19,7 +18,7 @@
 		</div>
 
 		<section class="my_working_groups">
-			<h1 class="heading--header">My Working Groups</h1>
+			<h3 class="section_header">My Working Groups</h3>
 		  <ul class="list__my_working_groups">
 				<li>
 					<a href="{{ link.templates-working-group-dashboard }}">Quality of Life</a>
@@ -34,18 +33,15 @@
 		</section>
 
 		<section class="my_campaigns">
-			<h1 class="heading--header">My Campaigns</h1>
-			<ul class="nav__my_campaigns">
+			<h3 class="section_header">My Campaigns</h3>
+			<ul class="list__my_campaigns">
 				<li>
 					<a href="{{ link.templates-campaign-dashboard }}">Participatory Budgeting - Cycle 4</a>
 				</li>
 			</ul>
 		</section>
 
-		<footer class="nav__footer">
-			{{>atoms-logo-svg}}
-			<div class="powered_by">Powered by Appcivist</div>
-		</footer>
+		{{> molecules-navigation-footer}}
 
 	</div>
 

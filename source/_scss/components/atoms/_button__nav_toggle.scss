@@ -1,13 +1,23 @@
 .button__nav_toggle {
 
-  border: none;
+  position: relative;
+  z-index: 30;
+  float: left;
+
   padding: .5 * $padding__base;
+  border: none;
   font-size: 2em;
   background-color: transparent;
   color: $color__text--primary;
+  text-align: left;
 
   &:hover {
     color: $color__nav_bg;
     background-color: $color__text--primary;
+  }
+
+  @media (min-width: $bp__md ){
+    float: none;
+    width: 100%;
   }
 }

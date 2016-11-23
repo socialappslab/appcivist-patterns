@@ -8,15 +8,18 @@
 }
 
 %onscreen {
-	position: static;
-	left: auto;
-	right: auto;
-	top: auto;
-	bottom: auto;
-	overflow: auto;
-	width: auto;
-	height: auto;
-	white-space: normal;
+	/*
+	a little brute-forcy, but…
+	*/
+	position: static !important;
+	left: auto !important;
+	right: auto !important;
+	top: auto !important;
+	bottom: auto !important;
+	overflow: auto !important;
+	width: auto !important;
+	height: auto !important;
+	white-space: normal !important;
 }
 
 %offscreen--min_md {

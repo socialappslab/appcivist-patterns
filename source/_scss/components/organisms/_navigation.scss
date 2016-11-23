@@ -3,21 +3,19 @@
   @extend %card__shadow;
 
   z-index: $z__nav;
-
   background-color: $color__nav_bg;
-
   position: fixed;
   top: 0;
   left: 0;
 
   overflow: hidden;
-  transition-property: width;
-  transition-duration: .25s;
+  transition-property: width, max-height, height;
+  transition-duration: .5s;
   transition-timing-function: cubic-bezier(.42, 0, .58, 1);
   float: left;
 
   width: 100%;
-  height: $nav__width;
+  max-height: $nav__width;
 
   .nav__container {
     position: relative;
@@ -27,32 +25,107 @@
     display: none;
   }
 
-  header,
   .my_working_groups,
   .my_campaigns {
-    height: 0;
-    overflow: hidden;
-    transition-property: width, max-height;
+    display: none;
+    white-space: nowrap;
+    transition-property: height, width, max-height;
     transition-duration: .25s;
     transition-timing-function: cubic-bezier(.42, 0, .58, 1);
   }
 
-  footer {
+  .my_working_groups {
+    margin-top: $padding__base;
+  }
+
+  .nav_header {
+    display: none;
+    position: relative;
+    top: $padding__base;
+    color: $color__brand-dark;
+    margin-left: $nav__width * 1.25;
+
+    h1 {
+      font-size: $typography__title * .5;
+    }
+
+    h2 {
+      font-size: $typography__subhead * .875;
+    }
+  }
+
+  .section_header {
+    font-size: $typography__subhead;
+    padding-left: $padding__base;
+  }
+
+  .list__my_working_groups,
+  .list__my_campaigns  {
+
+    border-top: 1px $color__panel--light solid;
+    width: 100%;
+    clear: both;
+
+    li {
+      line-height: 1.2;
+      border-bottom: 1px $color__panel--light solid;
+      padding: .25 * $padding__base;
+      padding-left: $padding__base;
+      padding-right: $padding__base;
+    }
+
+    margin-bottom: 1.5 * $padding__base;
+
+  }
+
+  .nav__footer {
+
     position: absolute;
-    right: 0.5em;
-    top: auto;
-    bottom: 0.5em;
+    right: 1em;
+    top: 1.5 * $padding__base;
+    max-width: 15em;
 
-    width: 2em;
+    .logo__wrapper {
 
+      float: left;
+      width: $padding__base;
+      height: $padding__base;
+      margin-right: .5em;
+      top: 0;
+      position: relative;
+
+      .logo__svg {
+        width: $padding__base;
+        height: $padding__base;
+        .svg__shape {
+          fill: $color__brand-dark;
+        }
+      }
+    }
   }
 
   @media (min-width: $bp__md ) {
 
     width: $nav__width;
     height: 100%;
+    min-height: 100%;
 
-    header,
+    .nav_header {
+
+      float: none;
+      margin-left: 0;
+      margin-top: 0;
+
+      h1 {
+        font-size: $typography__title * .875;
+      }
+
+      h2 {
+        font-size: $typography__subhead;
+      }
+    }
+
+    .nav_header,
     .my_working_groups,
     .my_campaigns {
       height: auto;
@@ -64,23 +137,15 @@
       height: 100%;
     }
 
-    footer {
-      bottom: .5em;
+    .nav__footer {
+      top: auto;
+      bottom: 0.5em !important;
       left: 0;
       right: auto;
       margin-right: 0;
-
       padding: $padding__base;
 
-      .logo {
-        width: 2em;
-        height: 2em;
-        margin-right: .5em;
-        top: -.5em;
-        position: relative;
-        max-width: 2em;
-      }
-
+      // hide
       .powered_by {
         position: absolute;
       	left: -10000px;
@@ -91,18 +156,31 @@
       }
     }
   }
-
 }
 
 %navigation--active {
 
-  height: auto;
+  max-height: 100%;
   width: 100%;
 
-  header,
+  .nav_header,
   .my_working_groups,
   .my_campaigns {
+    display: block;
     max-height: 100%;
+  }
+
+  .my_working_groups,
+  .my_campaigns {
+    width: 100%;
+  }
+
+  .nav_header {
+    padding-bottom: 2 * $padding__base;
+  }
+
+  .nav__footer {
+    bottom: auto;
   }
 
   .powered_by {
@@ -115,11 +193,22 @@
     width: $nav__width--active;
     height: 100%;
 
-    header,
     .my_working_groups,
     .my_campaigns {
       width: auto;
       max-height: 100%;
+    }
+
+    .nav_header {
+      margin-left: 0;
+      width: $nav__width--active;
+      padding-left: $padding__base;
+      padding-right: $padding__base;
+    }
+
+    .nav__footer {
+      top: auto;
+      bottom: .5 * $padding__base;
     }
   }
 }
@@ -127,6 +216,7 @@
 
 
 .navigation {
+
   @extend %navigation;
 
   &.nav--active {
