@@ -40,7 +40,8 @@
     }
   }
 
-  .form__add_proposal {
+  .form__add_proposal,
+  .form__add_idea {
     @extend %offscreen;
   }
 }
