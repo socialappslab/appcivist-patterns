@@ -3,7 +3,9 @@
   min-height: 100%;
 
   .appmain {
+    padding-top: $nav__width;
     @media (min-width: $bp__md) {
+      padding-top: 0;
       margin-left: $nav__width !important;
     }
   }

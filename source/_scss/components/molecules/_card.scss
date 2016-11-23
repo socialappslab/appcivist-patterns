@@ -1,9 +1,14 @@
 %card {
 
+  transition-property: width, height, margin, left, top;
+  transition-duration: .325s;
+  transition-timing-function: ease-out;
+
+
   .card__wrapper {
-    transition-property: box-shadow, width, height;
-    transition-duration: 0.25s;
-    transition-timing-function: 0.25s;
+    transition-property: box-shadow;
+    transition-duration: 0.25;
+    transition-timing-function: ease-out;
     @extend %card__shadow;
   }
 
@@ -12,7 +17,7 @@
   .card__header {
 
     padding: $padding__base;
-    padding-bottom: 0.5 * $padding__base; 
+    padding-bottom: 0.5 * $padding__base;
     color: $color__text--reverse;
     position: relative;
 

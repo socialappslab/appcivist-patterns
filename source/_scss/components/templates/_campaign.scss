@@ -5,15 +5,21 @@
 
   .list--proposals,
   .list--ideas {
-    transition-property: width, left;
-    transition-duration: .2s;
+    transition-property: width, left, margin-left;
+    transition-duration: .325s;
     transition-timing-function: ease-out;
+  }
+
+  .list--proposals {
+    float: left;
+    width: 100%;
   }
 
   .list--ideas {
     position: relative;
     left: 100%;
     width: 40%;
+    margin-left: 60%;
     background-color: $color__panel--lighter;
   }
 
@@ -23,7 +29,6 @@
 
     .list--proposals {
       width: 60%;
-      float: left;
       .card__proposal {
         @extend %grid__half_md;
       }
