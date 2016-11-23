@@ -1,33 +1,33 @@
 // 6.0 COMMENTS
-.comment-meta {
-  .member-card {
-  }
-}
 
-.comment-text {
-}
-
-.comment-reply-controls {
-  a.reply-count {
-  }
-}
-
-.comment-form {
+%comments__section {
 
   @extend %clearfix;
+  padding: 2* $padding__base;
 
-  label {
+  .comment-form {
+
+    @extend %clearfix;
+
+    .comment-meta {
+      @include span(9 of 12);
+      @extend %clearfix;
+    }
+
+    input {
+      @include span(3 of 12);
+    }
   }
 
-  .comment-meta {
-    @include span(9 of 12);
-  }
+  .comments__comment_form {
 
-  input {
-    @include span(3 of 12);
   }
 }
 
 .threaded-comments {
-  margin-left: ms(2);
+  padding: 1.5* $padding__base;
+}
+
+.comments__section {
+  @extend %comments__section;
 }

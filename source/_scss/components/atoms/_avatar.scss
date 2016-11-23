@@ -1,0 +1,49 @@
+%avatar {
+
+  @extend %clearfix;
+  height: 2em;
+  position: relative;
+  top: 0.6em;
+
+  figure,
+  img {
+    width: 2em;
+    height: 2em;
+  }
+
+  figure {
+    display: inline-block;
+    margin-right: 0.5em;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .fn {
+    display: inline-block;
+    position: relative;
+    top: -0.625em;
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .icon__more {
+    .svg__shape {
+      fill: $color__brand-accent;
+    }
+  }
+
+  .menu__contextual {
+    display: inline-block;
+  }
+
+  .action__menu {
+    @extend %offscreen;
+  }
+}
+
+.user__card {
+  @extend %avatar;
+}
