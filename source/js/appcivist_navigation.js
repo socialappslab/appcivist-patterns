@@ -1,8 +1,9 @@
-(function(appcvui, document, window) {
+(function(window, document) {
+  var appcvui = window.appcvui || {};
 
   appcvui.Navigation = function(appContainerSelector, navSelector) {
     this.initialize(appContainerSelector, navSelector);
-  }
+  };
 
   p = appcvui.Navigation.prototype;
 
@@ -13,11 +14,11 @@
     this.el = document.querySelector(navSelector);
     this.toggle = this.el.querySelector('.button__nav_toggle');
     this.toggle.addEventListener('click', this.toggleNav.bind(this));
-  }
+  };
 
   p.toggleNav = function(e) {
     this.appEl.classList.toggle('nav--active');
     this.el.classList.toggle('nav--active');
-  }
-
-}( window.appcvui =  window.appcvui || {}, document, window ));
+  };
+  window.appcvui = appcvui;
+}(window, document));

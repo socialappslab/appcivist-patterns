@@ -3,4 +3,11 @@
   {{{ patternLabFoot }}}
   
   </body>
+  <script>
+		document.onreadystatechange = function () {
+			if (document.readyState === 'interactive') {
+				appcvui.initialize();
+			}
+		}
+  </script>
 </html>

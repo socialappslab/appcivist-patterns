@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "compass-mixins": "^0.12.10",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-sass": "^1.2.1",
     "susy": "^2.2.12"
   }

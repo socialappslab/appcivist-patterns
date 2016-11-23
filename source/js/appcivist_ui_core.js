@@ -1,5 +1,5 @@
-var appcvui = ( function(appcvui, document, window){
-
+( function(window, document){
+  var appcvui = window.appcvui || {};
   appcvui.equalHeights = function(selector) {
 
     var elms = document.querySelectorAll(selector);
@@ -16,7 +16,7 @@ var appcvui = ( function(appcvui, document, window){
     for (x=0; x < len; x++) {
       elms[x].style.height = tallest + 'px';
     }
-  }
+  };
 
   appcvui.initialize = function(){
     vex.defaultOptions.className = 'vex-theme-plain';
@@ -24,12 +24,14 @@ var appcvui = ( function(appcvui, document, window){
     if( typeof document.querySelector('.campaign') != null ) {
       appcvui.campaign = new appcvui.Campaign('.campaign');
     }
-  }
+  };
 
-  document.onreadystatechange = function () {
-    if (document.readyState === "interactive") {
-      appcvui.initialize();
-    }
-  }
-
-}( window.appcvui = window.appcvui || {}, document, window));
+  // don't call this here, just exponse de initialize() method and called when is needed.
+  //document.onreadystatechange = function () {
+    //if (document.readyState === "interactive") {
+      //appcvui.initialize();
+    //}
+  //}
+  
+  window.appcvui = appcvui;
+}( window, document));
