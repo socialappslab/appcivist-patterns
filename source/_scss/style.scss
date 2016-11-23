@@ -39,6 +39,7 @@ compiled into production.
 @import "components/atoms/button__nav_toggle";
 @import "components/atoms/card__search_field";
 @import "components/atoms/tag";
+@import "components/atoms/avatar";
 
 @import "components/molecules/modal";
 @import "components/molecules/page__header";
@@ -51,11 +52,12 @@ compiled into production.
 @import "components/molecules/card__idea";
 @import "components/molecules/card__actions";
 @import "components/molecules/temperature_check";
-@import "components/molecules/campaign__status";
+@import "components/molecules/status__strip";
 
 @import "components/organisms/comments";
 @import "components/organisms/navigation";
 @import "components/organisms/footer";
 
+@import "components/templates/proposal";
 @import "components/templates/campaign";
 @import "components/templates/global";

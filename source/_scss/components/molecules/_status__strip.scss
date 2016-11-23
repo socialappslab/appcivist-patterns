@@ -1,0 +1,14 @@
+%status__strip {
+
+  padding: 1.5 * $padding__base;
+  background-color: $color__panel--lighter;
+
+  .heading--header {
+    font-weight: bold;
+  }
+}
+
+.campaign__status,
+.proposal__status {
+  @extend %status__strip;
+}

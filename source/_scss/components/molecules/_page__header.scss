@@ -17,8 +17,32 @@
   p {
     max-width: 52em;
   }
+
+  a {
+    color: $color__text--reverse;
+    text-decoration: underline;
+  }
+
+  .attribution {
+
+    margin-bottom: 1em;
+
+    .heading--subheader {
+      display: inline-block;
+      margin: 0;
+      margin-right: 0.5em;
+    }
+
+    .user__card {
+      display: inline-block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
-.campaign__header {
+.page__header {
   @extend %page__header;
 }

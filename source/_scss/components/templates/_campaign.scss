@@ -39,6 +39,10 @@
       left: 0;
     }
   }
+
+  .form__add_proposal {
+    @extend %offscreen;
+  }
 }
 
 .campaign_cards {

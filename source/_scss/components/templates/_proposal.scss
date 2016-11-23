@@ -1,0 +1,15 @@
+%proposal__single {
+
+  .etherpad__embed {
+    @extend %control__strip;
+    @extend %clearfix;
+  }
+  .attachments {
+    @extend %control__strip;
+    @extend %clearfix;
+  }
+}
+
+.proposal__single {
+  @extend %proposal__single;
+}
