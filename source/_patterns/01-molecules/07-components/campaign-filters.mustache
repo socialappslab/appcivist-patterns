@@ -7,11 +7,17 @@
   {{>atoms-button-add-filter}}
 
   <div class="modal-content" style="display:none">
-    <h2 class="modal__title">Select Categories to Add</h2>
-    <div>
-      {{>molecules-card-filter-available-tags}}
+    <header class="modal-header">
+        <h2 class="modal__title">Select Categories to Add</h2>
+    </header>
+    <div class="modal-body">
+      <fieldset>
+        {{> molecules-card-filter-available-tags}}
+      </fieldset>
+      <fieldset>
+        <a href="#" class="button__modal_submit">Apply Filters</a>
+      </fieldset>
     </div>
-    <a href="#" class="button">Apply Filters</a>
   </div>
 
 

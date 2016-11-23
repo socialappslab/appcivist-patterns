@@ -21,17 +21,11 @@
   appcvui.initialize = function(){
     vex.defaultOptions.className = 'vex-theme-plain';
     appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
-    if( typeof document.querySelector('.appmain > .campaign') != null ) {
+    if( document.querySelector('.appmain > .campaign') != null ) {
       appcvui.campaign = new appcvui.Campaign('.campaign');
     }
   };
 
-  // don't call this here, just exponse de initialize() method and called when is needed.
-  //document.onreadystatechange = function () {
-    //if (document.readyState === "interactive") {
-      //appcvui.initialize();
-    //}
-  //}
-  
   window.appcvui = appcvui;
+
 }( window, document));

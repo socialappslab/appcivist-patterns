@@ -1,4 +1,5 @@
 %tag_group {
+  @extend %clearfix;
   li {
     @extend %tag;
   }

@@ -1,7 +1,6 @@
 (function(appcvui, document, window, vex) {
 
   appcvui.ThemeWidget = function(selector) {
-    console.log("ThemeWidget");
     this.initialize(selector);
   }
 

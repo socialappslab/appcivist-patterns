@@ -9,11 +9,13 @@
 
     position: relative;
     top: -0.5em;
+    box-shadow: none;
+
 
     .search__icon {
       position: relative;
       top: .5em;
-      
+
       .svg_icon {
         fill: $color__brand-dark;
       }
@@ -37,6 +39,51 @@
   .filters,
   .sort {
     @extend %clearfix;
+  }
+
+  .filters {
+    .tags {
+      @extend %tag_group;
+      float: left;
+      margin-right: 0.5em;
+      li {
+        position: relative;
+        &::after {
+        }
+        &:hover {
+          a {
+            background-color: $color__brand-dark;
+            color: $color__panel--light;            
+          }
+          &::after {
+            content: "✖";
+            position: absolute;
+            color: $color__brand-accent;
+            top: .25em;
+            right: 0.25em;
+          }
+        }
+      }
+    }
+  }
+
+  .button__add_filter {
+
+    margin-left: 0.5em;
+    color: $color__brand-accent;
+    line-height: 1.25;
+
+    .icon {
+      text-align: center;
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      background-color: $color__brand-accent;
+      color: $color__panel--light;
+      border-radius: 50%;
+      margin-right: 0.25em;
+      padding-top: .25em;
+    }
   }
 
   @media (min-width: $bp__sm ) {
