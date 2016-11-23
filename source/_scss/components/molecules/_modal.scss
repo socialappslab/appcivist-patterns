@@ -3,21 +3,69 @@
   background-color: rgba(#fff,.8);
 }
 
-.vex-content {
+.vex.vex-theme-plain {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.vex.vex-theme-plain .vex-content {
+
   @extend %clearfix;
   @extend %card__shadow--darker;
+  overflow: auto;
+
+  margin: 1.5 * $padding__base;
+
+  width: 100%;
+  max-height: 100%;
+
   font-family: $typography__base_font !important;
-  padding: 2 * $padding__base;
+
   animation-duration: .1875s;
+
   .vex-close::before {
     border-radius: 50%;
     line-height: 26px;
     width: 25px;
     height: 25px;
+    background-color: $color__text--reverse;
   }
+
   .vex-close:hover::before,
   .vex-close:active::before {
     background-color: $color__brand-dark !important;
     color: $color__panel--light !important;
+  }
+
+  .modal-header {
+
+    padding: 2 * $padding__base;
+    background-color: $color__brand_primary;
+    color: $color__text--reverse;
+
+    .modal__title,
+    .heading--header {
+      font-size: $typography__title * .75 !important;
+      font-weight: 200;
+      margin-bottom: .5em;
+    }
+  }
+
+  .modal-body {
+    padding: 2 * $padding__base;
+    background-color: $color__panel--light;
+  }
+
+  .button__modal_submit {
+    @extend %button;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: $color__panel--light;
+  }
+
+  @media (min-width: $bp__md) {
+    margin: 0 auto;
+    width: $modal_width__md;
   }
 }

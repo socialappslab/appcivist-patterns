@@ -1,0 +1,20 @@
+input[type=text],
+input[type=search],
+input[type=url],
+input[type=number],
+textarea {
+  border-radius: 0;
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.25);
+  border-radius: none;
+  background-color: lighten($color__panel--light, 15%);
+  padding: .25 * $padding__base;
+}
+
+.field__container {
+  @extend %clearfix;
+  margin-bottom: 1.5 * $padding__base;
+}
+
+label {
+  font-size: $typography__tiny;
+}

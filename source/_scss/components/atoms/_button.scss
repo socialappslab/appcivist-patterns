@@ -1,14 +1,24 @@
 %button {
-
+  padding: .25em (.5*$padding__base);
+  background-color: $color__brand-dark;
+  color: $color__text--reverse;
 }
 
 
 %button--round {
+  
   @extend %button;
+
+  padding: 0;
+  background-color: transparent;
+  color: $color__text--reverse;
+
   .icon {
+    text-align: center;
     border-radius: 50%;
     background-color: $color__brand-dark;
   }
+
 }
 
 .campaign__filters .button__add_filter {
