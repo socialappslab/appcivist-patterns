@@ -18,3 +18,10 @@ textarea {
 label {
   font-size: $typography__tiny;
 }
+
+fieldset.divider {
+  border-bottom: 1px $color__brand-primary solid;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-radius: 0;
+}
