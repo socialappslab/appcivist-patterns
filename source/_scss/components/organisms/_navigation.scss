@@ -69,9 +69,18 @@
     li {
       line-height: 1.2;
       border-bottom: 1px $color__panel--light solid;
-      padding: .25 * $padding__base;
-      padding-left: $padding__base;
-      padding-right: $padding__base;
+      padding: 0;
+      a {
+        display: block;
+        color: $color__brand-dark;
+        padding: .25 * $padding__base;
+        padding-left: $padding__base;
+        padding-right: $padding__base;
+        &:hover {
+          color: $color__panel--light;
+          background-color: $color__brand-dark;
+        }
+      }
     }
 
     margin-bottom: 1.5 * $padding__base;
