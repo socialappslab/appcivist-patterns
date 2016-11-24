@@ -1,0 +1,10 @@
+<fieldset class="user__assignment">
+  <!-- assuming some sort of autocomplete -->
+  <label for="">Assign users</a>
+  <input type="text" placeholder="Enter a name to search…">
+  <ul class="user__list">
+    {{# listItems.five }}
+      {{> molecules-user-card }}
+    {{/ listItems.five }}
+  </ul>
+</fieldset>

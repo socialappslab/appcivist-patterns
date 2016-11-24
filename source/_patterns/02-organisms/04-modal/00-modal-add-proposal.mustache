@@ -23,6 +23,19 @@
         <textarea id="add_proposal__description" rows="8" cols="48" placeholder="Proposal Description"></textarea>
       </div>
 
+      <div class="field__container assign_proposal_to_wg">
+        <label for='assign-to-wg'>Assign this Proposal to a Working Group</label>
+        <select id="assign-to-wg">
+          <option value="value1">A Handy Working Group Name</option>
+          <option value="value2">Here's a Working Group Name</option>
+          <option value="value3">And Here's Another One</option>
+        </select>
+      </div>
+
+      <div class="field__container assign_proposal_to_users">
+        {{> molecules-user-assignment}}
+      </div>
+
       {{>molecules-add-proposal-available-themes}}
 
       <div class="field__container">

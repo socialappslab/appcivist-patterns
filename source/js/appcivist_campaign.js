@@ -16,7 +16,11 @@
 
     this.showIdeasButton = this.appEl.querySelector('.proposals__show_ideas');
     this.hideIdeasButton = this.appEl.querySelector('.ideas__hide_ideas');
+
+    console.log("»|»»",this.hideIdeasButton);
+
     this.addProposalButton = this.appEl.querySelector('.proposals__add_new');
+    this.addIdeaButton = this.appEl.querySelector('.ideas__add_new');
 
     var self = this;
 
@@ -29,6 +33,9 @@
        e.preventDefault();
         self.showIdeas(self);
       });
+    }
+
+    if( this.hideIdeasButton != null ) {
       this.hideIdeasButton.addEventListener('click', function(e) {
        e.preventDefault();
         self.hideIdeas(self);
@@ -39,6 +46,13 @@
       this.addProposalButton.addEventListener('click', function(e) {
         e.preventDefault();
         self.addProposal(self);
+      });
+    };
+
+    if( this.addIdeaButton != null ) {
+      this.addIdeaButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        self.addIdea(self);
       });
     };
 
@@ -77,7 +91,7 @@
 
   p.addIdea = function(self){
     vex.open({
-      unsafeContent: self.appEl.querySelector('.form__add_proposal').innerHTML
+      unsafeContent: self.appEl.querySelector('.form__add_idea').innerHTML
     })
   }
 
