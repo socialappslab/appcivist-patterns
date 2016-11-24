@@ -11,6 +11,10 @@
   }
 }
 
+.page__contents {
+  padding: 1.5 * $padding__base;
+}
+
 .appcivist {
   @extend %appcivist;
 }
