@@ -1,0 +1,74 @@
+%user__logged_in {
+
+  @extend %clearfix;
+  
+  .avatar_link,
+  figure,
+  img {
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    margin:: 0 auto;
+  }
+
+  .avatar_link {
+    display: none;
+    top: 0.5em;
+    float: left;
+    margin-right: 0.5em;
+  }
+
+  .fn,
+  .account__actions {
+    top: 0;
+  }
+
+  .account__actions {
+    font-size: $typography__tiny;
+    a {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+
+  @media (min-width: $bp__sm) {
+
+    width: 12em;
+
+    .avatar_link {
+      display: block;
+    }
+
+    .fn {
+      margin-left: 0;
+    }
+
+    .account__actions {
+      margin-left: 3.325em;
+    }
+  }
+
+  @media (min-width: $bp__md) {
+
+    figure {
+      float: left;
+      margin-right: 0.5em;
+    }
+
+    .avatar_link {
+      display: block;
+    }
+
+    .account__actions,
+    .fn {
+      @include offscreen;
+    }
+
+    .nav--active & {
+      .account__actions,
+      .fn {
+        @include onscreen;
+      }
+    }
+  }
+}

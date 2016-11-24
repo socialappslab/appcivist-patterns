@@ -14,6 +14,7 @@ compiled into production.
 @import "susy";
 @import "../../node_modules/font-awesome/scss/font-awesome";
 @import "../../node_modules/sass-mq/mq";
+
 //--------------------------------------
 // LOCAL TOOLS
 @import "modular-scale";
@@ -37,6 +38,7 @@ compiled into production.
 @import "appcivist-motion";
 
 @import "base/extendables";
+@import "base/mixins";
 
 @import "components/atoms/button__nav_toggle";
 @import "components/atoms/card__search_field";
@@ -56,10 +58,12 @@ compiled into production.
 @import "components/molecules/card__actions";
 @import "components/molecules/temperature_check";
 @import "components/molecules/status__strip";
+@import "components/molecules/user__logged_in";
 
 @import "components/organisms/comments";
 @import "components/organisms/navigation";
 @import "components/organisms/footer";
+@import "components/organisms/proposal__add";
 
 @import "components/templates/proposal";
 @import "components/templates/campaign";

@@ -7,7 +7,6 @@
   position: fixed;
   top: 0;
   left: 0;
-
   overflow: hidden;
   transition-property: width, max-height, height;
   transition-duration: .5s;
@@ -21,8 +20,13 @@
     position: relative;
   }
 
-  .user {
-    display: none;
+  .user__logged_in {
+    @extend %avatar;
+    @extend %user__logged_in;
+    position: relative;
+    top: 1.125 * $padding__base;
+    float: right;
+    margin-right: .75em;
   }
 
   .my_working_groups,
@@ -30,23 +34,25 @@
     display: none;
     white-space: nowrap;
     transition-property: height, width, max-height;
-    transition-duration: .25s;
-    transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
   }
 
   .my_working_groups {
-    margin-top: $padding__base;
+    padding-top: $padding__base;
+    clear: both;
   }
 
   .nav_header {
-    display: none;
+
+    float: left;
     position: relative;
     top: $padding__base;
     color: $color__brand-dark;
-    margin-left: $nav__width * 1.25;
+    margin-left: 0.5em;
 
     h1 {
-      font-size: $typography__title * .5;
+      font-size: $typography__title * 0.5;
     }
 
     h2 {
@@ -89,9 +95,7 @@
 
   .nav__footer {
 
-    position: absolute;
-    right: 1em;
-    top: 1.5 * $padding__base;
+    @extend %offscreen;
     max-width: 15em;
 
     .logo__wrapper {
@@ -120,7 +124,8 @@
     min-height: 100%;
 
     .nav_header {
-
+      overflow: hidden;
+      white-space: nowrap;
       float: none;
       margin-left: 0;
       margin-top: 0;
@@ -142,27 +147,24 @@
       width: 0;
     }
 
+    .user__logged_in {
+      float: none;
+      margin-left: 0.875 * $padding__base;
+      margin-bottom: 1.5 * $padding__base;
+    }
+
     .nav__container {
       height: 100%;
     }
 
     .nav__footer {
+      position: absolute;
       top: auto;
       bottom: 0.5em !important;
       left: 0;
       right: auto;
       margin-right: 0;
       padding: $padding__base;
-
-      // hide
-      .powered_by {
-        position: absolute;
-      	left: -10000px;
-      	overflow: hidden;
-      	width: 1px;
-      	height: 1px;
-      	white-space: nowrap;
-      }
     }
   }
 }
@@ -184,16 +186,21 @@
     width: 100%;
   }
 
-  .nav_header {
-    padding-bottom: 2 * $padding__base;
+  .my_working_groups {
+    border-top: 1px $color__brand-primary solid;
   }
 
   .nav__footer {
+    @extend %onscreen;
+    display: static;
     bottom: auto;
+    margin-left: $padding__base;
+    margin-bottom: 0.5 * $padding__base;
   }
 
   .powered_by {
     @extend %onscreen;
+    display: block;
     width: auto;
   }
 
@@ -202,10 +209,18 @@
     width: $nav__width--active;
     height: 100%;
 
+    .nav_header {
+      padding-bottom: 2 * $padding__base;
+    }
+
     .my_working_groups,
     .my_campaigns {
       width: auto;
       max-height: 100%;
+    }
+
+    .my_working_groups {
+      border-top: transparent;
     }
 
     .nav_header {
@@ -221,8 +236,6 @@
     }
   }
 }
-
-
 
 .navigation {
 

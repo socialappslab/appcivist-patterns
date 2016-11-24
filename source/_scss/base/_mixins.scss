@@ -1,0 +1,22 @@
+// these are here as mixins so they can be used inside media queries
+
+@mixin onscreen {
+  position: static;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  white-space: normal;
+}
+
+@mixin offscreen {
+	position: absolute;
+	left: -10000px;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	white-space: nowrap;
+}

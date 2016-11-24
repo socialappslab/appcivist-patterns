@@ -9,13 +9,7 @@
 			<h2>Vallejo, CA</h2>
 		</header>
 
-		<div class="user">
-			<div class="member-card">
-				<figure>{{> atoms-avatar }}</figure>
-				<h4><a href="{{ link.template-member-profile }}">{{ name.first }} {{ name.last }}</a>
-				<span class="heading--subheader"><a href="{{ link.templates-member-dashboard }}">My Settings</a> | <a href="{{ link.templates-anonymous-homepage }}">Log Out</a></span></h4>
-			</div>
-		</div>
+		{{> molecules-user-logged-in-status}}
 
 		<section class="my_working_groups">
 			<h3 class="section_header">My Working Groups</h3>
