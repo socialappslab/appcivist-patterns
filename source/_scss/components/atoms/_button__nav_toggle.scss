@@ -4,7 +4,7 @@
   z-index: 30;
   float: left;
 
-  padding: .5 * $padding__base;
+  padding: (.5 * $padding__base) (.25 * $padding__base);
   border: none;
   font-size: 2em;
   background-color: transparent;
@@ -17,6 +17,7 @@
   }
 
   @media (min-width: $bp__md ){
+    padding: .5 * $padding__base;
     float: none;
     width: 100%;
   }

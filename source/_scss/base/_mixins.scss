@@ -6,7 +6,7 @@
   right: auto;
   top: auto;
   bottom: auto;
-  overflow: auto;
+  overflow: visible;
   width: auto;
   height: auto;
   white-space: normal;
@@ -19,4 +19,12 @@
 	width: 1px;
 	height: 1px;
 	white-space: nowrap;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
