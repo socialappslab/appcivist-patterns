@@ -21,8 +21,8 @@
   appcvui.initialize = function(){
     vex.defaultOptions.className = 'vex-theme-plain';
     appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
-    if( document.querySelector('.appmain > .campaign') != null ) {
-      appcvui.campaign = new appcvui.Campaign('.campaign');
+    if( document.querySelectorAll('.appmain .proposals_and_ideas') != null ) {
+      appcvui.campaign = new appcvui.Campaign('.proposals_and_ideas');
     }
   };
 
