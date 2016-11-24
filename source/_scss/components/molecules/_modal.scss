@@ -14,8 +14,9 @@
   @extend %card__shadow--darker;
   overflow: auto;
 
-  margin: 1.5 * $padding__base;
-
+  box-sizing: border-box;
+  margin: 0;
+  
   width: 100%;
   max-height: 100%;
 
@@ -66,6 +67,7 @@
 
   @media (min-width: $bp__md) {
     margin: 0 auto;
+    margin-top: 1.5 * $padding__base;
     width: $modal_width__md;
   }
 }
