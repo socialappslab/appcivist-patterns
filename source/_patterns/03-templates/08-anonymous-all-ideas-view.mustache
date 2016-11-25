@@ -1,33 +1,42 @@
-{{> molecules-navigation-anonymous }}
-<main class="app-main anonymous">
-	<section class="panel intro">
-		<h1 class="heading--title">All Ideas</h1>
-	  <p class="heading--header">in the <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a> Working Group.</p>
-	</section>
-	<section class="panel">
-		{{> molecules-pagination }}
-	</section>
-	<section class="panel">
-		<section class="list--idea all-ideas">
-				{{# listItems.ten }}
-		    {{> molecules-card-idea }}
-		    {{/ listItems.ten }}
-				{{# listItems.ten }}
-		    {{> molecules-card-idea }}
-		    {{/ listItems.ten }}
-				{{# listItems.ten }}
-		    {{> molecules-card-idea }}
-		    {{/ listItems.ten }}
-				{{# listItems.ten }}
-		    {{> molecules-card-idea }}
-		    {{/ listItems.ten }}
-				{{# listItems.ten }}
-		    {{> molecules-card-idea }}
-		    {{/ listItems.ten }}
-		</section>
-	</section>
-	<section class="panel">
-		{{> molecules-pagination }}
-	</section>
+<main class="appmain anonymous">
+
+	{{> molecules-navigation-anonymous }}
+
+	<article="all_ideas__anonymous">
+
+		<header class="page__header">
+			<h1 class="heading--title">All Ideas</h1>
+			<div class="heading--header">in the <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a> Working Group.</div>
+		</header>
+
+		<div class="page__content">
+			<section class="panel">
+				{{> molecules-pagination }}
+			</section>
+			<section class="panel">
+				<section class="list--idea all-ideas">
+						{{# listItems.ten }}
+				    {{> molecules-card-idea }}
+				    {{/ listItems.ten }}
+						{{# listItems.ten }}
+				    {{> molecules-card-idea }}
+				    {{/ listItems.ten }}
+						{{# listItems.ten }}
+				    {{> molecules-card-idea }}
+				    {{/ listItems.ten }}
+						{{# listItems.ten }}
+				    {{> molecules-card-idea }}
+				    {{/ listItems.ten }}
+						{{# listItems.ten }}
+				    {{> molecules-card-idea }}
+				    {{/ listItems.ten }}
+				</section>
+			</section>
+			<section class="panel">
+				{{> molecules-pagination }}
+			</section>
+		</div>
+	</article>
 </main>
+
 {{> organisms-anonymous-footer }}

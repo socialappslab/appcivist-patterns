@@ -1,33 +1,36 @@
-{{> molecules-navigation}}
-
 <main class="appmain">
 
-	<header class="page__header">
-		<div class="heading--header">Hello, </div>
-		<h1 class="heading--title">{{name.first}}</h1>
-	</header>
+	{{> molecules-navigation}}
 
-	<div class="page__contents">
-		<div class="row">
-			<div class="columns-8">
-		    <h2 class="heading--display">Notifications & Recent Activity</h2>
-		    <div class="card">
-					{{> molecules-activity-stream }}
-				</div>
-		    <h2 class="heading--display">My Proposals</h2>
-		    {{> molecules-card-proposal }}
-		    <h2 class="heading--display">My Ideas</h2>
-				<div class="card">
-					{{> atoms-definition-list-item-idea }}
-				</div>
-		  </div>
-			<div class="columns-4">
-		    <h2 class="heading--display">My Ideas</h2>
-				<div class="card">
-			    {{> atoms-definition-list-item-idea }}
-				</div>
-		  </div>
+	<article class="member__dashboard">
+
+		<header class="page__header">
+			<div class="heading--header">Hello, </div>
+			<h1 class="heading--title">{{name.first}}</h1>
+		</header>
+
+		<div class="page__contents">
+			<div class="row">
+				<div class="columns-8">
+			    <h2 class="heading--display">Notifications & Recent Activity</h2>
+			    <div class="card">
+						{{> molecules-activity-stream }}
+					</div>
+			    <h2 class="heading--display">My Proposals</h2>
+			    {{> molecules-card-proposal }}
+			    <h2 class="heading--display">My Ideas</h2>
+					<div class="card">
+						{{> atoms-definition-list-item-idea }}
+					</div>
+			  </div>
+				<div class="columns-4">
+			    <h2 class="heading--display">My Ideas</h2>
+					<div class="card">
+				    {{> atoms-definition-list-item-idea }}
+					</div>
+			  </div>
+			</div>
 		</div>
-	</div>
 
+	</article>
 </main>

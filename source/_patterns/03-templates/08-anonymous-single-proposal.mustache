@@ -1,33 +1,28 @@
-<main class="appmain">
+<main class="appmain anonymous">
 
-	{{> molecules-navigation}}
+	{{> molecules-navigation-anonymous }}
 
 	<article class="proposal__single">
 
 		<header class="page__header">
-	    <p class="heading--header">Proposal</p>
-	    <h1 class="heading--title">{{ title.short }}</h1>
-			<p class="heading--subheader">In the <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a> working group</p>
-	    <p class="description">{{ excerpt.short }}</p>
+			<div class="heading--header">Proposal</div>
+			<h1 class="heading--title">{{title.short}}</h1>
+			<div class="heading--subheader">In the <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a> working group</div>
+			<p class="description">{{ excerpt.short }}</p>
 
-			<div class="attribution">
-				<p class="heading--subheader">Created by</p>
-				{{# listItems.one }}{{> molecules-user-card }}{{/ listItems.one }}
-			</div>
+			{{> molecules-tags }}
 
-	    {{> molecules-tags }}
-
-		  <div class="actions__bar">
-		    {{> molecules-voting-module }}
-		    <div class="action-button">
+			<div class="actions__bar">
+				{{! > molecules-voting-module }}
+				<div class="action-button">
 					{{> atoms-icon-more}}
-		      <ul class="action-menu">
-	          <li><a href="#">Edit</a></li>
-	          <li><a href="#">Exclude</a></li>
-	          <li><a href="#">Archive</a></li>
-		      </ul>
-		    </div>
-	    </div>
+					<ul class="action-menu">
+						<li><a href="#">Edit</a></li>
+						<li><a href="#">Exclude</a></li>
+						<li><a href="#">Archive</a></li>
+					</ul>
+				</div>
+			</div>
 		</header>
 
 		<section class="proposal__status">
@@ -50,7 +45,7 @@
 		  </section>
 		</section>
 
-	  <section class="attachments tex-created-attachments-similar">
+		<section class="attachments tex-created-attachments-similar">
 	    <section class="temp-array created-attachments-similar">
 				<div class="file_attachments">
         	<div class="panel-heading">
@@ -64,7 +59,7 @@
 				{{> molecules-file-card }}
 				{{> molecules-file-card }}
 			</section>
-	  </section>
+		</section>
 
 		<section class="similar_proposals">
 			<h2 class="heading--header">Similar Proposals</h2>
@@ -78,4 +73,4 @@
 	</article>
 </main>
 
-{{> organisms-footer }}
+{{> organisms-anonymous-footer }}
