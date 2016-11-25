@@ -29,6 +29,10 @@
     margin-right: .75em;
   }
 
+  .login_signup {
+    @extend %login_signup;
+  }
+  
   .my_working_groups,
   .my_campaigns {
     display: none;
