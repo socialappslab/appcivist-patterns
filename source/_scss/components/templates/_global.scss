@@ -5,8 +5,19 @@
   .appmain {
     padding-top: $nav__width;
     @media (min-width: $bp__md) {
+      transition-property: margin-left;
+      transition-duration: .25s;
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1);
       padding-top: 0;
-      margin-left: $nav__width !important;
+      margin-left: $nav__width;
+    }
+  }
+
+  &.nav--active {
+    @media (min-width: $bp__md) {
+      .appmain {
+        margin-left: $nav__width--active;
+      }
     }
   }
 }

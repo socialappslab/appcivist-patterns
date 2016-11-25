@@ -5,19 +5,29 @@
   float: left;
 
   padding: (.5 * $padding__base) (.25 * $padding__base);
+
   border: none;
   font-size: 2em;
   background-color: transparent;
   color: $color__text--primary;
   text-align: left;
 
+  &:focus,
   &:hover {
     color: $color__nav_bg;
     background-color: $color__text--primary;
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  @media (min-width: $bp__sm ){
+    padding: .5 * $padding__base;
   }
 
   @media (min-width: $bp__md ){
-    padding: .5 * $padding__base;
     float: none;
     width: 100%;
   }

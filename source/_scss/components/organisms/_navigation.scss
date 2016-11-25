@@ -1,7 +1,8 @@
 %navigation {
 
   @extend %card__shadow;
-
+  min-height: 6em;
+  
   z-index: $z__nav;
   background-color: $color__nav_bg;
   position: fixed;
@@ -9,7 +10,7 @@
   left: 0;
   overflow: hidden;
   transition-property: width, max-height, height;
-  transition-duration: .5s;
+  transition-duration: .25s;
   transition-timing-function: cubic-bezier(.42, 0, .58, 1);
   float: left;
 
@@ -32,7 +33,7 @@
   .login_signup {
     @extend %login_signup;
   }
-  
+
   .my_working_groups,
   .my_campaigns {
     display: none;
@@ -281,6 +282,19 @@
   &.nav--active {
     @extend %navigation--active;
     @extend %navigation--active--md;
+  }
+
+  .anonymous & {
+    @media (max-width: $bp__md ) {
+      .button__nav_toggle {
+        display: none;
+      }
+      &.nav--active {
+        .nav__footer {
+          @include offscreen;
+        }
+      }
+    }
   }
 }
 
