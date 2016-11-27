@@ -6452,7 +6452,7 @@ ul.submenu {
 
 .field__container:after, .user__card:after, .navigation .user__logged_in:after, .navigation-logged-in .user__logged_in:after, .vex.vex-theme-plain .vex-content:after, .tags:after, .campaign__filters .filters .tags:after, .campaign__filters .search:after, .campaign__filters .filters:after, .campaign__filters .sort:after, .campaign__filters:after, .list--proposals:after,
 .list--ideas:after, .list--proposals .list__cards:after,
-.list--ideas .list__cards:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
+.list--ideas .list__cards:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
   content: "";
   display: table;
   clear: both; }
@@ -6609,12 +6609,17 @@ ul.submenu {
   background-color: transparent;
   color: #465b64;
   text-align: left; }
-  .button__nav_toggle:hover {
+  .button__nav_toggle:focus, .button__nav_toggle:hover {
     color: #fff;
-    background-color: #465b64; }
+    background-color: #465b64;
+    outline: none; }
+  .button__nav_toggle:active {
+    outline: none; }
+  @media (min-width: 768px) {
+    .button__nav_toggle {
+      padding: 0.9375em; } }
   @media (min-width: 1024px) {
     .button__nav_toggle {
-      padding: 0.9375em;
       float: none;
       width: 100%; } }
 
@@ -7042,6 +7047,32 @@ ul.submenu {
     height: auto;
     white-space: normal; } }
 
+.navigation .login_signup, .navigation-logged-in .login_signup {
+  float: right;
+  position: relative;
+  top: 1.875em;
+  margin-right: 1.875em; }
+  .navigation .login_signup .button, .navigation-logged-in .login_signup .button {
+    display: inline-block;
+    padding-top: 0.234375em;
+    padding-bottom: 0.234375em;
+    padding-left: 0.46875em;
+    padding-right: 0.46875em;
+    margin-right: 0.125em;
+    margin-bottom: 0.234375em;
+    border: none;
+    letter-spacing: 1px; }
+  @media (min-width: 1024px) {
+    .navigation .login_signup, .navigation-logged-in .login_signup {
+      top: 0;
+      float: none;
+      margin-right: 0; }
+      .navigation .login_signup .button, .navigation-logged-in .login_signup .button {
+        display: block;
+        margin-left: 0.46875em;
+        margin-right: 0.46875em;
+        margin-bottom: 0.234375em; } }
+
 .comments__section {
   padding: 3.75em; }
   .comments__section .comment-form .comment-meta {
@@ -7065,6 +7096,7 @@ ul.submenu {
   padding: 2.8125em; }
 
 .navigation, .navigation-logged-in {
+  min-height: 6em;
   z-index: 1000;
   background-color: #fff;
   position: fixed;
@@ -7072,7 +7104,7 @@ ul.submenu {
   left: 0;
   overflow: hidden;
   transition-property: width, max-height, height;
-  transition-duration: .5s;
+  transition-duration: .25s;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
   float: left;
   width: 100%;
@@ -7234,6 +7266,17 @@ ul.submenu {
       overflow: visible;
       margin-top: 0.325em; } }
 
+@media (max-width: 1024px) {
+  .anonymous .navigation .button__nav_toggle, .anonymous .navigation-logged-in .button__nav_toggle {
+    display: none; }
+  .anonymous .navigation.nav--active .nav__footer, .anonymous .nav--active.navigation-logged-in .nav__footer {
+    position: absolute;
+    left: -10000px;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap; } }
+
 .footer {
   clear: both;
   left: 0;
@@ -7275,8 +7318,14 @@ ul.submenu {
     padding-top: 6em; }
     @media (min-width: 1024px) {
       .appcivist .appmain {
+        transition-property: margin-left;
+        transition-duration: .25s;
+        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
         padding-top: 0;
-        margin-left: 6em !important; } }
+        margin-left: 6em; } }
+  @media (min-width: 1024px) {
+    .nav--active.appcivist .appmain {
+      margin-left: 19em; } }
 
 .page__contents {
   padding: 2.8125em; }
