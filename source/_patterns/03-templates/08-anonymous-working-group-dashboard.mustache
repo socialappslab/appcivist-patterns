@@ -1,28 +1,28 @@
-<main class="appmain">
+<main class="appmain anonymous">
 
-	{{> molecules-navigation}}
+	{{> molecules-navigation-anonymous }}
 
-	<article class="working_group__dashboard">
+	<article clas="working_group__dashboard">
 
 		<header class="page__header">
-		  <div class="heading--header">Working Group</div>
-		  <h1 class="heading--title">Quality of Life</h1>
+			<div class="heading--header">Working Group</div>
+			<h1 class="heading--title">Quality of Life</h1>
 			<p>This is the working group dedicated to looking out for the general wellbeing of our citizens.</p>
 		</header>
 
 		<div class="page__contents">
 			<section class="panel activity-and-members">
 				<section class="latest-activity">
-					<div class="panel-heading panel-heading-relative">
+					<div class="panel-heading">
 						<h1 class="heading--header">Latest Activity</h1><p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a></p>
 					</div>
 					{{# listItems.ten }}
 					{{> atoms-activity-stream-list-item }}
 					{{/ listItems.ten }}
 				</section>
-				<section>
+				<section class="members-list">
 					<div class="panel-heading">
-						<h1 class="heading--header">Members</h1><p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a> | <a href="#">Add New</a></p>
+						<h1 class="heading--header">Members</h1><p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a></p>
 					</div>
 					{{# listItems.nine }}
 					{{> molecules-user-card }}
@@ -37,4 +37,5 @@
 
 	</article>
 </main>
-{{> organisms-footer }}
+
+{{> organisms-anonymous-footer }}

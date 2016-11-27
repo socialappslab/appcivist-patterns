@@ -1,0 +1,40 @@
+%login_signup {
+
+  @extend %clearfix;
+
+  float: right;
+  position: relative;
+  top: $padding__base;
+  margin-right: $padding__base;
+
+  .button {
+
+    display: inline-block;
+
+    padding-top: .125 * $padding__base;
+    padding-bottom: .125 * $padding__base;
+    padding-left: .25 * $padding__base;
+    padding-right: .25 * $padding__base;
+
+    margin-right: 0.125em;
+    margin-bottom: 0.125 * $padding__base;
+
+    border: none;
+    letter-spacing: 1px;
+  }
+
+  @media (min-width: $bp__md) {
+
+    top: 0;
+    float: none;
+    margin-right: 0;
+
+    .button {
+      display: block;
+      margin-left: 0.25 * $padding__base;
+      margin-right: 0.25 * $padding__base;
+      margin-bottom: 0.125 * $padding__base;
+    }
+  }
+
+}

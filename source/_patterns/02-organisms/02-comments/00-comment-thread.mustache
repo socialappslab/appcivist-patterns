@@ -1,11 +1,13 @@
-<section class="conversations">
+<section class="conversation__threaded">
+
+	<h2 class="heading--headline">Conversations in this {{ type }} (Forum)</h2>
 
 	<ul class="comment-list">
 		{{# listItems.five }}
 			{{> molecules-single-conversation }}
 		{{/ listItems.five }}
 	</ul>
-		
+
 	{{> molecules-comment-form-user }}
 
 </section>
