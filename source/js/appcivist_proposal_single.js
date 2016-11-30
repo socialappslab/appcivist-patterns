@@ -13,7 +13,7 @@
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
 
-    this.contextualMenu = new appcvui.ContextualMenu(el.querySelector('.heading_actions'));
+    this.contextualMenu = new appcvui.ContextualMenu( this.appEl.querySelector('.heading_actions'));
     console.log( '»| proposal single »»', this.contextualMenu );
   }
 

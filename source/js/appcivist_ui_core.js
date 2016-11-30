@@ -57,12 +57,12 @@
 
     if(document.querySelector('.working_group') != null) {
       console.log("|»»", 'working group');
-      appcvui.campaign = new appcvui.WorkingGroup('.working_group');
+      appcvui.working_group = new appcvui.WorkingGroup('.working_group');
     }
 
-    if(document.querySelector('.proposal_single') != null) {
+    if(document.querySelector('.proposal__single') != null) {
       console.log("|»»", 'proposal single');
-      appcvui.campaign = new appcvui.Proposal('.proposal__single');
+      appcvui.proposal = new appcvui.Proposal('.proposal__single');
     }
   };
 
