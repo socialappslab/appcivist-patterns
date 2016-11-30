@@ -1,23 +1,24 @@
 (function(appcvui, document, window) {
 
-  appcvui.Campaign = function(appContainerSelector) {
+  appcvui.ProposalsAndIdeas = function(appContainerSelector) {
     this.themeWidget;
     this.initialize(appContainerSelector);
-  }
+  };
 
-  p = appcvui.Campaign.prototype;
+  p = appcvui.ProposalsAndIdeas.prototype;
 
-  p.constructor = appcvui.Campaign;
+  p.constructor = appcvui.ProposalsAndIdeas;
 
   p.initialize = function(appContainerSelector) {
 
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
 
+    this.proposals = this.appEl.querySelectorAll('.card__proposal');
+    this.ideas = this.appEl.querySelectorAll('.card__idea');
+
     this.showIdeasButton = this.appEl.querySelector('.proposals__show_ideas');
     this.hideIdeasButton = this.appEl.querySelector('.ideas__hide_ideas');
-
-    console.log("»|»»",this.hideIdeasButton);
 
     this.addProposalButton = this.appEl.querySelector('.proposals__add_new');
     this.addIdeaButton = this.appEl.querySelector('.ideas__add_new');
@@ -33,7 +34,7 @@
        e.preventDefault();
         self.showIdeas(self);
       });
-    }
+    };
 
     if( this.hideIdeasButton != null ) {
       this.hideIdeasButton.addEventListener('click', function(e) {
@@ -56,16 +57,30 @@
       });
     };
 
+    if( this.proposals != null ) {
+      appcvui.forEach(this.proposals, this.initializeContextualMenu, this);
+    }
+
+    if( this.idas != null ) {
+      appcvui.forEach(this.ideas, this.initializeContextualMenu, this);
+    }
+
     document.addEventListener('resize', this.onResize);
 
     this.onResize();
-  }
+  };
 
   p.onResize = function() {
-    appcvui.equalHeights('.container__proposals .card__header');
-    appcvui.equalHeights('.container__proposals .card__body .excerpt');
-    appcvui.equalHeights('.container__ideas .card__header');
-  }
+
+    if(document.querySelector('.container__proposals') != null) {
+      appcvui.equalHeights('.container__proposals .card__header');
+      appcvui.equalHeights('.container__proposals .card__body .excerpt');
+    }
+
+    if(document.querySelector('.container__ideas') != null) {
+      appcvui.equalHeights('.container__ideas .card__header');
+    }
+  };
 
   p.showIdeas = function(inst){
     inst.appEl.querySelector('.campaign_cards').classList.add('show-ideas');
@@ -73,7 +88,7 @@
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
     }, 250);
-  }
+  };
 
   p.hideIdeas = function(inst){
     inst.appEl.querySelector('.campaign_cards').classList.remove('show-ideas');
@@ -81,18 +96,22 @@
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
     }, 250);
-  }
+  };
 
   p.addProposal = function(inst){
     vex.open({
       unsafeContent: inst.appEl.querySelector('.form__add_proposal').innerHTML
-    })
-  }
+    });
+  };
 
   p.addIdea = function(self){
     vex.open({
       unsafeContent: self.appEl.querySelector('.form__add_idea').innerHTML
-    })
-  }
+    });
+  };
 
-}( window.appcvui =  window.appcvui || {}, document, window ));
+  p.initializeContextualMenu = function(i, el) {
+    new appcvui.ContextualMenu(el.querySelector('.card__heading_actions'));
+  };
+
+}(window.appcvui =  window.appcvui || {}, document, window));

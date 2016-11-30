@@ -1,1 +1,83 @@
-/* empty file */
+%contextual_menu {
+
+  display: block;
+  @extend %offscreen;
+
+  z-index: $z__contextual_menus;
+
+  .content {
+
+    @extend %card__shadow;
+    opacity: 0;
+    min-width: 12em !important;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    clip: none;
+    position: relative;
+    background-color: $color__white;
+    color: $color__brand-dark;
+
+    ul {
+
+      li {
+        border-bottom: 1px $color__panel--light solid;
+      }
+    }
+
+    a {
+      padding: 1em 1.25em;
+      display: block;
+      cursor: pointer;
+      color: $color__brand-dark;
+      text-decoration: none;
+    }
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 1em;
+      z-index: 1;
+      width: 0;
+      height: 0;
+      border-left: 0.5em solid transparent;
+      border-right: 0.5em solid transparent;
+      transition-property: opacity, border-color, top, border-top;
+      transition-duration: 0.25s;
+      border-bottom: 0 solid $color__white;
+      left: 80%;
+      transform: translateX(-20%);
+    }
+  }
+
+  &.active {
+
+    @extend %onscreen;
+    display: block;
+    position: absolute;
+
+    .content {
+      opacity: 1;
+      top: 1.5em;
+      right: -1.675em;
+
+      &::after {
+        border-bottom: 12px solid $color__text--reverse;
+      }
+    }
+
+    a:hover {
+      background-color: $color__brand-dark;
+      color: $color__panel--light;
+    }
+  }
+
+  @media (min-width: $bp__md) {
+    a {
+      padding: 0.5em 0.75em;
+    }
+  }
+
+}

@@ -43,16 +43,17 @@ $color__brand-primary--light: lighten($color__brand-primary, 20%);
 $color__brand-primary--dark: darken($color__brand-primary, 10%);
 $color__brand-dark: #11493b;
 $color__brand-accent: #ae529e;
+$color__white: #fff;
 
 $color__text--primary: #465b64;
-$color__text--reverse: #fff;
+$color__text--reverse: $color__white;
 
 $color__panel--light: #e5ebe6;
 $color__panel--lighter: #f9faf8;
 
 $color__panel_control--subtle: #f7edf5;
 
-$color__nav_bg: #fff;
+$color__nav_bg: $color__white;
 
 /*
   4.0 BREAKPOINTS
@@ -67,6 +68,7 @@ $bp__xl: 1800px;
 $modal_width__md: 800px;
 
 $z__nav: 1000;
+$z__contextual_menus: 1050;
 
 
 

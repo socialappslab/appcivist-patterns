@@ -1,20 +1,21 @@
 (function(appcvui, document, window) {
 
-  appcvui.Proposal = function(appContainerSelector) {
+  appcvui.Campaign = function(appContainerSelector) {
     this.initialize(appContainerSelector);
   }
 
-  p = appcvui.Proposal.prototype;
+  p = appcvui.Campaign.prototype;
 
-  p.constructor = appcvui.Proposal;
+  p.constructor = appcvui.Campaign;
 
   p.initialize = function(appContainerSelector) {
 
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
 
-    this.contextualMenu = new appcvui.ContextualMenu(el.querySelector('.heading_actions'));
-    console.log( '»| proposal single »»', this.contextualMenu );
+    this.contextualMenu = new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
+    console.log( '»| campaign »»', this.contextualMenu );
+
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));

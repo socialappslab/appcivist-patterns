@@ -1,9 +1,45 @@
 %page__header {
 
+  position: relative;
+
   background-color: $color__brand-primary;
   color: #fff;
 
   padding: 1.5 * $padding__base;
+
+  .title_block {
+
+    display: inline-block;
+
+    @extend %clearfix;
+    position: relative;
+    clear: both;
+
+    .heading--title {
+      float: left;
+    }
+
+    .heading_actions {
+      float: right;
+      position: relative;
+      left: 2em;
+      top: 0.75em;
+
+      .contextual_menu {
+        @extend %contextual_menu;
+      }
+
+      .icon {
+        fill: $color__white;
+      }
+
+      a:hover .icon,
+      &.reveal_actions .icon {
+        fill: $color__brand-dark;
+      }
+    }
+
+  }
 
   .heading--header {
     color: $color__brand-dark;
