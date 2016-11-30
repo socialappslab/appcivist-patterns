@@ -62,12 +62,14 @@ compiled into production.
 @import "components/molecules/status__strip";
 @import "components/molecules/user__logged_in";
 @import "components/molecules/login_signup";
+@import "components/molecules/contribution";
 
 @import "components/organisms/comments";
 @import "components/organisms/navigation";
 @import "components/organisms/footer";
 @import "components/organisms/proposals_and_ideas";
 @import "components/organisms/proposal__add";
+@import "components/organisms/contribution_history";
 
 @import "components/templates/proposal";
 @import "components/templates/campaign";

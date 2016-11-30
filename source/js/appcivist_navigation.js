@@ -11,7 +11,9 @@
 
   p.initialize = function(appContainerSelector, navSelector) {
     this.appEl = document.querySelector(appContainerSelector);
+    if( this.appEl == null ) return;
     this.el = document.querySelector(navSelector);
+    if( this.el == null ) return;
     this.toggle = this.el.querySelector('.button__nav_toggle');
     this.toggle.addEventListener('click', this.toggleNav.bind(this));
   };
