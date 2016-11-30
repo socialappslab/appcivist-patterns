@@ -10,8 +10,8 @@
       </p>
       <div class="card__heading_actions">
         <ul>
-          <li class="action__toggle_selection">{{> atoms-icon-selection-toggle }}</li>
-          <li class="action__contextual_menu">{{> atoms-icon-cog }}</li>
+          <li class="action__toggle_selection"><a href="#">{{> atoms-icon-selection-toggle }}</a></li>
+          <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
         </ul>
       </div>
     </header>
@@ -20,7 +20,9 @@
         {{ excerpt.short }}
       </div>
       {{> molecules-temperature-check-module}}
-      <div class="card__contextual_menu">
+    </div>
+    <div class="contextual_menu">
+      <div class="content">
         <ul>
           <li><a href="#">Edit</a></li>
           <li><a href="#">Publish</a></li>

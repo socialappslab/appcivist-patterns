@@ -6,10 +6,16 @@
 
 
   .card__wrapper {
+
+    @extend %card__shadow;
     transition-property: box-shadow;
     transition-duration: 0.25;
     transition-timing-function: ease-out;
-    @extend %card__shadow;
+    position: relative;
+
+    .contextual_menu {
+      @extend %contextual_menu__proposals;
+    }
   }
 
   padding: 0.25 * $padding__base;
@@ -43,12 +49,10 @@
   .card__body {
     padding: $padding__base;
     font-size: $typography__subhead;
+    overflow: hidden;
   }
 
-  .card__contextual_menu {
-    display: none;
-  }
-
+  &.reveal_actions,
   &:hover {
     .card__wrapper {
       @extend %card__shadow--darker;
@@ -68,6 +72,6 @@
   .card__body,
   .card__header {
     background-color: $color__brand-dark;
-    color: #fff;
+    color: $color__text--reverse;
   }
 }

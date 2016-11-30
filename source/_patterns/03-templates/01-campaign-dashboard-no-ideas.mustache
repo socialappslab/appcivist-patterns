@@ -15,35 +15,7 @@
 			{{> molecules-timeline}}
 		</section>
 
-	  <section class="campaign__filters">
-			{{> molecules-campaign-search}}
-			{{> molecules-campaign-filters}}
-			{{> molecules-campaign-sort}}
-		</section>
-
-		<div class="campaign_cards">
-
-	    <section class="list--proposals">
-
-				<header class="proposals__header">
-					<h2 class="heading--header">Proposals</h2>
-					<a class="proposals__see_all" href="{{link.templates-all-proposals-view}}">See All</a>
-					<a class="proposals__add_new" href="#">Add New</a>
-					<a class="proposals__show_ideas" href="{{link.templates-campaign-dashboard}}">Show Ideas</a>
-				</header>
-
-				<div class="list__cards container__proposals">
-		      {{# listItems.four}}
-		        {{> molecules-card-proposal}}
-		      {{/ listItems.four}}
-		      {{# listItems.seven}}
-		        {{> molecules-card-proposal}}
-		      {{/ listItems.seven}}
-				</div>
-
-	    </section>
-
-		</div>
+		{{> organisms-proposals-only}}
 
 		{{> organisms-comment-section}}
 

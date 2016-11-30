@@ -20,6 +20,9 @@
   /* hmmm, specific css in a general bit of scss, fix! */
   .proposals__show_ideas {
     float: right;
+    .proposals__only & {
+      display: none;
+    }
   }
 
 }

@@ -1,23 +1,29 @@
 %card__actions {
 
   position: absolute;
-  top: 2.5em;
-  right: .5em;
+  top: 2em;
+  right: 0.5em;
 
   ul {
     li {
       float: left;
       margin-right: .5em;
+    }
+  }
+
+  a {
+    .icon {
+      fill: $color__text--reverse;
+    }
+    &.active,
+    &:focus,
+    &:hover {
       .icon {
-        fill: $color__text--reverse;
-      }
-      &:hover {
-        .icon {
-          fill: $color__brand-dark;
-        }
+        fill: $color__brand-dark;
       }
     }
   }
+
   // desktop, although some touch detection and js class maybe a good idea eventually.
   @extend %offscreen--min_md;
 
