@@ -3,6 +3,8 @@
   position: relative;
 
   background-color: $color__brand-primary;
+  background-image: url('../images/vallejo_header.jpg');
+  background-size: cover;
   color: #fff;
 
   padding: 1.5 * $padding__base;
@@ -76,6 +78,13 @@
     a {
       text-decoration: none;
     }
+  }
+
+  .description {
+    margin-top: 1.5em;
+    font-size: 1.25em;
+    line-height: 1.2;
+    max-width: 40em;
   }
 }
 

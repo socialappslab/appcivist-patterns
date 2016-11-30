@@ -6,7 +6,7 @@
 
 		<header class="page__header">
 
-	    <div class="type">Proposal</div>
+	    <div class="type">Proposal <span class="status">— Published</span></div>
 
 			<div class="title_block">
 
@@ -34,24 +34,18 @@
 
 			<p class="parent_working_group"><i class="fa fa-group"></i> <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a></p>
 
-	    <p class="description">{{ excerpt.short }}</p>
+			{{> molecules-tags }}
 
 			<div class="attribution">
 				<p class="heading--subheader">Created by</p>
 				{{# listItems.one }}{{> molecules-user-card }}{{/ listItems.one }}
 			</div>
 
-	    {{> molecules-tags }}
+	    <p class="description">{{ excerpt.short }}</p>
 
 			{{> molecules-voting-module}}
 
-
 		</header>
-
-		<section class="proposal__status">
-			<h2 class="heading--header">Proposal Status</h2>
-			{{> molecules-idea-timeline }}
-		</section>
 
 		<section class="etherpad__embed text-created-attachments-similar">
 		  <section class="temp-array proposal-text">
