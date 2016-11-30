@@ -1,0 +1,14 @@
+%contribution_history {
+
+  em {
+    font-weight: 800;
+  }
+  
+  .contribution {
+    @extend %contribution;
+  }
+}
+
+.modal_content__contribution_history {
+  @extend %contribution_history;
+}

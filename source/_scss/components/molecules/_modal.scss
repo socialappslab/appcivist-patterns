@@ -16,7 +16,7 @@
 
   box-sizing: border-box;
   margin: 0;
-  
+
   width: 100%;
   max-height: 100%;
 
@@ -65,6 +65,11 @@
     color: $color__panel--light;
   }
 
+
+  .modal_content__contribution_history .modal-body {
+    background-color: $color__white;
+    padding: 0;
+  }
   @media (min-width: $bp__md) {
     margin: 0 auto;
     margin-top: 1.5 * $padding__base;

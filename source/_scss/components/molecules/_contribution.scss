@@ -1,0 +1,95 @@
+%contribution {
+
+  @extend %clearfix;
+  color: $color__brand-dark;
+
+  .type_and_date,
+  .contribution_details {
+    min-height: 6.5em;
+    box-sizing: border-box;
+  }
+
+  .type_and_date {
+
+    display: block;
+    position: relative;
+    float: left;
+    width: 6em;
+    background: $color__panel--light;
+    padding: 1em 0.5em;
+    padding-top: 3.5em;
+    padding-bottom: 0.75em;
+    text-align: center;
+
+    .date,
+    .year {
+      display: block;
+      font-size: 0.75em;
+    }
+
+  }
+
+  .contribution_details {
+
+    display: block;
+    margin-left: 6em;
+    padding: 1.25em $padding__base 0 $padding__base;
+    border-bottom: 1px $color__panel--light solid;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: -2em;
+      z-index: 1;
+      width: 0;
+      height: 0;
+      border: 1em solid transparent;
+      border-right: 1.25em solid $color__white;
+    }
+  }
+
+  .what_happened,
+  .contribution_description {
+    display: block;
+  }
+  .what_happened {
+    font-size: 0.875em;
+    margin-bottom: 0.5em;
+    a {
+      display: inline;
+    }
+  }
+
+  .contribution_description {
+    font-size: 1.31em;
+  }
+
+  .type_icon {
+    @extend .fa;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-35%);
+    color: $color__brand-dark;
+    &::before {
+      font-size: 1.5em !important;
+    }
+  }
+
+  &.add .type_icon {
+    @extend .fa-plus;
+  }
+
+  &.association .type_icon {
+    @extend .fa-exchange;
+  }
+
+  &.content .type_icon {
+    @extend .fa-file;
+  }
+
+}
