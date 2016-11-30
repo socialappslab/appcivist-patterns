@@ -46,10 +46,21 @@ button, .button {
   padding: ms(1) ms(2);
 }
 
+.voting-buttons {
+  margin-top: 2em;
+}
 .vote-button {
   min-width: 50px;
-  padding: 3px 5px 6px 1px;
-  border: 1px solid;
+  a {
+    display: block;
+    padding: .25em .5em;
+    background: $color__white;
+    color: $color__brand-dark !important;
+    &:hover {
+      background: $color__brand-dark;
+      color: $color__white !important;
+    }
+  }
 }
 
 .upvote { border-right: 0; }
