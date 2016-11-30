@@ -2,17 +2,30 @@
   <div class="card__wrapper">
     <header class="card__header">
       <p class="heading--category">{{tag.title}}</p>
-      <h1 class="heading--headline">
-        <a href="{{link.templates-single-proposal}}">{{ title.short }}</a>
-      </h1>
-      <p class="heading--attribution">
-        By <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a>
-      </p>
-      <div class="card__heading_actions">
-        <ul>
-          <li class="action__toggle_selection"><a href="#">{{> atoms-icon-selection-toggle }}</a></li>
-          <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
-        </ul>
+      <div class="title_block">
+        <h1 class="heading--headline">
+          <a href="{{link.templates-single-proposal}}">{{ title.short }}</a>
+        </h1>
+        <div class="card__heading_actions">
+          <ul class="actions">
+            <li class="action__toggle_selection"><a href="#">{{> atoms-icon-selection-toggle }}</a></li>
+            <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
+          </ul>
+          <div class="contextual_menu">
+            <div class="content">
+              <ul>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">Publish</a></li>
+                <li><a href="#">Give Feedback</a></li>
+                <li><a href="#">Exclude</a></li>
+                <li><a href="#">See history</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="heading__working_group">
+        <i class="fa fa-group"></i> <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a>
       </div>
     </header>
     <div class="card__body">
@@ -20,17 +33,6 @@
         {{ excerpt.short }}
       </div>
       {{> molecules-temperature-check-module}}
-    </div>
-    <div class="contextual_menu">
-      <div class="content">
-        <ul>
-          <li><a href="#">Edit</a></li>
-          <li><a href="#">Publish</a></li>
-          <li><a href="#">Give Feedback</a></li>
-          <li><a href="#">Exclude</a></li>
-          <li><a href="#">See history</a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </div>

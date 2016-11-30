@@ -1,7 +1,7 @@
 (function(appcvui, document, window, vex) {
 
-  appcvui.ContextualMenu = function(selector) {
-    this.initialize(selector);
+  appcvui.ContextualMenu = function(element) {
+    this.initialize(element);
   }
 
   p = appcvui.ContextualMenu.prototype;
@@ -10,7 +10,7 @@
 
   p.initialize = function(el) {
 
-    console.log(":: instantiating :::", el.querySelector('.heading--headline a').textContent );
+    // console.log(":: instantiating :::", el );
 
     this.hideMenuTimeoutDuration = 250;
     this.hideMenuTimeout = null;
@@ -51,8 +51,8 @@
   }
 
   p.showContextualMenu = function(stay) {
-    console.log('showContextualMenu', stay);
 
+    this.setPosition();
     this.attachOnClikcOutside();
 
     if(stay) {
@@ -60,6 +60,7 @@
       this.actuator.classList.add('active');
       this.menu.classList.add('stay');
     }
+
     window.clearTimeout( this.hideMenuTimeout );
     this.menu.classList.add('active');
   }
@@ -80,6 +81,21 @@
       e.preventDefault();
       this.closeIfClickOutside(e);
     }.bind(this));
+  }
+
+  p.setPosition = function() {
+    /*
+     assumes:
+      this.menu is positione absolute within a relatively positioned parent (this.el).
+    */
+    var rect = this.menu.parentElement.getBoundingClientRect();
+    // console.log( this.menu );
+    // console.log( this.menu.parentElement );
+    // console.log( "»|»»", this.menu.parentElement.position() );
+
+    this.menu.style.top = "1em";//( this.menu.parentElement.position().top -  document.body.scrollTop)  + 'px';
+    this.menu.style.left = "auto";
+    this.menu.style.right = 0;//( rect.width ) + 'px';
   }
 
   p.closeIfClickOutside = function(e) {

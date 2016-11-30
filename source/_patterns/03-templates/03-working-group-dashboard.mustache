@@ -2,12 +2,33 @@
 
 	{{> molecules-navigation}}
 
-	<article class="working_group__dashboard">
+	<article class="working_group">
 
 		<header class="page__header">
-		  <div class="heading--header">Working Group</div>
-		  <h1 class="heading--title">Quality of Life</h1>
-			<p>This is the working group dedicated to looking out for the general wellbeing of our citizens.</p>
+		  <div class="type">Working Group</div>
+
+			<div class="title_block">
+			  <h1 class="heading--title">Quality of Life</h1>
+				<div class="heading_actions">
+	        <ul>
+	          <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
+	        </ul>
+					<div class="contextual_menu">
+			      <div class="content">
+							<ul class="actions">
+			          <li><a href="#">Edit</a></li>
+			          <li><a href="#">Publish</a></li>
+			          <li><a href="#">Give Feedback</a></li>
+			          <li><a href="#">Exclude</a></li>
+			          <li><a href="#">See history</a></li>
+			        </ul>
+			      </div>
+			    </div>
+	      </div>
+			</div>
+
+			<p class="description">This is the working group dedicated to looking out for the general wellbeing of our citizens.</p>
+
 		</header>
 
 		<div class="page__contents">

@@ -5,9 +5,35 @@
 	<article class="proposal__single">
 
 		<header class="page__header">
-	    <p class="heading--header">Proposal</p>
-	    <h1 class="heading--title">{{ title.short }}</h1>
-			<p class="heading--subheader">In the <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a> working group</p>
+
+	    <div class="type">Proposal</div>
+
+			<div class="title_block">
+
+			  <h1 class="heading--title">{{ title.short }}</h1>
+
+				<div class="heading_actions">
+					<ul class="actions">
+						<li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
+					</ul>
+
+					<div class="contextual_menu">
+			      <div class="content">
+			        <ul>
+			          <li><a href="#">Edit</a></li>
+			          <li><a href="#">Publish</a></li>
+			          <li><a href="#">Give Feedback</a></li>
+			          <li><a href="#">Exclude</a></li>
+			          <li><a href="#">See history</a></li>
+			        </ul>
+			      </div>
+			    </div>
+
+				</div>
+			</div>
+
+			<p class="parent_working_group"><i class="fa fa-group"></i> <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a></p>
+
 	    <p class="description">{{ excerpt.short }}</p>
 
 			<div class="attribution">
@@ -17,17 +43,7 @@
 
 	    {{> molecules-tags }}
 
-		  <div class="actions__bar">
-		    {{> molecules-voting-module }}
-		    <div class="action-button">
-					{{> atoms-icon-more}}
-		      <ul class="action-menu">
-	          <li><a href="#">Edit</a></li>
-	          <li><a href="#">Exclude</a></li>
-	          <li><a href="#">Archive</a></li>
-		      </ul>
-		    </div>
-	    </div>
+
 		</header>
 
 		<section class="proposal__status">

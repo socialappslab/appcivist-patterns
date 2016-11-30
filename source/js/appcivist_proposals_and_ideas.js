@@ -111,7 +111,7 @@
   };
 
   p.initializeContextualMenu = function(i, el) {
-    new appcvui.ContextualMenu(el);
+    new appcvui.ContextualMenu(el.querySelector('.card__heading_actions'));
   };
 
 }(window.appcvui =  window.appcvui || {}, document, window));
