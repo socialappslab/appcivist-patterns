@@ -119,8 +119,8 @@
   "proposal": {
     "title": "Cooperative Garden Project",
     "summary": "A cooperative garden, run by members of the community and oriented to the youth as an educational experience",
-    "pad" : "http://etherpad.littlemacondo.com/p/pattern-proposal-template-example",
-    "padreadonly": "http://etherpad.littlemacondo.com/p/r.e2956be1151e1803efa825fcee2f172e",
-    "cover" : "http://appcivist.littlemacondo.com/assets/images/bg-hands-collaborating.jpg"
+    "pad" : "https://etherpad.appcivist.org/p/pattern-proposal-template-example",
+    "padreadonly": "https://etherpad.appcivist.org/p/r.e2956be1151e1803efa825fcee2f172e",
+    "cover" : "https://platform.appcivist.org/assets/images/bg-hands-collaborating.jpg"
   }
 }
