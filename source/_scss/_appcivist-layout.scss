@@ -90,23 +90,6 @@ button, .button {
   margin-bottom: 0;
 }
 
-.timeline {
-  @include display-flex;
-  @include justify-content(center);
-  margin-top: ms(2);
-  overflow-x: scroll;
-  &-item {
-    margin-top: ms(2);
-    padding: 0 ms(1);
-  }
-  .marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 60px;
-    margin: -.7em auto ms(-1);
-  }
-}
-
 .ideas-and-proposals section, .text-created-attachments-similar section {
   @include breakpoint(tablet) {
     @include gallery(3 of 6);
