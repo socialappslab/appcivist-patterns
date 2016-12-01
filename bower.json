@@ -27,6 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "vex": "^3.0.0"
+    "vex": "^3.0.0",
+    "classList": "^1.1.0"
   }
 }
