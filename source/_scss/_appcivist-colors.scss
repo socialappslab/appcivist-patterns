@@ -184,32 +184,6 @@ input[type=submit] {
   background-color: $color__text--reverse;
 }
 
-.timeline-item {
-  border-top: 1px solid $color__borders;
-}
-.timeline {
-  .marker {
-    background-color: $color__borders;
-  }
-}
-.inactive {
-  color: lighten($color__text--secondary, 30%);
-  .marker {
-    background-color: lighten($color__text--secondary, 30%);
-  }
-}
-.active {
-  color: $color__brand-primary;
-  .marker {
-    background-color: $color__brand-primary;
-    }
-}
-.future {
-  color: $color__brand-primary--light;
-  .marker {
-    background-color: $color__brand-primary--light;
-  }
-}
 // 5.0 TYPE
 .heading--header {
   color: $color__text--secondary;

@@ -6,9 +6,80 @@
   .heading--header {
     font-weight: bold;
   }
+
+
 }
 
-.campaign__status,
-.proposal__status {
+.timeline {
+
+  margin-top: 2em;
+  min-height: 3em;
+
+  .marker {
+    width: 0.625em;
+    height: 0.625em;
+    position: relative;
+    top: -0.3125em;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .timeline-item {
+
+    min-width: 8em;
+
+    &.active {
+
+      .marker {
+        top: 0;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        border: 0.425em $color__brand-dark solid !important;
+        color: $color__panel--lighter;
+        background-color: $color__panel--lighter;
+        position: relative;
+        transform: translateY(-50%);
+      }
+
+      .label {
+        margin-top: -0.3875em;
+      }
+    }
+  }
+}
+
+.timeline {
+
+  .markers {
+    @include display-flex;
+    @include justify-content(space-between);
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      border-top: 1px $color__brand-dark solid;
+      transform: translateX(-50%) translateY(50%);
+      left: 50%;
+    }
+  }
+
+  .marker {
+    margin: 0 auto;
+    background-color: $color__brand-dark;
+  }
+  .label {
+    display: block;
+    margin-top: 1em;
+    font-size: 1em;
+    color: $color__brand-dark;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+
+
+.campaign__status {
   @extend %status__strip;
 }
