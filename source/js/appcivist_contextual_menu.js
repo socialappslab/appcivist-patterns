@@ -9,9 +9,9 @@
   p.constructor = appcvui.ContextualMenu;
 
   p.initialize = function(el) {
-
-    // console.log(":: instantiating :::", el );
-
+    if(!el) {
+      return;
+    }
     this.hideMenuTimeoutDuration = 250;
     this.hideMenuTimeout = null;
     this.menuSelector = '.contextual_menu';
