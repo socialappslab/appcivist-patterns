@@ -6116,7 +6116,7 @@ TABLE OF CONTENTS
   background: #00654f; }
 
 .color__brand-accent {
-  background: #ae529e; }
+  background: #df009d; }
 
 .color__text--primary {
   background: #465b64; }
@@ -6131,7 +6131,7 @@ TABLE OF CONTENTS
   background: #afafaf; }
 
 .color__borders--accent {
-  background: #cf97c5; }
+  background: #ff46c8; }
 
 .color__borders--primary {
   background: #009877; }
@@ -6140,9 +6140,9 @@ html, .sg-main {
   background-color: #fff; }
 
 a {
-  color: #ae529e; }
+  color: #df009d; }
   a:hover, a:focus {
-    color: #8c417f; }
+    color: #ac0079; }
 
 blockquote {
   color: #465b64; }
@@ -6155,27 +6155,27 @@ blockquote {
 
 button, .button {
   color: #fff;
-  background-color: #ae529e;
-  border-color: #8c417f; }
+  background-color: #df009d;
+  border-color: #ac0079; }
   button:hover, .button:hover {
-    background-color: #69315f; }
+    background-color: #790055; }
 
 input[type=submit] {
   color: #fff;
-  background: #ae529e;
-  border-color: #8c417f; }
+  background: #df009d;
+  border-color: #ac0079; }
   input[type=submit]:hover {
-    background-color: #69315f; }
+    background-color: #790055; }
 
 .vote-button {
-  border-color: #ae529e;
-  color: #ae529e; }
+  border-color: #df009d;
+  color: #df009d; }
   .vote-button:hover {
-    background-color: #8c417f; }
+    background-color: #ac0079; }
     .vote-button:hover a {
       color: #fff; }
   .vote-button a {
-    color: #ae529e; }
+    color: #df009d; }
 
 .disabled.button {
   color: #8f8f8f;
@@ -6186,10 +6186,10 @@ input[type=submit] {
     background-color: #dbdbdb; }
 
 .secondary.button {
-  color: #ae529e;
+  color: #df009d;
   background-color: #fff; }
   .secondary.button:hover {
-    background-color: #ae529e;
+    background-color: #df009d;
     color: #fff; }
 
 .warning.button {
@@ -6199,15 +6199,15 @@ input[type=submit] {
     background-color: #7f0a11; }
 
 .add-button svg g, .close-button svg g, .more-menu svg g, .action-button svg g, .upvote svg g, .downvote svg g {
-  fill: #ae529e; }
+  fill: #df009d; }
   .add-button svg g:hover, .close-button svg g:hover, .more-menu svg g:hover, .action-button svg g:hover, .upvote svg g:hover, .downvote svg g:hover {
-    fill: #462140; }
+    fill: #460031; }
 
 .close-button {
   background-color: white;
-  border-color: #010001; }
+  border-color: black; }
   .close-button:hover {
-    background-color: #dfbad8; }
+    background-color: #ff79d7; }
 
 .alert {
   background: #f7f9f9; }
@@ -6232,7 +6232,7 @@ input[type=submit] {
   border-top: 1px solid #E2E2E2; }
 
 .card {
-  border: 1px solid #cf97c5;
+  border: 1px solid #ff46c8;
   background-color: white;
   color: #757575;
   clear: both; }
@@ -6262,7 +6262,7 @@ input[type=submit] {
   background: #009877; }
 
 .label-info {
-  background: #ae529e; }
+  background: #df009d; }
 
 .label-success {
   background: #739c80; }
@@ -6652,7 +6652,7 @@ a {
   .user__card a, .navigation .user__logged_in a, .navigation-logged-in .user__logged_in a {
     display: inline-block; }
   .user__card .icon__more .svg__shape, .navigation .user__logged_in .icon__more .svg__shape, .navigation-logged-in .user__logged_in .icon__more .svg__shape {
-    fill: #ae529e; }
+    fill: #df009d; }
   .user__card .menu__contextual, .navigation .user__logged_in .menu__contextual, .navigation-logged-in .user__logged_in .menu__contextual {
     display: inline-block; }
 
@@ -6839,19 +6839,19 @@ a {
       .campaign__filters .filters .tags li:hover::after {
         content: "✖";
         position: absolute;
-        color: #ae529e;
+        color: #df009d;
         top: .25em;
         right: 0.25em; }
   .campaign__filters .button__add_filter {
     margin-left: 0.5em;
-    color: #ae529e;
+    color: #df009d;
     line-height: 1.25; }
     .campaign__filters .button__add_filter .icon {
       text-align: center;
       display: inline-block;
       width: 1.5em;
       height: 1.5em;
-      background-color: #ae529e;
+      background-color: #df009d;
       color: #e5ebe6;
       border-radius: 50%;
       margin-right: 0.25em;
@@ -6908,6 +6908,12 @@ a {
       padding-left: 15px;
       padding-right: 15px;
       float: right; } }
+
+.list--proposals .ideas__header a,
+.list--proposals .proposals__header a,
+.list--ideas .ideas__header a,
+.list--ideas .proposals__header a {
+  margin-right: 1em; }
 
 .list--proposals .list__cards,
 .list--ideas .list__cards {
