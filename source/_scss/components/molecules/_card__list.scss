@@ -10,6 +10,9 @@
   .ideas__header,
   .proposals__header {
     @extend %control__strip;
+    a {
+      margin-right: 1em;
+    }
   }
 
   .list__cards {
