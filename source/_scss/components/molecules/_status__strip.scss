@@ -82,4 +82,5 @@
 
 .campaign__status {
   @extend %status__strip;
+  overflow-x: scroll;
 }

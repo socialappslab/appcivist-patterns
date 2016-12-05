@@ -7113,6 +7113,9 @@ a {
   font-weight: normal;
   text-align: center; }
 
+.campaign__status {
+  overflow-x: scroll; }
+
 .navigation .user__logged_in .avatar_link, .navigation-logged-in .user__logged_in .avatar_link, .navigation .user__logged_in figure, .navigation-logged-in .user__logged_in figure, .navigation .user__logged_in img, .navigation-logged-in .user__logged_in img {
   display: block;
   width: 2.5em;
