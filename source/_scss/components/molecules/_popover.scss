@@ -1,0 +1,60 @@
+%popover {
+
+  display: block;
+  @extend %offscreen;
+
+  z-index: $z__contextual_menus;
+
+  .content {
+
+    @extend %card__shadow;
+
+    transition-duration: 0.325s;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+
+    opacity: 0;
+    min-width: 2em !important;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    clip: none;
+    position: relative;
+    background-color: $color__brand-dark;
+    color: $color__white;
+    padding: 0.5em;
+    left: 0%;
+    transform: translateX(-25%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      z-index: 1;
+      width: 0;
+      height: 0;
+      border-left: 0.5em solid transparent;
+      border-right: 0.5em solid transparent;
+      transition-property: opacity, border-color, top, border-top;
+      transition-duration: 0.25s;
+      border-top: 0 solid $color__brand-dark;
+      left: 25%;
+    }
+  }
+
+  &.active {
+    @extend %onscreen;
+    display: block;
+    position: absolute;
+    .content {
+      opacity: 1;
+      &::after {
+        border-top: 12px solid $color__brand-dark;
+      }
+    }
+  }
+}
+
+.popover {
+  @extend %popover;
+}

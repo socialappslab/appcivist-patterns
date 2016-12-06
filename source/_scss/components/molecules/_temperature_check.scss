@@ -3,8 +3,9 @@
   li {
     display: inline-block;
     margin-right: .5em;
+    position: relative;
   }
-  
+
   a {
 
     @extend .fa;

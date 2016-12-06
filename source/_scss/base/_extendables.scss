@@ -1,9 +1,8 @@
 %offscreen {
 	position: absolute;
 	left: -10000px;
-	overflow: hidden;
-	width: 1px;
-	height: 1px;
+	opacity: 0;
+	z-index: -1;
 	white-space: nowrap;
 }
 
@@ -12,10 +11,9 @@
   left: auto;
   right: auto;
   top: auto;
+	opacity: 1;
+	z-index: 1;
   bottom: auto;
-  overflow: visible;
-  width: auto;
-  height: auto;
   white-space: normal;
 }
 
@@ -25,10 +23,9 @@
   	left: -10000px;
     right: auto;
     top: auto;
-  	overflow: hidden;
-  	width: 1px;
-  	height: 1px;
   	white-space: nowrap;
+		opacity: 0;
+		z-index: -1;
   }
 }
 

@@ -60,11 +60,14 @@
 
     .content {
       opacity: 1;
+
+      z-index: auto;
+
       top: 1.5em;
       right: -1.675em;
 
       &::after {
-        border-bottom: 12px solid $color__text--reverse;
+        border-bottom: 12px solid $color__white;
       }
     }
 
