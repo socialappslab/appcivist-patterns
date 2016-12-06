@@ -95,7 +95,7 @@
       this.popover is positione absolute within a relatively positioned parent (this.el).
     */
     var fullHeight = this.popover.offsetHeight + parseInt(getComputedStyle(this.popover).paddingTop) + parseInt(getComputedStyle(this.popover).paddingBottom) + parseInt(getComputedStyle(this.popover).marginTop) + parseInt(getComputedStyle(this.popover).marginBottom);
-    this.popover.style.top = ( -1 * ( fullHeight )) + "px";
+    this.popover.style.top = ( -1 * (( fullHeight ) + 16 )) + "px";
   }
 
   p.closeIfClickOutside = function(e) {

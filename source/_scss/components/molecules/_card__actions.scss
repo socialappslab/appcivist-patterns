@@ -30,9 +30,5 @@
 }
 
 %card__actions--visible {
-  overflow: visible;
-  width: auto;
-  height: auto;
-  left: auto;
-  white-space: normal;
+  @extend %onscreen;
 }

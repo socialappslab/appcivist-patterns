@@ -35,6 +35,7 @@
     .card__heading_actions {
       position: absolute;
       top: -1.75em;
+      left: auto;
       right: -1em;
       .contextual_menu {
         @extend %contextual_menu;
@@ -52,17 +53,29 @@
     color: $color__text--reverse;
     position: relative;
 
-    .heading--category {
+    .heading--categories {
       font-size: $typography__tiny;
+      div {
+        display: inline-block;
+        &::after {
+          display: inline-block;
+          content: ", ";
+        }
+        &:last-child::after {
+          display: none;
+          content: none;
+        }
+      }
     }
 
     a {
       color: $color__text--reverse;
     }
 
-    .card__heading_actions {
-      @extend %card__actions;
-    }
+  }
+
+  .card__heading_actions {
+    @extend %card__actions;
   }
 
   .card__body {
@@ -79,6 +92,7 @@
       @extend %card__actions--visible;
     }
   }
+
 
   &--selected {
     @extend %card--selected;

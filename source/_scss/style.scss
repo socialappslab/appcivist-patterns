@@ -37,8 +37,8 @@ compiled into production.
 @import "appcivist-colors";
 @import "appcivist-motion";
 
-@import "base/extendables";
 @import "base/mixins";
+@import "base/extendables";
 
 @import "components/atoms/links";
 @import "components/atoms/button__nav_toggle";

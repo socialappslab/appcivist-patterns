@@ -19,13 +19,7 @@
 
 %offscreen--min_md {
   @media( min-width: $bp__md ) {
-    position: absolute;
-  	left: -10000px;
-    right: auto;
-    top: auto;
-  	white-space: nowrap;
-		opacity: 0;
-		z-index: -1;
+		@include offscreen;
   }
 }
 
