@@ -1,7 +1,17 @@
 %card__proposal {
 
   @extend %card;
-  @extend %grid__responsive;
+
+  // https://github.com/Snugug/eq.js
+  div[data-eq-state $= 'small'] & {
+    @include gallery(6 of 12);
+  }
+  div[data-eq-state $= 'medium'] & {
+    @include gallery(4 of 12);
+  }
+  div[data-eq-state $= 'large'] & {
+    @include gallery(3 of 12);
+  }
 
   .card__header {
     background-color: $color__brand_primary;

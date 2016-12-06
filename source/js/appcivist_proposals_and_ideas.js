@@ -23,6 +23,8 @@
     this.addProposalButton = this.appEl.querySelector('.proposals__add_new');
     this.addIdeaButton = this.appEl.querySelector('.ideas__add_new');
 
+    this.tempChecks = this.appEl.querySelectorAll('.temperature_check');
+
     var self = this;
 
     if( document.querySelector('.campaign__filters .filters') != null) {
@@ -61,20 +63,32 @@
       appcvui.forEach(this.proposals, this.initializeContextualMenu, this);
     }
 
-    if( this.idas != null ) {
+    if( this.ideas != null ) {
       appcvui.forEach(this.ideas, this.initializeContextualMenu, this);
+    }
+
+    if( this.tempChecks != null ) {
+      appcvui.forEach(this.tempChecks, this.initializeTemperatureCheck, this);
     }
 
     document.addEventListener('resize', this.onResize);
 
-    this.onResize();
+    // this.onResize();
+
+    document.addEventListener('eqResize', function(){
+      this.onResize();
+      console.log("eqResize")
+    }.bind(this));
   };
 
   p.onResize = function() {
 
     if(document.querySelector('.container__proposals') != null) {
+      appcvui.equalHeights('.container__proposals .title_block');
+      appcvui.equalHeights('.container__proposals .heading__working_group');
       appcvui.equalHeights('.container__proposals .card__header');
       appcvui.equalHeights('.container__proposals .card__body .excerpt');
+      appcvui.equalHeights('.container__proposals .card__body');
     }
 
     if(document.querySelector('.container__ideas') != null) {
@@ -87,7 +101,7 @@
     inst.showIdeasTimeout = window.setTimeout( function(){
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
-    }, 250);
+    }, 320);
   };
 
   p.hideIdeas = function(inst){
@@ -95,7 +109,7 @@
     inst.showIdeasTimeout = window.setTimeout( function(){
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
-    }, 250);
+    }, 320);
   };
 
   p.addProposal = function(inst){
@@ -113,5 +127,9 @@
   p.initializeContextualMenu = function(i, el) {
     new appcvui.ContextualMenu(el.querySelector('.card__heading_actions'));
   };
+
+  p.initializeTemperatureCheck = function(i, el) {
+    new appcvui.TemperatureCheck( el );
+  }
 
 }(window.appcvui =  window.appcvui || {}, document, window));

@@ -1,7 +1,7 @@
 %card {
 
   transition-property: width, height, margin, left, top;
-  transition-duration: .325s;
+  transition-duration: 0.325s;
   transition-timing-function: ease-out;
 
   padding: 0.25 * $padding__base;
@@ -28,6 +28,7 @@
     }
 
     .heading__working_group {
+      @extend %clearfix;
       font-size: 0.875em;
     }
 

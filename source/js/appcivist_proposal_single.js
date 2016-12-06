@@ -14,7 +14,6 @@
     if( this.appEl == null ) return;
 
     this.contextualMenu = new appcvui.ContextualMenu( this.appEl.querySelector('.heading_actions'));
-    console.log( '»| proposal single »»', this.contextualMenu );
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));

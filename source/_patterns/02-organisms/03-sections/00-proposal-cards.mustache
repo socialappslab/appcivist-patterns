@@ -7,11 +7,11 @@
     <a class="proposals__show_ideas" href="#">Show Ideas</a>
 
     <div class="form__add_proposal">
-      {{>organisms-modal-add-proposal}}      
+      {{>organisms-modal-add-proposal}}
     </div>
   </header>
 
-  <div class="list__cards container__proposals">
+  <div class="list__cards container__proposals" data-eq-pts="small: 768, medium: 1024, large: 1500">
     {{# listItems.four }}
       {{> molecules-card-proposal}}
     {{/ listItems.four }}

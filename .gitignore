@@ -6,6 +6,7 @@ patternlab.json
 Thumbs.db
 .idea/
 public/
+source/js/vendor/*
 dist/
 dist/images/favicon_16x16.png.original.png
 dist/images/favicon_32x32.png.original.png

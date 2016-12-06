@@ -3,6 +3,14 @@
   @extend %card;
   margin-bottom: 0.5 * $padding__base;
 
+  div[data-eq-state $= 'small'] & {
+    @include gallery(6 of 12);
+  }
+
+  div[data-eq-state $= 'medium'] & {
+    @include gallery(6 of 12);
+  }
+
   .card__header {
     background-color: $color__text--reverse;
     padding: 0.5 * $padding__base;
