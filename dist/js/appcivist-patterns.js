@@ -9,13 +9,9 @@
   p.constructor = appcvui.Campaign;
 
   p.initialize = function(appContainerSelector) {
-
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
-
     this.contextualMenu = new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
-    console.log( '»| campaign »»', this.contextualMenu );
-
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));
@@ -169,6 +165,118 @@
 }(window, document));
 ;(function(appcvui, document, window) {
 
+  appcvui.PopOver = function(element) {
+    this.initialize(element);
+    return this;
+  }
+
+  p = appcvui.PopOver.prototype;
+
+  p.constructor = appcvui.PopOver;
+
+  p.initialize = function(el) {
+
+    this.hideTimeoutDuration = 250;
+    this.hideTimeout = null;
+    this.bodyClickEventListener = null;
+
+    this.el = el;
+    this.popover = document.createElement('div');
+    this.popover.classList.add('popover');
+    this.popoverContent = document.createElement('div');
+    this.popoverContent.classList.add('content');
+    this.popover.appendChild(this.popoverContent);
+    this.el.appendChild( this.popover );
+
+    // console.log("|»»", this.el, this.popover );
+
+    this.el.addEventListener( 'mouseenter', function(e) {
+      window.clearTimeout( this.hideTimeout );
+      this.show();
+    }.bind(this));
+
+    this.el.addEventListener( 'click', function(e) {
+      e.preventDefault();
+      this.show(true);
+    }.bind(this));
+
+    this.el.addEventListener( 'mouseleave', function(e) {
+      if(!this.popover.classList.contains('stay')) {
+        this.initiateTimeout();
+      }
+    }.bind(this));
+
+    this.popover.addEventListener( 'mouseenter', function(e) {
+      window.clearTimeout(this.hideTimeout);
+    }.bind(this));
+
+    this.popover.addEventListener( 'mouseleave', function(e) {
+      if(!this.popover.classList.contains('stay')) {
+        this.initiateTimeout();
+      }
+    }.bind(this));
+
+  }
+
+  p.setContent = function( content ) {
+    this.popoverContent.innerHTML = content;
+  }
+
+  p.show = function(stay) {
+    this.attachOnClikcOutside();
+
+    if(stay) {
+      this.el.classList.add('active');
+      this.popover.classList.add('stay');
+    }
+
+    window.clearTimeout( this.hideTimeout );
+    this.popover.classList.add('active');
+    this.setPosition();
+
+  }
+
+  p.hide = function() {
+    document.body.removeEventListener("click",this.bodyClickEventListener);
+    window.clearTimeout( this.hideTimeout );
+    this.popover.classList.remove('active');
+  }
+
+  p.initiateTimeout = function() {
+    window.clearTimeout( this.hideTimeout );
+    this.hideTimeout = setTimeout( this.hide.bind(this), this.hideTimeoutDuration);
+  }
+
+  p.attachOnClikcOutside = function() {
+    this.bodyClickEventListener = document.body.addEventListener("click", function(e) {
+      e.preventDefault();
+      this.closeIfClickOutside(e);
+    }.bind(this));
+  }
+
+  p.setPosition = function() {
+    /*
+     assumes:
+      this.popover is positione absolute within a relatively positioned parent (this.el).
+    */
+    var fullHeight = this.popover.offsetHeight + parseInt(getComputedStyle(this.popover).paddingTop) + parseInt(getComputedStyle(this.popover).paddingBottom) + parseInt(getComputedStyle(this.popover).marginTop) + parseInt(getComputedStyle(this.popover).marginBottom);
+    this.popover.style.top = ( -1 * (( fullHeight ) + 16 )) + "px";
+  }
+
+  p.closeIfClickOutside = function(e) {
+    window.clearTimeout( this.hideTimeout );
+
+    if( !this.popover.contains(e.target) && !this.el.contains(e.target)) {
+      this.el.classList.remove('reveal_actions');
+      this.el.classList.remove('active');
+      this.el.classList.remove('stay');
+      this.hide();
+    }
+  }
+
+}( window.appcvui =  window.appcvui || {}, document, window, window.vex ));
+;(function(appcvui, document, window) {
+
   appcvui.Proposal = function(appContainerSelector) {
     this.initialize(appContainerSelector);
   }
@@ -183,7 +291,9 @@
     if( this.appEl == null ) return;
 
     this.contextualMenu = new appcvui.ContextualMenu( this.appEl.querySelector('.heading_actions'));
-    console.log( '»| proposal single »»', this.contextualMenu );
+
+    this.temperature_check = new appcvui.TemperatureCheck( this.appEl.querySelector('.page__header .temperature_check'));
+
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));
@@ -211,6 +321,8 @@
 
     this.addProposalButton = this.appEl.querySelector('.proposals__add_new');
     this.addIdeaButton = this.appEl.querySelector('.ideas__add_new');
+
+    this.tempChecks = this.appEl.querySelectorAll('.temperature_check');
 
     var self = this;
 
@@ -250,20 +362,32 @@
       appcvui.forEach(this.proposals, this.initializeContextualMenu, this);
     }
 
-    if( this.idas != null ) {
+    if( this.ideas != null ) {
       appcvui.forEach(this.ideas, this.initializeContextualMenu, this);
+    }
+
+    if( this.tempChecks != null ) {
+      appcvui.forEach(this.tempChecks, this.initializeTemperatureCheck, this);
     }
 
     document.addEventListener('resize', this.onResize);
 
-    this.onResize();
+    // this.onResize();
+
+    document.addEventListener('eqResize', function(){
+      this.onResize();
+      console.log("eqResize")
+    }.bind(this));
   };
 
   p.onResize = function() {
 
     if(document.querySelector('.container__proposals') != null) {
+      appcvui.equalHeights('.container__proposals .title_block');
+      appcvui.equalHeights('.container__proposals .heading__working_group');
       appcvui.equalHeights('.container__proposals .card__header');
       appcvui.equalHeights('.container__proposals .card__body .excerpt');
+      appcvui.equalHeights('.container__proposals .card__body');
     }
 
     if(document.querySelector('.container__ideas') != null) {
@@ -276,7 +400,7 @@
     inst.showIdeasTimeout = window.setTimeout( function(){
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
-    }, 250);
+    }, 320);
   };
 
   p.hideIdeas = function(inst){
@@ -284,7 +408,7 @@
     inst.showIdeasTimeout = window.setTimeout( function(){
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
-    }, 250);
+    }, 320);
   };
 
   p.addProposal = function(inst){
@@ -302,6 +426,36 @@
   p.initializeContextualMenu = function(i, el) {
     new appcvui.ContextualMenu(el.querySelector('.card__heading_actions'));
   };
+
+  p.initializeTemperatureCheck = function(i, el) {
+    new appcvui.TemperatureCheck( el );
+  }
+
+}(window.appcvui =  window.appcvui || {}, document, window));
+;(function(appcvui, document, window, vex) {
+
+  appcvui.TemperatureCheck = function(element) {
+    this.initialize(element);
+  }
+
+  p = appcvui.TemperatureCheck.prototype;
+
+  p.constructor = appcvui.TemperatureCheck;
+
+  p.initialize = function(el) {
+
+    this.el = el;
+    this.thumbsUp = this.el.querySelector('.upvote');
+    this.thumbsDown = this.el.querySelector('.downvote');
+
+    var upvote = new appcvui.PopOver(this.thumbsUp);
+    upvote.setContent( this.thumbsUp.getAttribute('data-votecount') )
+    upvote.setPosition();
+
+    var downvote = new appcvui.PopOver(this.thumbsDown);
+    downvote.setContent( this.thumbsDown.getAttribute('data-votecount') )
+    downvote.setPosition();
+  }
 
 }(window.appcvui =  window.appcvui || {}, document, window));
 ;(function(appcvui, document, window, vex) {
@@ -381,17 +535,14 @@
     };
 
     if(document.querySelector('.campaign') != null) {
-      console.log("|»»", 'campaign');
       appcvui.campaign = new appcvui.Campaign('.campaign');
     }
 
     if(document.querySelector('.working_group') != null) {
-      console.log("|»»", 'working group');
       appcvui.working_group = new appcvui.WorkingGroup('.working_group');
     }
 
     if(document.querySelector('.proposal__single') != null) {
-      console.log("|»»", 'proposal single');
       appcvui.proposal = new appcvui.Proposal('.proposal__single');
     }
   };
