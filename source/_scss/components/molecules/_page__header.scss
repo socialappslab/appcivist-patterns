@@ -80,11 +80,64 @@
     }
   }
 
+  .temperature_check {
+
+      background-color: #fff;
+      font-size: 1.5em;
+      display: inline-block;
+      padding: 0.25em 0.5em;
+
+      @media (min-width: $bp__md) {
+        font-size: 1.25em;
+      }
+
+      a {
+        color: $color__brand-dark;
+        text-decoration: none;
+        &:hover {}
+      }
+
+      li:last-child {
+        margin-right: 0;
+      }
+  }
+
+  .tags {
+
+    li {
+
+      display: inline-block;
+      background: transparent;
+      margin-left: 0.25em;
+
+      div {
+        display: inline-block
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &::after {
+        content: ", ";
+        display: inline-block;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
+  }
+
   .description {
     margin-top: 1.5em;
-    font-size: 1.25em;
+    font-size: 1.5em;
     line-height: 1.2;
     max-width: 40em;
+  }
+
+  .proposal__single & {
+    padding-bottom: 0;
   }
 }
 

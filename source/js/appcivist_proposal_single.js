@@ -14,6 +14,9 @@
     if( this.appEl == null ) return;
 
     this.contextualMenu = new appcvui.ContextualMenu( this.appEl.querySelector('.heading_actions'));
+
+    this.temperature_check = new appcvui.TemperatureCheck( this.appEl.querySelector('.page__header .temperature_check'));
+
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));
