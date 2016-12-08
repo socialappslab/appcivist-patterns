@@ -49,7 +49,7 @@
 
   .heading--title {
     font-size: $typography__title;
-    font-weight: 200;
+    font-weight: 300;
   }
 
   p {
@@ -80,16 +80,27 @@
     }
   }
 
+  .voting_mechanism {
+
+    a {
+      font-size: 1.5em;
+    }
+
+    display: inline-block;
+    vertical-align: bottom;
+
+    @media (min-width: $bp__md) {
+      a {
+        font-size: 1.25em;
+      }
+    }
+  }
+
   .temperature_check {
 
       background-color: #fff;
-      font-size: 1.5em;
       display: inline-block;
       padding: 0.25em 0.5em;
-
-      @media (min-width: $bp__md) {
-        font-size: 1.25em;
-      }
 
       a {
         color: $color__brand-dark;

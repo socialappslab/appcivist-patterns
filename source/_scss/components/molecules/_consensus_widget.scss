@@ -1,0 +1,47 @@
+%consensus_widget {
+
+  @extend %clearfix;
+  position: relative;
+
+  .options {
+
+    @extend %clearfix;
+
+    li {
+      float: left;
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+
+  .accessible_data {
+    @extend %offscreen;
+  }
+
+  .popover_template {
+    display: none;
+  }
+
+  .popover {
+    
+    @extend %offscreen;
+
+    &.active {
+      @extend %onscreen;
+      position: absolute;
+      left: 50%;
+    }
+
+    .content {
+      padding: 1em;
+    }
+
+    figcaption {
+      margin-top: 1em;
+    }
+  }
+}
+
+.consensus_widget {
+  @extend %consensus_widget;
+}

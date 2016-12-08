@@ -15,7 +15,13 @@
 
     this.contextualMenu = new appcvui.ContextualMenu( this.appEl.querySelector('.heading_actions'));
 
-    this.temperature_check = new appcvui.TemperatureCheck( this.appEl.querySelector('.page__header .temperature_check'));
+    if( this.appEl.querySelector('.page__header .temperature_check') != null ) {
+      this.temperature_check = new appcvui.TemperatureCheck( this.appEl.querySelector('.page__header .temperature_check'));
+    }
+
+    if( this.appEl.querySelector('.page__header .consensus_widget') != null ) {
+      this.temperature_check = new appcvui.ConsensusWidget( this.appEl.querySelector('.page__header .consensus_widget'));
+    }
 
   }
 

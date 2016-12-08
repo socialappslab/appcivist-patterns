@@ -1,0 +1,6 @@
+{
+  "voting_mechanism": {
+    "temperature_check": true,
+    "consensus": false
+  }
+}
