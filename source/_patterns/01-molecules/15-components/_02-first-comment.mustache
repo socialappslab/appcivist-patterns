@@ -2,15 +2,18 @@
 	<div class="comment-meta">
 		<p class="heading--header">
 			Yesterday in <a href="#">Housing and Urban Development (HUD) Funds</a>
-		{{> molecules-user-card}}
-		<p>
+			{{> molecules-user-card }}
+		</p>
 	</div>
 	<div class="comment-text">
-		<small>{{ description }}</small>
+		<h1 class="heading--title">Comment Subject</h1>
+		<p>{{ description }}</p>
+	</div>
+	<div class="comment-voting">
+		{{> molecules-temperature-check}}
 	</div>
 	<div class="comment-reply-controls">
-		{{> molecules-voting-module }}
 		<a class="heading--subheader reply-count">2 Replies</a>
-		<a class="heading--subheader reply-count reply">Reply to this comment</a>
+		<button class="small button reply">Reply</button>
 	</div>
 </li>
