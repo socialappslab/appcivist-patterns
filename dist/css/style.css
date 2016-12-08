@@ -5865,15 +5865,6 @@ button, .button {
   margin: 0 0 18px 0;
   padding: 0 0 18px 0; }
 
-.voting-buttons {
-  text-align: center;
-  flex-grow: 4;
-  z-index: 100;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: flex-start;
-  align-items: flex-start; }
-
 .action-bar {
   display: -webkit-flex;
   display: flex;
@@ -5894,24 +5885,6 @@ button, .button {
 
 .action-bar-filters .vote-button {
   padding: 5px; }
-
-ul.action-menu {
-  max-height: 0px; }
-  ul.action-menu li {
-    z-index: 999999;
-    padding-top: 14px;
-    opacity: 0; }
-    ul.action-menu li:first-of-type {
-      border-top: 0; }
-
-.upvote:before {
-  content: ''; }
-
-.downvote:before {
-  content: ''; }
-
-.middle:before {
-  content: ''; }
 
 ol.pagination {
   display: -webkit-flex;
@@ -6386,7 +6359,7 @@ ul.submenu {
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
 
-.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
+.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
   position: absolute;
   left: -10000px;
   opacity: 0;
@@ -6601,13 +6574,15 @@ a {
 
 .vex-overlay {
   animation-duration: .1875s;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2000; }
 
 .vex.vex-theme-plain {
   padding-top: 0;
   padding-bottom: 0; }
 
 .vex.vex-theme-plain .vex-content {
+  z-index: 2001;
   overflow: auto;
   box-sizing: border-box;
   margin: 0;
@@ -7110,7 +7085,7 @@ div[data-eq-state$='large'] .card__proposal {
 
 .popover {
   display: block;
-  z-index: 1050; }
+  z-index: 1075; }
   .popover .content {
     transition-duration: 0.325s;
     transition-property: opacity;
@@ -7155,6 +7130,17 @@ div[data-eq-state$='large'] .card__proposal {
 
 .temperature_check a {
   display: block; }
+
+.consensus_widget .options li {
+  float: left;
+  margin-right: 0; }
+
+.consensus_widget .popover_template {
+  display: none; }
+
+.consensus_widget canvas {
+  width: 12em;
+  height: 12em; }
 
 .campaign__status {
   padding: 2.8125em;

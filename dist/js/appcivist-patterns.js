@@ -15,6 +15,73 @@
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));
+;(function(appcvui, document, window, Chart) {
+
+  var origResizeListener = Chart.helpers.addResizeListener;
+  Chart.helpers.addResizeListener = function(node, callback){
+    if(Chart.defaults.global.responsive){
+      origResizeListener(node,callback);
+    }
+  };
+
+  Chart.defaults.global.responsive = false;
+  Chart.defaults.global.defaultFontFamily = 'Lato,sans-serif';
+  Chart.defaults.global.borderColor = 'rgba(0,0,0,0)';
+  Chart.defaults.global.borderWidth = 0;
+
+  appcvui.ConsensusChart = function(element) {
+    this.initialize(element);
+  }
+
+  p = appcvui.ConsensusChart.prototype;
+
+  p.constructor = appcvui.ConsensusChart;
+
+  p.initialize = function(el) {
+    this.el = el;
+    this.data = this.el.getAttribute('data-chart-data');
+  }
+
+  p.setData = function(data) {
+    this.data = data;
+  }
+
+  p.renderChart = function() {
+
+    var context= this.el.querySelector('canvas').getContext('2d');
+    var data = JSON.parse(this.data);
+
+    this.chart = new Chart(context, {
+      type: 'pie',
+      data: data,
+      options: {
+        borderWidth: 0
+      }
+    });
+  }
+}(window.appcvui =  window.appcvui || {}, document, window, window.Chart));
+;(function(appcvui, document, window, vex) {
+
+  appcvui.ConsensusWidget = function(element) {
+    this.initialize(element);
+  }
+
+  p = appcvui.ConsensusWidget.prototype;
+
+  p.constructor = appcvui.ConsensusWidget;
+
+  p.initialize = function(el) {
+    this.el = el;
+    var popoverContent = this.el.querySelector('.consensus_result').innerHTML;
+    var popover = new appcvui.PopOver(this.el);
+    popover.setContent(popoverContent);
+    var chart = new appcvui.ConsensusChart(popover.popoverContent.querySelector('.chart'));
+    popover.setPosition();
+    popover.beforeShow = chart.renderChart.bind(chart);
+    chart.renderChart();
+  }
+
+}(window.appcvui =  window.appcvui || {}, document, window));
 ;(function(appcvui, document, window, vex) {
 
   appcvui.ContextualMenu = function(element) {
@@ -181,6 +248,7 @@
     this.bodyClickEventListener = null;
 
     this.el = el;
+
     this.popover = document.createElement('div');
     this.popover.classList.add('popover');
     this.popoverContent = document.createElement('div');
@@ -223,6 +291,12 @@
   }
 
   p.show = function(stay) {
+
+    // would probably be better as a event lister / emitter but hey
+    if( this.beforeShow ) {
+      this.beforeShow.call();
+    }
+
     this.attachOnClikcOutside();
 
     if(stay) {
@@ -292,7 +366,13 @@
 
     this.contextualMenu = new appcvui.ContextualMenu( this.appEl.querySelector('.heading_actions'));
 
-    this.temperature_check = new appcvui.TemperatureCheck( this.appEl.querySelector('.page__header .temperature_check'));
+    if( this.appEl.querySelector('.page__header .temperature_check') != null ) {
+      this.temperature_check = new appcvui.TemperatureCheck( this.appEl.querySelector('.page__header .temperature_check'));
+    }
+
+    if( this.appEl.querySelector('.page__header .consensus_widget') != null ) {
+      this.temperature_check = new appcvui.ConsensusWidget( this.appEl.querySelector('.page__header .consensus_widget'));
+    }
 
   }
 
