@@ -16,6 +16,7 @@
     this.bodyClickEventListener = null;
 
     this.el = el;
+
     this.popover = document.createElement('div');
     this.popover.classList.add('popover');
     this.popoverContent = document.createElement('div');
@@ -58,6 +59,12 @@
   }
 
   p.show = function(stay) {
+
+    // would probably be better as a event lister / emitter but hey
+    if( this.beforeShow ) {
+      this.beforeShow.call();
+    }
+
     this.attachOnClikcOutside();
 
     if(stay) {

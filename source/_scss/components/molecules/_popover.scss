@@ -3,7 +3,8 @@
   display: block;
   @extend %offscreen;
 
-  z-index: $z__contextual_menus;
+  z-index: $z__popover;
+
 
   .content {
 
@@ -24,7 +25,6 @@
     color: $color__white;
     padding: 0.5em;
     left: 0%;
-    transform: translateX(-25%);
 
     &::after {
       content: "";
@@ -46,6 +46,10 @@
     @extend %onscreen;
     display: block;
     position: absolute;
+
+    left: 50%;
+    transform: translateX(-25%);
+
     .content {
       opacity: 1;
       &::after {

@@ -149,14 +149,7 @@ button, .button {
   padding:0 0 ms(1) 0;
 }
 
-.voting-buttons {
-  text-align: center;
-  flex-grow: 4;
-  //padding: ms(-1);
-  z-index: 100;
-  @include display-flex;
-  @include align-items(flex-start);
-}
+
 .action-bar {
   @include display-flex;
   @include justify-content(space-between);
@@ -183,33 +176,6 @@ button, .button {
 .action-bar-filters {
   .vote-button {
     padding: 5px;
-  }
-}
-
-ul.action-menu {
-  max-height: 0px;
-  li {
-    z-index: 999999;
-    padding-top: 14px;
-    opacity: 0;
-    &:first-of-type {
-      border-top: 0;
-    }
-  }
-}
-.upvote {
-  &:before {
-    content:'';
-  }
-}
-.downvote {
-  &:before {
-    content:'';
-  }
-}
-.middle {
-  &:before {
-    content:'';
   }
 }
 
