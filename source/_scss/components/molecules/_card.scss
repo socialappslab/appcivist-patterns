@@ -21,6 +21,7 @@
     position: relative;
 
     .heading--headline {
+      @extend %clearfix;
       float: left;
       font-size: $typography__headline;
       font-weight: normal;
@@ -47,6 +48,8 @@
   }
 
   .card__header {
+
+    @extend %clearfix;
 
     padding: $padding__base;
     padding-bottom: 0.5 * $padding__base;
@@ -92,10 +95,11 @@
     }
   }
 
-
-  &--selected {
-    @extend %card--selected;
+  .voting_mechanism {
+    position: relative;
+    left: -0.875em;
   }
+
 }
 
 %card--selected {

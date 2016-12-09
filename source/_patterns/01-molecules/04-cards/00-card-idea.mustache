@@ -1,28 +1,36 @@
 <div class="card__idea">
   <div class="card__wrapper">
     <header class="card__header">
-      <div class="heading--category">{{tag.title}}</div>
-      <h1 class="heading--headline">
-        <a href="{{link.templates-single-proposal}}">{{ title.short }}</a>
-      </h1>
-      <div class="card__heading_actions">
-        <ul class="actions">
-          <li class="action__toggle_selection">{{> atoms-icon-selection-toggle }}</li>
-          <li class="action__contextual_menu">{{> atoms-icon-cog }}</li>
-        </ul>
-        <div class="contextual_menu">
-          <ul>
-            <li class="action__edit"><a href="#">Edit</a></li>
-            <li class="action__publish"><a href="#">Publish</a></li>
-            <li class="action__feedback"><a href="#">Give Feedback</a></li>
-            <li class="action__exclude"><a href="#">Exclude</a></li>
-            <li class="action__history"><a href="#">See history</a></li>
+      <div class="heading--categories">
+        {{> molecules-tags-proposal-card}}
+      </div>
+      <div class="title_block">
+        <h1 class="heading--headline">
+          <a href="{{link.templates-single-proposal}}">{{ title.short }}</a>
+        </h1>
+        <div class="card__heading_actions">
+          <ul class="actions">
+            <li class="action__toggle_selection"><a href="#">{{> atoms-icon-selection-toggle }}</a></li>
+            <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
           </ul>
+          <div class="contextual_menu">
+            <div class="content">
+              <ul>
+                <li class="action__edit"><a href="#">Edit</a></li>
+                <li class="action__publish"><a href="#">Publish</a></li>
+                <li class="action__feedback"><a href="#">Give Feedback</a></li>
+                <li class="action__exclude"><a href="#">Exclude</a></li>
+                <li class="action__history"><a href="#">See history</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
-      {{> molecules-temperature-check}}
-
+      <div class="card__body">
+        <div class="voting_mechanism">
+          {{> molecules-temperature-check}}
+        </div>
+      </div>
     </header>
   </div>
 </div>

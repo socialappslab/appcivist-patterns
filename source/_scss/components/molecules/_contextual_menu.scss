@@ -1,6 +1,5 @@
 %contextual_menu {
 
-  display: block;
   @extend %offscreen;
 
   z-index: $z__contextual_menus;
@@ -55,7 +54,6 @@
   &.active {
 
     @extend %onscreen;
-    display: block;
     position: absolute;
 
     .content {

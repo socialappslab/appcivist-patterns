@@ -9,8 +9,6 @@
 
   Chart.defaults.global.responsive = false;
   Chart.defaults.global.defaultFontFamily = 'Lato,sans-serif';
-  // Chart.defaults.global.borderColor = 'transparent';
-  // Chart.defaults.global.borderWidth = 0;
 
   Chart.defaults.global.legend.position = 'bottom';
   Chart.defaults.global.legend.fullWidth = 'true';

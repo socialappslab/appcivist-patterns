@@ -6392,7 +6392,7 @@ ul.submenu {
 
 .field__container:after, .user__card:after, .navigation .user__logged_in:after, .navigation-logged-in .user__logged_in:after, .vex.vex-theme-plain .vex-content:after, .page__header .title_block:after, .tags:after, .campaign__filters .filters .tags:after, .campaign__filters .search:after, .campaign__filters .filters:after, .campaign__filters .sort:after, .campaign__filters:after, .list--proposals:after,
 .list--ideas:after, .list--proposals .list__cards:after,
-.list--ideas .list__cards:after, .card__proposal .title_block:after, .card__idea .title_block:after, .card__proposal .title_block .heading__working_group:after, .card__idea .title_block .heading__working_group:after, .consensus_widget:after, .consensus_widget .options:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .modal_content__contribution_history .contribution:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
+.list--ideas .list__cards:after, .card__proposal .title_block:after, .card__idea .title_block:after, .card__proposal .title_block .heading--headline:after, .card__idea .title_block .heading--headline:after, .card__proposal .title_block .heading__working_group:after, .card__idea .title_block .heading__working_group:after, .card__proposal .card__header:after, .card__idea .card__header:after, .card__idea .card__body:after, .consensus_widget:after, .consensus_widget .options:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .modal_content__contribution_history .contribution:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
   content: "";
   display: table;
   clear: both; }
@@ -6901,8 +6901,7 @@ a {
       color: #fff; }
   .card__proposal .card__body, .card__idea .card__body {
     padding: 1.875em;
-    font-size: 1.13em;
-    overflow: hidden; }
+    font-size: 1.13em; }
 
 div[data-eq-state$='small'] .card__proposal {
   -webkit-box-sizing: border-box;
@@ -6973,56 +6972,65 @@ div[data-eq-state$='large'] .card__proposal {
 .card__proposal .excerpt {
   margin-bottom: 0.9375em; }
 
-.card__idea {
-  margin-bottom: 0.9375em; }
-  div[data-eq-state$='small'] .card__idea {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 50%;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px; }
-    div[data-eq-state$='small'] .card__idea:nth-child(2n + 1) {
-      margin-left: 0;
-      margin-right: -100%;
-      clear: both; }
-    div[data-eq-state$='small'] .card__idea:nth-child(2n + 2) {
-      margin-left: 50%;
-      margin-right: -100%;
-      clear: none; }
-  div[data-eq-state$='medium'] .card__idea {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 50%;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px; }
-    div[data-eq-state$='medium'] .card__idea:nth-child(2n + 1) {
-      margin-left: 0;
-      margin-right: -100%;
-      clear: both; }
-    div[data-eq-state$='medium'] .card__idea:nth-child(2n + 2) {
-      margin-left: 50%;
-      margin-right: -100%;
-      clear: none; }
-  .card__idea .card__header {
-    background-color: #fff;
-    padding: 0.9375em;
+div[data-eq-state$='small'] .card__idea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px; }
+  div[data-eq-state$='small'] .card__idea:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both; }
+  div[data-eq-state$='small'] .card__idea:nth-child(2n + 2) {
+    margin-left: 50%;
+    margin-right: -100%;
+    clear: none; }
+
+div[data-eq-state$='medium'] .card__idea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px; }
+  div[data-eq-state$='medium'] .card__idea:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both; }
+  div[data-eq-state$='medium'] .card__idea:nth-child(2n + 2) {
+    margin-left: 50%;
+    margin-right: -100%;
+    clear: none; }
+
+.card__idea .card__header {
+  background-color: #fff;
+  padding: 0.9375em;
+  color: #11493b; }
+  .card__idea .card__header a {
     color: #11493b; }
-    .card__idea .card__header a {
-      color: #11493b; }
-    .card__idea .card__header .card__heading_actions {
-      position: absolute;
-      top: 0.5em;
-      right: .5em; }
-      .card__idea .card__header .card__heading_actions .icon {
-        fill: #32ffd2; }
-      .card__idea .card__header .card__heading_actions:hover .icon {
-        fill: #009877; }
-  .card__idea .heading--headline {
+  .card__idea .card__header .contextual_menu .content {
+    background-color: #00fec7; }
+  .card__idea .card__header .contextual_menu.active .content::after {
+    border-bottom: 12px solid #00fec7; }
+
+.card__idea .card__body {
+  padding-top: 0.5em;
+  padding-bottom: 1em; }
+
+.card__idea .title_block {
+  max-height: 3.5em; }
+  .card__idea .title_block::after {
+    clear: none; }
+  .card__idea .title_block .heading--headline {
     font-size: 1.13em; }
+  .card__idea .title_block .card__heading_actions .icon {
+    fill: #009877; }
+  .card__idea .title_block .card__heading_actions:hover .icon {
+    fill: #11493b; }
 
 .card__proposal .card__heading_actions .actions li, .card__idea .card__heading_actions .actions li {
   float: left;
@@ -7035,7 +7043,6 @@ div[data-eq-state$='large'] .card__proposal {
   fill: #11493b; }
 
 .page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu {
-  display: block;
   z-index: 1050; }
   .page__header .title_block .heading_actions .contextual_menu .content, .card__proposal .title_block .card__heading_actions .contextual_menu .content, .card__idea .title_block .card__heading_actions .contextual_menu .content {
     opacity: 0;
@@ -7071,7 +7078,6 @@ div[data-eq-state$='large'] .card__proposal {
       left: 80%;
       transform: translateX(-20%); }
   .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu {
-    display: block;
     position: absolute; }
     .page__header .title_block .heading_actions .active.contextual_menu .content, .card__proposal .title_block .card__heading_actions .active.contextual_menu .content, .card__idea .title_block .card__heading_actions .active.contextual_menu .content {
       opacity: 1;
@@ -7128,26 +7134,31 @@ div[data-eq-state$='large'] .card__proposal {
       .active.popover .content::after {
         border-top: 12px solid #11493b; }
 
+.temperature_check .votes {
+  display: inline-block;
+  margin-right: 0.75em; }
+
 .temperature_check li {
   display: inline-block;
-  margin-right: .5em;
+  margin-right: 0.5em;
   position: relative; }
 
 .temperature_check a {
   display: block; }
 
-.temperature_check .informal_score em {
-  border-radius: 75%;
-  text-align: center;
-  padding: 0.25em 0.5em;
-  color: #fff; }
-
-.temperature_check .informal_score.positive em {
-  background-color: #009877; }
-
-.temperature_check .informal_score.negative em {
-  background-color: #df009d;
-  color: black; }
+.temperature_check .informal_score {
+  display: inline-block; }
+  .temperature_check .informal_score em {
+    border-radius: 25%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.125em 0.25em;
+    color: #fff; }
+  .temperature_check .informal_score.positive em {
+    background-color: #009877; }
+  .temperature_check .informal_score.negative em {
+    background-color: #df009d;
+    color: #003227; }
 
 .consensus_widget {
   position: relative; }

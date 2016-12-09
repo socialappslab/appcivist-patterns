@@ -26,8 +26,12 @@
 
   Chart.defaults.global.responsive = false;
   Chart.defaults.global.defaultFontFamily = 'Lato,sans-serif';
-  Chart.defaults.global.borderColor = 'rgba(0,0,0,0)';
-  Chart.defaults.global.borderWidth = 0;
+
+  Chart.defaults.global.legend.position = 'bottom';
+  Chart.defaults.global.legend.fullWidth = 'true';
+
+  Chart.defaults.global.elements.arc.borderWidth = 3;
+  Chart.defaults.global.elements.arc.borderColor = "rgba(0,0,0,0.1)";
 
   appcvui.ConsensusChart = function(element) {
     this.initialize(element);
@@ -57,10 +61,18 @@
       options: {
         borderWidth: 0,
         usePointStyle: true,
-        borderColor: "#000"
+        borderColor: "#000",
+        bodyFontFamily: "Lato",
+        legend: {
+          boxWidth: 80,
+          display: true,
+          labels: {
+            fontColor: '#fff'
+          }
+        }
       }
     });
-  }
+  };
 
   p.redraw = function() {
     this.chart.render();
@@ -404,12 +416,12 @@
     this.ideas = this.appEl.querySelectorAll('.card__idea');
 
     this.showIdeasButton = this.appEl.querySelector('.proposals__show_ideas');
-    this.hideIdeasButton = this.appEl.querySelector('.ideas__hide_ideas');
 
     this.addProposalButton = this.appEl.querySelector('.proposals__add_new');
     this.addIdeaButton = this.appEl.querySelector('.ideas__add_new');
 
     this.tempChecks = this.appEl.querySelectorAll('.temperature_check');
+    this.consensusWidgets = this.appEl.querySelectorAll('.consensus_widget');
 
     var self = this;
 
@@ -421,13 +433,13 @@
       this.showIdeasButton.addEventListener('click', function(e) {
        e.preventDefault();
         self.showIdeas(self);
-      });
-    };
-
-    if( this.hideIdeasButton != null ) {
-      this.hideIdeasButton.addEventListener('click', function(e) {
-       e.preventDefault();
-        self.hideIdeas(self);
+        if(self.showIdeasButton.querySelector('.nav-label').textContent == "Hide Ideas") {
+          self.hideIdeas(self);
+          self.showIdeasButton.querySelector('.nav-label').textContent = "Show Ideas";
+        } else {
+          self.showIdeasButton.querySelector('.nav-label').textContent = "Hide Ideas";
+          self.showIdeas(self);
+        }
       });
     };
 
@@ -457,27 +469,30 @@
       appcvui.forEach(this.tempChecks, this.initializeTemperatureCheck, this);
     }
 
-    document.addEventListener('resize', this.onResize);
+    if( this.consensusWidgets != null ) {
+      appcvui.forEach(this.consensusWidgets, this.initializeConsensusWidget, this);
+    }
 
-    // this.onResize();
+    document.addEventListener('resize', this.onResize);
 
     document.addEventListener('eqResize', function(){
       this.onResize();
-      console.log("eqResize")
     }.bind(this));
   };
 
   p.onResize = function() {
 
     if(document.querySelector('.container__proposals') != null) {
-      appcvui.equalHeights('.container__proposals .title_block');
       appcvui.equalHeights('.container__proposals .heading__working_group');
+      appcvui.equalHeights('.container__proposals .heading--headline');
+      appcvui.equalHeights('.container__proposals .title_block');
       appcvui.equalHeights('.container__proposals .card__header');
       appcvui.equalHeights('.container__proposals .card__body .excerpt');
       appcvui.equalHeights('.container__proposals .card__body');
     }
 
     if(document.querySelector('.container__ideas') != null) {
+      appcvui.equalHeights('.container__ideas .card__header .heading--headline');
       appcvui.equalHeights('.container__ideas .card__header');
     }
   };
@@ -485,12 +500,14 @@
   p.showIdeas = function(inst){
     inst.appEl.querySelector('.campaign_cards').classList.add('show-ideas');
     inst.showIdeasTimeout = window.setTimeout( function(){
+      console.log("SHOW RESIZE");
       clearTimeout( inst.showIdeasTimeout );
       inst.onResize();
     }, 320);
   };
 
   p.hideIdeas = function(inst){
+    console.log("HIDE RESIZE");
     inst.appEl.querySelector('.campaign_cards').classList.remove('show-ideas');
     inst.showIdeasTimeout = window.setTimeout( function(){
       clearTimeout( inst.showIdeasTimeout );
@@ -516,6 +533,10 @@
 
   p.initializeTemperatureCheck = function(i, el) {
     new appcvui.TemperatureCheck( el );
+  }
+
+  p.initializeConsensusWidget = function(i, el) {
+    new appcvui.ConsensusWidget(el);
   }
 
 }(window.appcvui =  window.appcvui || {}, document, window));

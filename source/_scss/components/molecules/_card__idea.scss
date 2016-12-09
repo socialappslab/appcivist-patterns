@@ -1,8 +1,8 @@
 %card__idea {
 
   @extend %card;
-  margin-bottom: 0.5 * $padding__base;
 
+  // https://github.com/Snugug/eq.js
   div[data-eq-state $= 'small'] & {
     @include gallery(6 of 12);
   }
@@ -12,34 +12,59 @@
   }
 
   .card__header {
+
     background-color: $color__text--reverse;
     padding: 0.5 * $padding__base;
     color: $color__brand-dark;
+
     a {
       color: $color__brand-dark;
     }
 
-    .card__heading_actions {
-      position: absolute;
-      top: 0.5em;
-      right: .5em;
-      .icon {
-        fill: lighten($color__brand_primary, 30%);
+    .contextual_menu {
+      .content {
+        background-color: $color__brand-primary--light !important;
       }
-      &:hover {
-        .icon {
-          fill: $color__brand_primary;
-        }
+      &.active .content::after {
+        border-bottom: 12px solid $color__brand-primary--light !important;
       }
     }
   }
 
-  .heading--headline {
-    font-size: $typography__subhead;
+  .card__body {
+    @extend %clearfix;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
   }
 
+  .title_block {
+
+    max-height: 3.5em;
+
+    .heading--headline {
+      font-size: $typography__subhead;
+    }
+
+    .card__heading_actions {
+
+      margin-right: 0.5em;
+
+      .icon {
+        fill: $color__brand_primary;
+      }
+
+      &:hover {
+        .icon {
+          fill: $color__brand-dark;
+        }
+      }
+    }
+  }
 }
 
 .card__idea {
   @extend %card__idea;
+  &--selected {
+    @extend %card--selected;
+  }
 }
