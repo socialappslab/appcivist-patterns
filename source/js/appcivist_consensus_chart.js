@@ -9,8 +9,14 @@
 
   Chart.defaults.global.responsive = false;
   Chart.defaults.global.defaultFontFamily = 'Lato,sans-serif';
-  Chart.defaults.global.borderColor = 'rgba(0,0,0,0)';
-  Chart.defaults.global.borderWidth = 0;
+  // Chart.defaults.global.borderColor = 'transparent';
+  // Chart.defaults.global.borderWidth = 0;
+
+  Chart.defaults.global.legend.position = 'bottom';
+  Chart.defaults.global.legend.fullWidth = 'true';
+
+  Chart.defaults.global.elements.arc.borderWidth = 3;
+  Chart.defaults.global.elements.arc.borderColor = "rgba(0,0,0,0.1)";
 
   appcvui.ConsensusChart = function(element) {
     this.initialize(element);
@@ -40,10 +46,18 @@
       options: {
         borderWidth: 0,
         usePointStyle: true,
-        borderColor: "#000"
+        borderColor: "#000",
+        bodyFontFamily: "Lato",
+        legend: {
+          boxWidth: 80,
+          display: true,
+          labels: {
+            fontColor: '#fff'
+          }
+        }
       }
     });
-  }
+  };
 
   p.redraw = function() {
     this.chart.render();

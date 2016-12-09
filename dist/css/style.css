@@ -6359,14 +6359,14 @@ ul.submenu {
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
 
-.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
+.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .consensus_widget .popover, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
   position: absolute;
   left: -10000px;
   opacity: 0;
   z-index: -1;
   white-space: nowrap; }
 
-.card__proposal:hover .card__heading_actions, .card__idea:hover .card__heading_actions, .card__proposal .reveal_actions.card__heading_actions, .card__idea .reveal_actions.card__heading_actions, .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu, .active.popover, .navigation.nav--active .nav__footer, .nav--active.navigation-logged-in .nav__footer, .navigation.nav--active .powered_by, .nav--active.navigation-logged-in .powered_by {
+.card__proposal:hover .card__heading_actions, .card__idea:hover .card__heading_actions, .card__proposal .reveal_actions.card__heading_actions, .card__idea .reveal_actions.card__heading_actions, .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu, .active.popover, .consensus_widget .popover.active, .navigation.nav--active .nav__footer, .nav--active.navigation-logged-in .nav__footer, .navigation.nav--active .powered_by, .nav--active.navigation-logged-in .powered_by {
   position: static;
   left: auto;
   right: auto;
@@ -6392,7 +6392,7 @@ ul.submenu {
 
 .field__container:after, .user__card:after, .navigation .user__logged_in:after, .navigation-logged-in .user__logged_in:after, .vex.vex-theme-plain .vex-content:after, .page__header .title_block:after, .tags:after, .campaign__filters .filters .tags:after, .campaign__filters .search:after, .campaign__filters .filters:after, .campaign__filters .sort:after, .campaign__filters:after, .list--proposals:after,
 .list--ideas:after, .list--proposals .list__cards:after,
-.list--ideas .list__cards:after, .card__proposal .title_block:after, .card__idea .title_block:after, .card__proposal .title_block .heading__working_group:after, .card__idea .title_block .heading__working_group:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .modal_content__contribution_history .contribution:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
+.list--ideas .list__cards:after, .card__proposal .title_block:after, .card__idea .title_block:after, .card__proposal .title_block .heading__working_group:after, .card__idea .title_block .heading__working_group:after, .consensus_widget:after, .consensus_widget .options:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .modal_content__contribution_history .contribution:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
   content: "";
   display: table;
   clear: both; }
@@ -6607,7 +6607,7 @@ a {
     .vex.vex-theme-plain .vex-content .modal-header .modal__title,
     .vex.vex-theme-plain .vex-content .modal-header .heading--header {
       font-size: 1.97625em !important;
-      font-weight: 200;
+      font-weight: 300;
       margin-bottom: .5em; }
   .vex.vex-theme-plain .vex-content .modal-body {
     padding: 3.75em;
@@ -6634,13 +6634,13 @@ a {
   color: #fff;
   padding: 2.8125em; }
   .page__header .title_block {
-    display: inline-block;
     position: relative;
     clear: both; }
     .page__header .title_block .heading--title {
-      float: left; }
+      float: left;
+      max-width: 85%; }
     .page__header .title_block .heading_actions {
-      float: right;
+      display: inline-block;
       position: relative;
       left: 2em;
       top: 0.75em; }
@@ -6652,7 +6652,7 @@ a {
     color: #11493b; }
   .page__header .heading--title {
     font-size: 2.635em;
-    font-weight: 200; }
+    font-weight: 300; }
   .page__header p {
     max-width: 52em; }
   .page__header a {
@@ -6668,14 +6668,18 @@ a {
       display: inline-block; }
     .page__header .attribution a {
       text-decoration: none; }
+  .page__header .voting_mechanism {
+    display: inline-block;
+    vertical-align: bottom; }
+    .page__header .voting_mechanism a {
+      font-size: 1.5em; }
+    @media (min-width: 1024px) {
+      .page__header .voting_mechanism a {
+        font-size: 1.25em; } }
   .page__header .temperature_check {
     background-color: #fff;
-    font-size: 1.5em;
     display: inline-block;
     padding: 0.25em 0.5em; }
-    @media (min-width: 1024px) {
-      .page__header .temperature_check {
-        font-size: 1.25em; } }
     .page__header .temperature_check a {
       color: #11493b;
       text-decoration: none; }
@@ -6873,7 +6877,7 @@ a {
       font-size: 0.875em; }
     .card__proposal .title_block .card__heading_actions, .card__idea .title_block .card__heading_actions {
       position: absolute;
-      top: -1.75em;
+      top: -0.75em;
       left: auto;
       right: -1em; }
       .card__proposal .title_block .card__heading_actions .contextual_menu.active .content, .card__idea .title_block .card__heading_actions .contextual_menu.active .content {
@@ -7100,8 +7104,7 @@ div[data-eq-state$='large'] .card__proposal {
     background-color: #11493b;
     color: #fff;
     padding: 0.5em;
-    left: 0%;
-    transform: translateX(-25%); }
+    left: 0%; }
     .popover .content::after {
       content: "";
       position: absolute;
@@ -7117,7 +7120,9 @@ div[data-eq-state$='large'] .card__proposal {
       left: 25%; }
   .active.popover {
     display: block;
-    position: absolute; }
+    position: absolute;
+    left: 50%;
+    transform: translateX(-25%); }
     .active.popover .content {
       opacity: 1; }
       .active.popover .content::after {
@@ -7131,16 +7136,34 @@ div[data-eq-state$='large'] .card__proposal {
 .temperature_check a {
   display: block; }
 
-.consensus_widget .options li {
-  float: left;
-  margin-right: 0; }
+.temperature_check .informal_score em {
+  border-radius: 75%;
+  text-align: center;
+  padding: 0.25em 0.5em;
+  color: #fff; }
 
-.consensus_widget .popover_template {
-  display: none; }
+.temperature_check .informal_score.positive em {
+  background-color: #009877; }
 
-.consensus_widget canvas {
-  width: 12em;
-  height: 12em; }
+.temperature_check .informal_score.negative em {
+  background-color: #df009d;
+  color: black; }
+
+.consensus_widget {
+  position: relative; }
+  .consensus_widget .options li {
+    float: left;
+    margin-right: 0;
+    text-align: center; }
+  .consensus_widget .popover_template {
+    display: none; }
+  .consensus_widget .popover.active {
+    position: absolute;
+    left: 50%; }
+  .consensus_widget .popover .content {
+    padding: 1em; }
+  .consensus_widget .popover figcaption {
+    margin-top: 1em; }
 
 .campaign__status {
   padding: 2.8125em;

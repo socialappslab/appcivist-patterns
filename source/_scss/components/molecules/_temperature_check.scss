@@ -1,8 +1,13 @@
 %temperature_check {
 
+  .votes {
+    display: inline-block;
+    margin-right: 0.75em;
+  }
+
   li {
     display: inline-block;
-    margin-right: .5em;
+    margin-right: 0.5em;
     position: relative;
   }
 
@@ -17,6 +22,32 @@
 
     &.thumbs-down {
       @extend .fa-thumbs-down;
+    }
+  }
+
+  .informal_score {
+
+    display: inline-block;
+
+    em {
+      border-radius: 25%;
+      text-align: center;
+      vertical-align: middle;
+      padding: 0.125em 0.25em;
+      color: $color__white;
+    }
+
+    &.positive {
+      em {
+        background-color: $color__brand-primary;
+      }
+    }
+
+    &.negative {
+      em {
+        background-color: $color__brand-accent;
+        color: darken( $color__brand-primary, 20%);
+      }
     }
   }
 }

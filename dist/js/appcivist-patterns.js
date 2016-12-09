@@ -55,10 +55,17 @@
       type: 'pie',
       data: data,
       options: {
-        borderWidth: 0
+        borderWidth: 0,
+        usePointStyle: true,
+        borderColor: "#000"
       }
     });
   }
+
+  p.redraw = function() {
+    this.chart.render();
+  }
+
 }(window.appcvui =  window.appcvui || {}, document, window, window.Chart));
 ;(function(appcvui, document, window, vex) {
 
@@ -76,9 +83,9 @@
     var popover = new appcvui.PopOver(this.el);
     popover.setContent(popoverContent);
     var chart = new appcvui.ConsensusChart(popover.popoverContent.querySelector('.chart'));
-    popover.setPosition();
-    popover.beforeShow = chart.renderChart.bind(chart);
     chart.renderChart();
+    popover.setPosition();
+    popover.beforeShow = chart.redraw.bind(chart);
   }
 
 }(window.appcvui =  window.appcvui || {}, document, window));

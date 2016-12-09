@@ -24,6 +24,7 @@
     this.addIdeaButton = this.appEl.querySelector('.ideas__add_new');
 
     this.tempChecks = this.appEl.querySelectorAll('.temperature_check');
+    this.consensusWidgets = this.appEl.querySelectorAll('.consensus_widget');
 
     var self = this;
 
@@ -69,6 +70,10 @@
 
     if( this.tempChecks != null ) {
       appcvui.forEach(this.tempChecks, this.initializeTemperatureCheck, this);
+    }
+
+    if( this.consensusWidgets != null ) {
+      appcvui.forEach(this.consensusWidgets, this.initializeConsensusWidget, this);
     }
 
     document.addEventListener('resize', this.onResize);
@@ -130,6 +135,10 @@
 
   p.initializeTemperatureCheck = function(i, el) {
     new appcvui.TemperatureCheck( el );
+  }
+
+  p.initializeConsensusWidget = function(i, el) {
+    new appcvui.ConsensusWidget(el);
   }
 
 }(window.appcvui =  window.appcvui || {}, document, window));
