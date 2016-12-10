@@ -1,5 +1,15 @@
 ( function(window, document){
   var appcvui = window.appcvui || {};
+  window.paceOptions = {
+    ajax: false,
+    restartOnRequestAfter: false,
+    document: false, // disabled
+    eventLag: false, // disabled
+    elements : {
+      selectors: [".appmain"]
+    }
+  };
+
 
   appcvui.equalHeights = function(selector) {
 
@@ -43,8 +53,7 @@
 
     vex.defaultOptions.className = 'vex-theme-plain';
     appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
-
-    appcvui.paceLoader = new appcvui.PaceLoading('.appcivist');
+    appcvui.paceLoader = new appcvui.PaceLoading();
     appcvui.paceLoader.start();
 
     if(document.querySelector('.proposals_and_ideas') != null) {

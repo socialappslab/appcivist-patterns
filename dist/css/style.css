@@ -6071,6 +6071,96 @@ ol.pagination {
   margin-left: 100%; }
 
 /*--------------------------------------
+This file contains all AppCivist styles
+for the Pace loading wheels
+/--------------------------------------*/
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-perspective: 12rem;
+  -moz-perspective: 12rem;
+  -ms-perspective: 12rem;
+  -o-perspective: 12rem;
+  perspective: 12rem;
+  z-index: 2000;
+  position: fixed;
+  height: 6rem;
+  width: 6rem;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.pace.pace-inactive .pace-progress {
+  display: none; }
+
+.pace .pace-progress {
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 6rem;
+  width: 6rem !important;
+  line-height: 6rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: rgba(0, 152, 119, 0.8);
+  color: #fff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  text-align: center;
+  -webkit-animation: pace-theme-center-circle-spin linear infinite 2s;
+  -moz-animation: pace-theme-center-circle-spin linear infinite 2s;
+  -ms-animation: pace-theme-center-circle-spin linear infinite 2s;
+  -o-animation: pace-theme-center-circle-spin linear infinite 2s;
+  animation: pace-theme-center-circle-spin linear infinite 2s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.pace .pace-progress:after {
+  content: attr(data-progress-text);
+  display: block; }
+
+@-webkit-keyframes pace-theme-center-circle-spin {
+  from {
+    -webkit-transform: rotateY(0deg); }
+  to {
+    -webkit-transform: rotateY(360deg); } }
+
+@-moz-keyframes pace-theme-center-circle-spin {
+  from {
+    -moz-transform: rotateY(0deg); }
+  to {
+    -moz-transform: rotateY(360deg); } }
+
+@-ms-keyframes pace-theme-center-circle-spin {
+  from {
+    -ms-transform: rotateY(0deg); }
+  to {
+    -ms-transform: rotateY(360deg); } }
+
+@-o-keyframes pace-theme-center-circle-spin {
+  from {
+    -o-transform: rotateY(0deg); }
+  to {
+    -o-transform: rotateY(360deg); } }
+
+@keyframes pace-theme-center-circle-spin {
+  from {
+    transform: rotateY(0deg); }
+  to {
+    transform: rotateY(360deg); } }
+
+/*--------------------------------------
 This file contains all color styles
 in use throughout the AppCivist Sass files
 
@@ -6083,10 +6173,10 @@ TABLE OF CONTENTS
   background: #009877; }
 
 .color__brand-primary--light {
-  background: #00fec7; }
+  background: #66c1ad; }
 
 .color__brand-primary--dark {
-  background: #00654f; }
+  background: #007259; }
 
 .color__brand-accent {
   background: #df009d; }
@@ -6359,14 +6449,14 @@ ul.submenu {
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
 
-.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .consensus_widget .popover, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
+.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal--selected .title_block .card__heading_actions .contextual_menu, .card__idea--selected .title_block .card__heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .consensus_widget .popover, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
   position: absolute;
   left: -10000px;
   opacity: 0;
   z-index: -1;
   white-space: nowrap; }
 
-.card__proposal:hover .card__heading_actions, .card__idea:hover .card__heading_actions, .card__proposal .reveal_actions.card__heading_actions, .card__idea .reveal_actions.card__heading_actions, .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu, .active.popover, .consensus_widget .popover.active, .navigation.nav--active .nav__footer, .nav--active.navigation-logged-in .nav__footer, .navigation.nav--active .powered_by, .nav--active.navigation-logged-in .powered_by {
+.card__proposal--selected:hover .card__heading_actions, .card__idea--selected:hover .card__heading_actions, .card__proposal:hover .card__heading_actions, .card__idea:hover .card__heading_actions, .card__proposal--selected .reveal_actions.card__heading_actions, .card__idea--selected .reveal_actions.card__heading_actions, .card__proposal .reveal_actions.card__heading_actions, .card__idea .reveal_actions.card__heading_actions, .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal--selected .title_block .card__heading_actions .active.contextual_menu, .card__idea--selected .title_block .card__heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu, .active.popover, .consensus_widget .popover.active, .navigation.nav--active .nav__footer, .nav--active.navigation-logged-in .nav__footer, .navigation.nav--active .powered_by, .nav--active.navigation-logged-in .powered_by {
   position: static;
   left: auto;
   right: auto;
@@ -6377,22 +6467,22 @@ ul.submenu {
   white-space: normal; }
 
 @media (min-width: 1024px) {
-  .card__proposal .card__heading_actions, .card__idea .card__heading_actions {
+  .card__proposal--selected .card__heading_actions, .card__idea--selected .card__heading_actions, .card__proposal .card__heading_actions, .card__idea .card__heading_actions {
     position: absolute;
     left: -10000px;
     z-index: -1;
     opacity: 0;
     white-space: nowrap; } }
 
-.card__proposal .card__wrapper, .card__idea .card__wrapper, .page__header .title_block .heading_actions .contextual_menu .content, .card__proposal .title_block .card__heading_actions .contextual_menu .content, .card__idea .title_block .card__heading_actions .contextual_menu .content, .popover .content, .navigation, .navigation-logged-in {
+.card__proposal--selected .card__wrapper, .card__idea--selected .card__wrapper, .card__proposal .card__wrapper, .card__idea .card__wrapper, .page__header .title_block .heading_actions .contextual_menu .content, .card__proposal--selected .title_block .card__heading_actions .contextual_menu .content, .card__idea--selected .title_block .card__heading_actions .contextual_menu .content, .card__proposal .title_block .card__heading_actions .contextual_menu .content, .card__idea .title_block .card__heading_actions .contextual_menu .content, .popover .content, .navigation, .navigation-logged-in {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35); }
 
-.vex.vex-theme-plain .vex-content, .card__proposal:hover .card__wrapper, .card__idea:hover .card__wrapper {
+.vex.vex-theme-plain .vex-content, .card__proposal--selected:hover .card__wrapper, .card__idea--selected:hover .card__wrapper, .card__proposal:hover .card__wrapper, .card__idea:hover .card__wrapper {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.45); }
 
 .field__container:after, .user__card:after, .navigation .user__logged_in:after, .navigation-logged-in .user__logged_in:after, .vex.vex-theme-plain .vex-content:after, .page__header .title_block:after, .tags:after, .campaign__filters .filters .tags:after, .campaign__filters .search:after, .campaign__filters .filters:after, .campaign__filters .sort:after, .campaign__filters:after, .list--proposals:after,
 .list--ideas:after, .list--proposals .list__cards:after,
-.list--ideas .list__cards:after, .card__proposal .title_block:after, .card__idea .title_block:after, .card__proposal .title_block .heading--headline:after, .card__idea .title_block .heading--headline:after, .card__proposal .title_block .heading__working_group:after, .card__idea .title_block .heading__working_group:after, .card__proposal .card__header:after, .card__idea .card__header:after, .card__idea .card__body:after, .consensus_widget:after, .consensus_widget .options:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .modal_content__contribution_history .contribution:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
+.list--ideas .list__cards:after, .card__proposal--selected .title_block:after, .card__idea--selected .title_block:after, .card__proposal .title_block:after, .card__idea .title_block:after, .card__proposal--selected .title_block .heading--headline:after, .card__idea--selected .title_block .heading--headline:after, .card__proposal .title_block .heading--headline:after, .card__idea .title_block .heading--headline:after, .card__proposal--selected .title_block .heading__working_group:after, .card__idea--selected .title_block .heading__working_group:after, .card__proposal .title_block .heading__working_group:after, .card__idea .title_block .heading__working_group:after, .card__proposal--selected .card__header:after, .card__idea--selected .card__header:after, .card__proposal .card__header:after, .card__idea .card__header:after, .card__idea .card__body:after, .consensus_widget:after, .consensus_widget .options:after, .navigation .login_signup:after, .navigation-logged-in .login_signup:after, .modal_content__contribution_history .contribution:after, .comments__section:after, .comments__section .comment-form:after, .comments__section .comment-form .comment-meta:after, .campaign_cards:after, .proposals_and_ideas:after, .proposal__single .etherpad__embed:after, .proposal__single .attachments:after, .page__contents:after {
   content: "";
   display: table;
   clear: both; }
@@ -6668,6 +6758,22 @@ a {
       display: inline-block; }
     .page__header .attribution a {
       text-decoration: none; }
+    .page__header .attribution .logo__wrapper__light {
+      float: left;
+      width: 1.875em;
+      height: 1.875em;
+      margin-right: .5em;
+      top: 0;
+      position: relative; }
+      .page__header .attribution .logo__wrapper__light .logo__svg {
+        width: 1.875em;
+        height: 1.875em; }
+        .page__header .attribution .logo__wrapper__light .logo__svg .svg__shape {
+          fill: #fff; }
+    .page__header .attribution .powered_by {
+      width: auto;
+      overflow: visible;
+      padding-top: 0.325em; }
   .page__header .voting_mechanism {
     display: inline-block;
     vertical-align: bottom; }
@@ -6856,52 +6962,59 @@ a {
   padding: 2.8125em;
   padding-top: 0; }
 
-.card__proposal, .card__idea {
+.card__proposal--selected, .card__idea--selected, .card__proposal, .card__idea {
   transition-property: width, height, margin, left, top;
   transition-duration: 0.325s;
   transition-timing-function: ease-out;
   padding: 0.46875em; }
-  .card__proposal .card__wrapper, .card__idea .card__wrapper {
+  .card__proposal--selected .card__wrapper, .card__idea--selected .card__wrapper, .card__proposal .card__wrapper, .card__idea .card__wrapper {
     transition-property: box-shadow;
     transition-duration: 0.25;
     transition-timing-function: ease-out;
     position: relative; }
-  .card__proposal .title_block, .card__idea .title_block {
+  .card__proposal--selected .title_block, .card__idea--selected .title_block, .card__proposal .title_block, .card__idea .title_block {
     position: relative; }
-    .card__proposal .title_block .heading--headline, .card__idea .title_block .heading--headline {
+    .card__proposal--selected .title_block .heading--headline, .card__idea--selected .title_block .heading--headline, .card__proposal .title_block .heading--headline, .card__idea .title_block .heading--headline {
       float: left;
       font-size: 1.438em;
       font-weight: normal;
       margin-bottom: 0.9375em; }
-    .card__proposal .title_block .heading__working_group, .card__idea .title_block .heading__working_group {
+    .card__proposal--selected .title_block .heading__working_group, .card__idea--selected .title_block .heading__working_group, .card__proposal .title_block .heading__working_group, .card__idea .title_block .heading__working_group {
       font-size: 0.875em; }
-    .card__proposal .title_block .card__heading_actions, .card__idea .title_block .card__heading_actions {
+    .card__proposal--selected .title_block .card__heading_actions, .card__idea--selected .title_block .card__heading_actions, .card__proposal .title_block .card__heading_actions, .card__idea .title_block .card__heading_actions {
       position: absolute;
       top: -0.75em;
       left: auto;
       right: -1em; }
-      .card__proposal .title_block .card__heading_actions .contextual_menu.active .content, .card__idea .title_block .card__heading_actions .contextual_menu.active .content {
+      .card__proposal--selected .title_block .card__heading_actions .contextual_menu.active .content, .card__idea--selected .title_block .card__heading_actions .contextual_menu.active .content, .card__proposal .title_block .card__heading_actions .contextual_menu.active .content, .card__idea .title_block .card__heading_actions .contextual_menu.active .content {
         right: -1.125em !important; }
-  .card__proposal .card__header, .card__idea .card__header {
+  .card__proposal--selected .card__header, .card__idea--selected .card__header, .card__proposal .card__header, .card__idea .card__header {
     padding: 1.875em;
     padding-bottom: 0.9375em;
     color: #fff;
     position: relative; }
-    .card__proposal .card__header .heading--categories, .card__idea .card__header .heading--categories {
+    .card__proposal--selected .card__header .heading--categories, .card__idea--selected .card__header .heading--categories, .card__proposal .card__header .heading--categories, .card__idea .card__header .heading--categories {
       font-size: 0.81em; }
-      .card__proposal .card__header .heading--categories div, .card__idea .card__header .heading--categories div {
+      .card__proposal--selected .card__header .heading--categories div, .card__idea--selected .card__header .heading--categories div, .card__proposal .card__header .heading--categories div, .card__idea .card__header .heading--categories div {
         display: inline-block; }
-        .card__proposal .card__header .heading--categories div::after, .card__idea .card__header .heading--categories div::after {
+        .card__proposal--selected .card__header .heading--categories div::after, .card__idea--selected .card__header .heading--categories div::after, .card__proposal .card__header .heading--categories div::after, .card__idea .card__header .heading--categories div::after {
           display: inline-block;
           content: ", "; }
-        .card__proposal .card__header .heading--categories div:last-child::after, .card__idea .card__header .heading--categories div:last-child::after {
+        .card__proposal--selected .card__header .heading--categories div:last-child::after, .card__idea--selected .card__header .heading--categories div:last-child::after, .card__proposal .card__header .heading--categories div:last-child::after, .card__idea .card__header .heading--categories div:last-child::after {
           display: none;
           content: none; }
-    .card__proposal .card__header a, .card__idea .card__header a {
+    .card__proposal--selected .card__header a, .card__idea--selected .card__header a, .card__proposal .card__header a, .card__idea .card__header a {
       color: #fff; }
-  .card__proposal .card__body, .card__idea .card__body {
+  .card__proposal--selected .card__body, .card__idea--selected .card__body, .card__proposal .card__body, .card__idea .card__body {
     padding: 1.875em;
     font-size: 1.13em; }
+  .card__proposal--selected .voting_mechanism, .card__idea--selected .voting_mechanism, .card__proposal .voting_mechanism, .card__idea .voting_mechanism {
+    position: relative;
+    left: -0.875em; }
+
+.card__proposal--selected .card__body, .card__idea--selected .card__body, .card__proposal--selected .card__header, .card__idea--selected .card__header {
+  background-color: #11493b;
+  color: #fff; }
 
 div[data-eq-state$='small'] .card__proposal {
   -webkit-box-sizing: border-box;
@@ -6972,6 +7085,9 @@ div[data-eq-state$='large'] .card__proposal {
 .card__proposal .excerpt {
   margin-bottom: 0.9375em; }
 
+.card__proposal--selected .card__header {
+  background-color: #11493b; }
+
 div[data-eq-state$='small'] .card__idea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -7013,9 +7129,9 @@ div[data-eq-state$='medium'] .card__idea {
   .card__idea .card__header a {
     color: #11493b; }
   .card__idea .card__header .contextual_menu .content {
-    background-color: #00fec7; }
+    background-color: #66c1ad !important; }
   .card__idea .card__header .contextual_menu.active .content::after {
-    border-bottom: 12px solid #00fec7; }
+    border-bottom: 12px solid #66c1ad !important; }
 
 .card__idea .card__body {
   padding-top: 0.5em;
@@ -7023,28 +7139,28 @@ div[data-eq-state$='medium'] .card__idea {
 
 .card__idea .title_block {
   max-height: 3.5em; }
-  .card__idea .title_block::after {
-    clear: none; }
   .card__idea .title_block .heading--headline {
     font-size: 1.13em; }
-  .card__idea .title_block .card__heading_actions .icon {
-    fill: #009877; }
-  .card__idea .title_block .card__heading_actions:hover .icon {
-    fill: #11493b; }
+  .card__idea .title_block .card__heading_actions {
+    margin-right: 0.5em; }
+    .card__idea .title_block .card__heading_actions .icon {
+      fill: #009877; }
+    .card__idea .title_block .card__heading_actions:hover .icon {
+      fill: #11493b; }
 
-.card__proposal .card__heading_actions .actions li, .card__idea .card__heading_actions .actions li {
+.card__proposal--selected .card__heading_actions .actions li, .card__idea--selected .card__heading_actions .actions li, .card__proposal .card__heading_actions .actions li, .card__idea .card__heading_actions .actions li {
   float: left;
   margin-right: .5em; }
 
-.card__proposal .card__heading_actions a .icon, .card__idea .card__heading_actions a .icon {
+.card__proposal--selected .card__heading_actions a .icon, .card__idea--selected .card__heading_actions a .icon, .card__proposal .card__heading_actions a .icon, .card__idea .card__heading_actions a .icon {
   fill: #fff; }
 
-.card__proposal .card__heading_actions a.active .icon, .card__idea .card__heading_actions a.active .icon, .card__proposal .card__heading_actions a:focus .icon, .card__idea .card__heading_actions a:focus .icon, .card__proposal .card__heading_actions a:hover .icon, .card__idea .card__heading_actions a:hover .icon {
+.card__proposal--selected .card__heading_actions a.active .icon, .card__idea--selected .card__heading_actions a.active .icon, .card__proposal .card__heading_actions a.active .icon, .card__idea .card__heading_actions a.active .icon, .card__proposal--selected .card__heading_actions a:focus .icon, .card__idea--selected .card__heading_actions a:focus .icon, .card__proposal .card__heading_actions a:focus .icon, .card__idea .card__heading_actions a:focus .icon, .card__proposal--selected .card__heading_actions a:hover .icon, .card__idea--selected .card__heading_actions a:hover .icon, .card__proposal .card__heading_actions a:hover .icon, .card__idea .card__heading_actions a:hover .icon {
   fill: #11493b; }
 
-.page__header .title_block .heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu {
+.page__header .title_block .heading_actions .contextual_menu, .card__proposal--selected .title_block .card__heading_actions .contextual_menu, .card__idea--selected .title_block .card__heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu {
   z-index: 1050; }
-  .page__header .title_block .heading_actions .contextual_menu .content, .card__proposal .title_block .card__heading_actions .contextual_menu .content, .card__idea .title_block .card__heading_actions .contextual_menu .content {
+  .page__header .title_block .heading_actions .contextual_menu .content, .card__proposal--selected .title_block .card__heading_actions .contextual_menu .content, .card__idea--selected .title_block .card__heading_actions .contextual_menu .content, .card__proposal .title_block .card__heading_actions .contextual_menu .content, .card__idea .title_block .card__heading_actions .contextual_menu .content {
     opacity: 0;
     min-width: 12em !important;
     overflow: visible;
@@ -7054,15 +7170,15 @@ div[data-eq-state$='medium'] .card__idea {
     position: relative;
     background-color: #fff;
     color: #11493b; }
-    .page__header .title_block .heading_actions .contextual_menu .content ul li, .card__proposal .title_block .card__heading_actions .contextual_menu .content ul li, .card__idea .title_block .card__heading_actions .contextual_menu .content ul li {
+    .page__header .title_block .heading_actions .contextual_menu .content ul li, .card__proposal--selected .title_block .card__heading_actions .contextual_menu .content ul li, .card__idea--selected .title_block .card__heading_actions .contextual_menu .content ul li, .card__proposal .title_block .card__heading_actions .contextual_menu .content ul li, .card__idea .title_block .card__heading_actions .contextual_menu .content ul li {
       border-bottom: 1px #e5ebe6 solid; }
-    .page__header .title_block .heading_actions .contextual_menu .content a, .card__proposal .title_block .card__heading_actions .contextual_menu .content a, .card__idea .title_block .card__heading_actions .contextual_menu .content a {
+    .page__header .title_block .heading_actions .contextual_menu .content a, .card__proposal--selected .title_block .card__heading_actions .contextual_menu .content a, .card__idea--selected .title_block .card__heading_actions .contextual_menu .content a, .card__proposal .title_block .card__heading_actions .contextual_menu .content a, .card__idea .title_block .card__heading_actions .contextual_menu .content a {
       padding: 1em 1.25em;
       display: block;
       cursor: pointer;
       color: #11493b;
       text-decoration: none; }
-    .page__header .title_block .heading_actions .contextual_menu .content::after, .card__proposal .title_block .card__heading_actions .contextual_menu .content::after, .card__idea .title_block .card__heading_actions .contextual_menu .content::after {
+    .page__header .title_block .heading_actions .contextual_menu .content::after, .card__proposal--selected .title_block .card__heading_actions .contextual_menu .content::after, .card__idea--selected .title_block .card__heading_actions .contextual_menu .content::after, .card__proposal .title_block .card__heading_actions .contextual_menu .content::after, .card__idea .title_block .card__heading_actions .contextual_menu .content::after {
       content: "";
       position: absolute;
       top: -12px;
@@ -7077,20 +7193,20 @@ div[data-eq-state$='medium'] .card__idea {
       border-bottom: 0 solid #fff;
       left: 80%;
       transform: translateX(-20%); }
-  .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu {
+  .page__header .title_block .heading_actions .active.contextual_menu, .card__proposal--selected .title_block .card__heading_actions .active.contextual_menu, .card__idea--selected .title_block .card__heading_actions .active.contextual_menu, .card__proposal .title_block .card__heading_actions .active.contextual_menu, .card__idea .title_block .card__heading_actions .active.contextual_menu {
     position: absolute; }
-    .page__header .title_block .heading_actions .active.contextual_menu .content, .card__proposal .title_block .card__heading_actions .active.contextual_menu .content, .card__idea .title_block .card__heading_actions .active.contextual_menu .content {
+    .page__header .title_block .heading_actions .active.contextual_menu .content, .card__proposal--selected .title_block .card__heading_actions .active.contextual_menu .content, .card__idea--selected .title_block .card__heading_actions .active.contextual_menu .content, .card__proposal .title_block .card__heading_actions .active.contextual_menu .content, .card__idea .title_block .card__heading_actions .active.contextual_menu .content {
       opacity: 1;
       z-index: auto;
       top: 1.5em;
       right: -1.675em; }
-      .page__header .title_block .heading_actions .active.contextual_menu .content::after, .card__proposal .title_block .card__heading_actions .active.contextual_menu .content::after, .card__idea .title_block .card__heading_actions .active.contextual_menu .content::after {
+      .page__header .title_block .heading_actions .active.contextual_menu .content::after, .card__proposal--selected .title_block .card__heading_actions .active.contextual_menu .content::after, .card__idea--selected .title_block .card__heading_actions .active.contextual_menu .content::after, .card__proposal .title_block .card__heading_actions .active.contextual_menu .content::after, .card__idea .title_block .card__heading_actions .active.contextual_menu .content::after {
         border-bottom: 12px solid #fff; }
-    .page__header .title_block .heading_actions .active.contextual_menu a:hover, .card__proposal .title_block .card__heading_actions .active.contextual_menu a:hover, .card__idea .title_block .card__heading_actions .active.contextual_menu a:hover {
+    .page__header .title_block .heading_actions .active.contextual_menu a:hover, .card__proposal--selected .title_block .card__heading_actions .active.contextual_menu a:hover, .card__idea--selected .title_block .card__heading_actions .active.contextual_menu a:hover, .card__proposal .title_block .card__heading_actions .active.contextual_menu a:hover, .card__idea .title_block .card__heading_actions .active.contextual_menu a:hover {
       background-color: #11493b;
       color: #e5ebe6; }
   @media (min-width: 1024px) {
-    .page__header .title_block .heading_actions .contextual_menu a, .card__proposal .title_block .card__heading_actions .contextual_menu a, .card__idea .title_block .card__heading_actions .contextual_menu a {
+    .page__header .title_block .heading_actions .contextual_menu a, .card__proposal--selected .title_block .card__heading_actions .contextual_menu a, .card__idea--selected .title_block .card__heading_actions .contextual_menu a, .card__proposal .title_block .card__heading_actions .contextual_menu a, .card__idea .title_block .card__heading_actions .contextual_menu a {
       padding: 0.5em 0.75em; } }
 
 .popover {
@@ -7421,7 +7537,7 @@ div[data-eq-state$='medium'] .card__idea {
     transition-property: height, width, max-height;
     transition-duration: 0.25s;
     transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
-  .navigation .my_working_groups, .navigation-logged-in .my_working_groups {
+  .navigation .my_campaigns, .navigation-logged-in .my_campaigns {
     padding-top: 1.875em;
     clear: both; }
   .navigation .nav_header, .navigation-logged-in .nav_header {
@@ -7436,7 +7552,7 @@ div[data-eq-state$='medium'] .card__idea {
       font-size: 0.98875em; }
   .navigation .section_header, .navigation-logged-in .section_header {
     font-size: 1.13em;
-    padding-left: 1.875em; }
+    padding-left: 30px; }
   .navigation .list__my_working_groups, .navigation-logged-in .list__my_working_groups, .navigation .list__my_campaigns, .navigation-logged-in .list__my_campaigns {
     border-top: 1px #e5ebe6 solid;
     width: 100%;
@@ -7478,7 +7594,7 @@ div[data-eq-state$='medium'] .card__idea {
     max-height: 100%; }
   .navigation.nav--active .my_working_groups, .nav--active.navigation-logged-in .my_working_groups, .navigation.nav--active .my_campaigns, .nav--active.navigation-logged-in .my_campaigns {
     width: 100%; }
-  .navigation.nav--active .my_working_groups, .nav--active.navigation-logged-in .my_working_groups {
+  .navigation.nav--active .my_campaigns, .nav--active.navigation-logged-in .my_campaigns {
     border-top: 1px #009877 solid; }
   .navigation.nav--active .nav__footer, .nav--active.navigation-logged-in .nav__footer {
     display: static;
@@ -7540,7 +7656,7 @@ div[data-eq-state$='medium'] .card__idea {
     .navigation.nav--active .my_working_groups, .nav--active.navigation-logged-in .my_working_groups, .navigation.nav--active .my_campaigns, .nav--active.navigation-logged-in .my_campaigns {
       width: auto;
       max-height: 100%; }
-    .navigation.nav--active .my_working_groups, .nav--active.navigation-logged-in .my_working_groups {
+    .navigation.nav--active .my_campaigns, .nav--active.navigation-logged-in .my_campaigns {
       border-top: transparent; }
     .navigation.nav--active .nav_header, .nav--active.navigation-logged-in .nav_header {
       margin-left: 0;

@@ -1,7 +1,7 @@
 (function(appcvui, document, window) {
 
-  appcvui.PaceLoading = function (element) {
-    this.initialize(element);
+  appcvui.PaceLoading = function () {
+    this.initialize();
     return this;
   }
 
@@ -9,20 +9,9 @@
 
   p.constructor = appcvui.PaceLoading;
 
-  p.initialize = function(el) {
-    window.paceOptions = {
-      ajax: false, // disabled
-      document: false, // disabled
-      eventLag: false, // disabled
-      elements: {
-        selectors: [el]
-      }
-    };
-
-    this.el = el;
-
-    this.paceOptions = window.paceOptions;
-    Pace.options = this.paceOptions;
+  p.initialize = function() {
+    Pace.options = window.paceOptions;
+    console.log (Pace.options);
   }
 
   p.start =  function (element) {
