@@ -22,6 +22,7 @@
     this.el = el;
 
     this.paceOptions = window.paceOptions;
+    Pace.options = this.paceOptions;
   }
 
   p.start =  function (element) {
