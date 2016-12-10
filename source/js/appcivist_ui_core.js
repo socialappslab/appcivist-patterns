@@ -44,6 +44,9 @@
     vex.defaultOptions.className = 'vex-theme-plain';
     appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
 
+    appcvui.paceLoader = new appcvui.PaceLoading('.appcivist');
+    Pace.stop();
+
     if(document.querySelector('.proposals_and_ideas') != null) {
       appcvui.proposalsAndIdeas = new appcvui.ProposalsAndIdeas('.proposals_and_ideas');
     } else if (document.querySelector('.proposals__only') != null) {
