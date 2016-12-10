@@ -45,7 +45,7 @@
     appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
 
     appcvui.paceLoader = new appcvui.PaceLoading('.appcivist');
-    Pace.stop();
+    appcvui.paceLoader.start();
 
     if(document.querySelector('.proposals_and_ideas') != null) {
       appcvui.proposalsAndIdeas = new appcvui.ProposalsAndIdeas('.proposals_and_ideas');

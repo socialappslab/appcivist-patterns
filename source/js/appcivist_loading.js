@@ -25,9 +25,6 @@
   }
 
   p.start =  function (element) {
-    vex.open({
-      unsafeContent: this.el.querySelector('.modal-content').innerHTML
-    })
     Pace.start();
   }
 

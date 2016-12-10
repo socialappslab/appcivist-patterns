@@ -12,6 +12,7 @@
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
     this.contextualMenu = new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
+    appcvui.paceLoader.stop();
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));

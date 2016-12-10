@@ -23,6 +23,8 @@
       this.temperature_check = new appcvui.ConsensusWidget( this.appEl.querySelector('.page__header .consensus_widget'));
     }
 
+    appcvui.paceLoader.stop();
+
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));
