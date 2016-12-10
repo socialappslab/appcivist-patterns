@@ -1,47 +1,47 @@
 <main class="appmain">
 
-	{{> molecules-navigation}}
+  {{> molecules-navigation}}
 
-	<article class="all_proposals">
+    <article class="all_proposals">
 
-		<header class="page__header">
-			<h1 class="heading--title">All Proposals</h1>
-			<div class="heading--header">in the <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a> Working Group.</div>
-		</header>
+        <header class="page__header">
+            <h1 class="heading--title">All Proposals</h1>
 
-		<div class="page__content">
+            <div class="heading--header">
+                <a href="{{ link.templates-working-group-dashboard }}"><i class="fa fa-group"></i> {{ group.name }}</a>
+            </div>
+        </header>
 
-			<section class="panel">
-				{{> molecules-pagination }}
-			</section>
+        <div class="page__content">
 
-			<section class="list--idea all-proposals">
-					{{# listItems.ten }}
-			    {{> molecules-card-proposal }}
-			    {{/ listItems.ten }}
-					{{# listItems.ten }}
-			    {{> molecules-card-proposal }}
-			    {{/ listItems.ten }}
-					{{# listItems.ten }}
-			    {{> molecules-card-proposal }}
-			    {{/ listItems.ten }}
-					{{# listItems.ten }}
-			    {{> molecules-card-proposal }}
-			    {{/ listItems.ten }}
-					{{# listItems.ten }}
-			    {{> molecules-card-proposal }}
-			    {{/ listItems.ten }}
-					{{# listItems.ten }}
-			    {{> molecules-card-proposal }}
-			    {{/ listItems.ten }}
-			</section>
+            <section class="panel">
+              {{> molecules-pagination }}
+            </section>
 
-			<section class="panel">
-				{{> molecules-pagination }}
-			</section>
-		</div>
-	</article>
+            <section class="list--proposals">
 
-	{{> organisms-footer }}
+                <div class="list__cards container__proposals" data-eq-pts="small: 768, medium: 1024, large: 1500">
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                  {{> molecules-card-proposal}}
+                </div>
+
+            </section>
+
+
+            <section class="panel">
+              {{> molecules-pagination }}
+            </section>
+        </div>
+    </article>
+
+  {{> organisms-footer }}
 
 </main>
