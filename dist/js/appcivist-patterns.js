@@ -12,6 +12,7 @@
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
     this.contextualMenu = new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
+    appcvui.paceLoader.stop();
   }
 
 }( window.appcvui =  window.appcvui || {}, document, window ));
@@ -225,8 +226,8 @@
 }( window.appcvui =  window.appcvui || {}, document, window, window.vex ));
 ;(function(appcvui, document, window) {
 
-  appcvui.PaceLoading = function (element) {
-    this.initialize(element);
+  appcvui.PaceLoading = function () {
+    this.initialize();
     return this;
   }
 
@@ -234,25 +235,12 @@
 
   p.constructor = appcvui.PaceLoading;
 
-  p.initialize = function(el) {
-    window.paceOptions = {
-      ajax: false, // disabled
-      document: false, // disabled
-      eventLag: false, // disabled
-      elements: {
-        selectors: [el]
-      }
-    };
-
-    this.el = el;
-
-    this.paceOptions = window.paceOptions;
+  p.initialize = function() {
+    Pace.options = window.paceOptions;
+    console.log (Pace.options);
   }
 
   p.start =  function (element) {
-    vex.open({
-      unsafeContent: this.el.querySelector('.modal-content').innerHTML
-    })
     Pace.start();
   }
 
@@ -431,6 +419,8 @@
     if( this.appEl.querySelector('.page__header .consensus_widget') != null ) {
       this.temperature_check = new appcvui.ConsensusWidget( this.appEl.querySelector('.page__header .consensus_widget'));
     }
+
+    appcvui.paceLoader.stop();
 
   }
 
@@ -631,6 +621,16 @@
 }( window.appcvui =  window.appcvui || {}, document, window, window.vex ));
 ;( function(window, document){
   var appcvui = window.appcvui || {};
+  window.paceOptions = {
+    ajax: false,
+    restartOnRequestAfter: false,
+    document: false, // disabled
+    eventLag: false, // disabled
+    elements : {
+      selectors: [".appmain"]
+    }
+  };
+
 
   appcvui.equalHeights = function(selector) {
 
@@ -674,9 +674,8 @@
 
     vex.defaultOptions.className = 'vex-theme-plain';
     appcvui.navigation = new appcvui.Navigation('.appcivist', '#appcivist__nav');
-
-    appcvui.paceLoader = new appcvui.PaceLoading('.appcivist');
-    Pace.stop();
+    appcvui.paceLoader = new appcvui.PaceLoading();
+    appcvui.paceLoader.start();
 
     if(document.querySelector('.proposals_and_ideas') != null) {
       appcvui.proposalsAndIdeas = new appcvui.ProposalsAndIdeas('.proposals_and_ideas');
@@ -715,6 +714,7 @@
     this.appEl = document.querySelector(appContainerSelector);
     if( this.appEl == null ) return;
     this.contextualMenu = new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
+    appcvui.paceLoader.stop();
 
   }
 
