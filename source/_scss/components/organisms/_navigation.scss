@@ -2,7 +2,7 @@
 
   @extend %card__shadow;
   min-height: 6em;
-  
+
   z-index: $z__nav;
   background-color: $color__nav_bg;
   position: fixed;
@@ -67,7 +67,7 @@
 
   .section_header {
     font-size: $typography__subhead;
-    padding-left: $padding__base;
+    padding-left: $padding__base_fixed;
   }
 
   .list__my_working_groups,

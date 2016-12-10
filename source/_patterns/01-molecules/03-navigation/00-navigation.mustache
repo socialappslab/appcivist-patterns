@@ -11,32 +11,35 @@
 
 		{{> molecules-user-logged-in-status}}
 
+    <section class="my_campaigns">
+      <h3 class="section_header">Ongoing Campaigns</h3>
+        <ul class="list__my_campaigns">
+          <li>
+            <a href="{{ link.templates-campaign-dashboard }}">Participatory Budgeting - Cycle 4</a>
+          </li>
+        </ul>
+    </section>
+
 		<section class="my_working_groups">
 			<h3 class="section_header">My Working Groups</h3>
 		  <ul class="list__my_working_groups">
 				<li>
 					<a href="{{ link.templates-working-group-dashboard }}">Quality of Life</a>
 				</li>
-				<li>
-					<a href="{{ link.templates-working-group-dashboard }}">Public Safety and Infrastructure</a>
-				</li>
-		    <li>
-		        <a href="{{ link.templates-working-group-dashboard }}">Program and Services</a>
-		    </li>
 		  </ul>
 		</section>
 
-		<section class="my_campaigns">
-			<h3 class="section_header">My Campaigns</h3>
-			<ul class="list__my_campaigns">
-				<li>
-					<a href="{{ link.templates-campaign-dashboard }}">Participatory Budgeting - Cycle 4</a>
-				</li>
-			</ul>
-		</section>
-
+    <section class="my_working_groups">
+      <h3 class="section_header">Other Working Groups</h3>
+      <ul class="list__my_working_groups">
+        <li>
+          <a href="{{ link.templates-working-group-dashboard }}">Public Safety and Infrastructure</a>
+        </li>
+        <li>
+          <a href="{{ link.templates-working-group-dashboard }}">Program and Services</a>
+        </li>
+      </ul>
+    </section>
 		{{> molecules-navigation-footer}}
-
 	</div>
-
 </nav>
