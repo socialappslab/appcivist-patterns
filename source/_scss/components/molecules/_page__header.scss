@@ -78,6 +78,29 @@
     a {
       text-decoration: none;
     }
+
+    .logo__wrapper__light {
+
+      float: left;
+      width: $padding__base;
+      height: $padding__base;
+      margin-right: .5em;
+      top: 0;
+      position: relative;
+
+      .logo__svg {
+        width: $padding__base;
+        height: $padding__base;
+        .svg__shape {
+          fill: #fff;
+        }
+      }
+    }
+    .powered_by {
+      width: auto;
+      overflow: visible;
+      padding-top: 0.325em;
+    }
   }
 
   .voting_mechanism {

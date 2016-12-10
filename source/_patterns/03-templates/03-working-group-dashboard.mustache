@@ -1,67 +1,73 @@
 <main class="appmain">
 
-	{{> molecules-navigation}}
+  {{> molecules-navigation}}
 
-	<article class="working_group">
+    <article class="working_group">
 
-		<header class="page__header">
-		  <div class="type"><i class="fa fa-group"></i> Working Group</div>
+        <header class="page__header">
+            <div class="type"><i class="fa fa-group"></i> Working Group</div>
 
-			<div class="title_block">
-			  <h1 class="heading--title">Quality of Life</h1>
-				<div class="heading_actions">
-	        <ul>
-	          <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
-	        </ul>
-					<div class="contextual_menu">
-			      <div class="content">
-							<ul class="actions">
-								<li class="action__edit"><a href="#">Edit</a></li>
-                <li class="action__publish"><a href="#">Publish</a></li>
-                <li class="action__feedback"><a href="#">Give Feedback</a></li>
-                <li class="action__exclude"><a href="#">Exclude</a></li>
-                <li class="action__history"><a href="#">See history</a></li>
-			        </ul>
-			      </div>
-			    </div>
-	      </div>
-			</div>
+            <div class="title_block">
+                <h1 class="heading--title">Quality of Life</h1>
 
-			<p class="description">This is the working group dedicated to looking out for the general wellbeing of our citizens.</p>
+                <div class="heading_actions">
+                    <ul>
+                        <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
+                    </ul>
+                    <div class="contextual_menu">
+                        <div class="content">
+                            <ul class="actions">
+                                <li class="action__edit"><a href="#">Edit</a></li>
+                                <li class="action__publish"><a href="#">Publish</a></li>
+                                <li class="action__feedback"><a href="#">Give Feedback</a></li>
+                                <li class="action__exclude"><a href="#">Exclude</a></li>
+                                <li class="action__history"><a href="#">See history</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="description">This is the working group dedicated to looking out for the general wellbeing of our citizens.</p>
 
-		</header>
+            {{> molecules-attribution-appcivist }}
+        </header>
 
-		<div class="page__contents">
-			<section class="panel activity-and-members">
-				<section class="latest-activity">
-					<div class="panel-heading panel-heading-relative">
-						<h1 class="heading--header">Latest Activity</h1><p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a></p>
-					</div>
-					{{# listItems.ten }}
-					{{> atoms-activity-stream-list-item }}
-					{{/ listItems.ten }}
-				</section>
-				<section>
-					<div class="panel-heading">
-						<h1 class="heading--header">Members</h1><p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a> | <a href="#">Add New</a></p>
-					</div>
-					{{# listItems.nine }}
-					{{> molecules-user-card }}
-					{{/ listItems.nine }}
-				</section>
-			</section>
-		</div>
+        <div class="page__contents">
+            <section class="panel activity-and-members">
+                <section class="latest-activity">
+                    <div class="panel-heading panel-heading-relative">
+                        <h1 class="heading--header">Latest Activity</h1>
 
-		{{> organisms-proposals-and-ideas}}
+                        <p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a></p>
+                    </div>
+                  {{# listItems.ten }}
+                    {{> atoms-activity-stream-list-item }}
+                  {{/ listItems.ten }}
+                </section>
+                <section>
+                    <div class="panel-heading">
+                        <h1 class="heading--header">Members</h1>
 
-		{{> organisms-comment-section}}
+                        <p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a> | <a
+                                href="#">Add New</a></p>
+                    </div>
+                  {{# listItems.nine }}
+                    {{> molecules-user-card }}
+                  {{/ listItems.nine }}
+                </section>
+            </section>
+        </div>
 
-	</article>
+      {{> organisms-proposals-and-ideas}}
 
-	<div class="history-modal" style="display: none">
-		{{>organisms-contribution-history}}
-	</div>
+      {{> organisms-comment-section}}
 
-	{{> organisms-footer }}
+    </article>
+
+    <div class="history-modal" style="display: none">
+      {{>organisms-contribution-history}}
+    </div>
+
+  {{> organisms-footer }}
 
 </main>
