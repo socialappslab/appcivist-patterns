@@ -17,6 +17,18 @@
     background-color: $color__brand_primary;
   }
 
+  .new {
+    background-color: $color__brand_primary--light;
+  }
+
+  .excluded {
+    background-color: $color__text--primary;
+  }
+
+  .archived {
+    background-color:  $color__text--secondary;
+  }
+
   .excerpt {
     margin-bottom: 0.5 * $padding__base;
   }
