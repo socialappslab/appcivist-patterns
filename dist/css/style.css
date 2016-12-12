@@ -7082,6 +7082,15 @@ div[data-eq-state$='large'] .card__proposal {
 .card__proposal .card__header {
   background-color: #009877; }
 
+.card__proposal .new {
+  background-color: #66c1ad; }
+
+.card__proposal .excluded {
+  background-color: #465b64; }
+
+.card__proposal .archived {
+  background-color: #757575; }
+
 .card__proposal .excerpt {
   margin-bottom: 0.9375em; }
 
