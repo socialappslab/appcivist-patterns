@@ -7005,6 +7005,13 @@ a {
           content: none; }
     .card__proposal--selected .card__header a, .card__idea--selected .card__header a, .card__proposal .card__header a, .card__idea .card__header a {
       color: #fff; }
+    .card__proposal--selected .card__header .card__heading_bookmark, .card__idea--selected .card__header .card__heading_bookmark, .card__proposal .card__header .card__heading_bookmark, .card__idea .card__header .card__heading_bookmark {
+      position: absolute;
+      top: -6px;
+      left: auto;
+      right: auto;
+      color: white;
+      font-size: 25px; }
   .card__proposal--selected .card__body, .card__idea--selected .card__body, .card__proposal .card__body, .card__idea .card__body {
     padding: 1.875em;
     font-size: 1.13em; }
