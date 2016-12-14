@@ -1,8 +1,8 @@
 <div class="card__proposal">
   <div class="card__wrapper">
-    <header class="card__header excluded">
+    <header class="card__header archived">
       <div class="heading--categories">
-        EXCLUDED - {{> molecules-tags-proposal-card}}
+        ARCHIVED - {{> molecules-tags-proposal-card}}
       </div>
       <div class="title_block">
         <h1 class="heading--headline">
@@ -15,13 +15,7 @@
           </ul>
           <div class="contextual_menu">
             <div class="content">
-              <ul>
-                <li class="action__edit"><a href="#">Edit</a></li>
-                <li class="action__publish"><a href="#">Publish</a></li>
-                <li class="action__feedback"><a href="#">Give Feedback</a></li>
-                <li class="action__exclude"><a href="#">Exclude</a></li>
-                <li class="action__history"><a href="#">See history</a></li>
-              </ul>
+              {{> molecules-proposals-menu }}
             </div>
           </div>
         </div>

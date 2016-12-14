@@ -1,8 +1,11 @@
-<div class="card__proposal">
+<div class="card__idea">
   <div class="card__wrapper">
     <header class="card__header">
+      <div class="card__heading_bookmark">
+        <i class="fa fa-bookmark"></i>
+      </div>
       <div class="heading--categories">
-        PUBLISHED - {{> molecules-tags-proposal-card}}
+        {{> molecules-tags-proposal-card}}
       </div>
       <div class="title_block">
         <h1 class="heading--headline">
@@ -20,23 +23,11 @@
           </div>
         </div>
       </div>
-      <div class="heading__working_group">
-        <i class="fa fa-group"></i> <a href="{{ link.templates-working-group-dashboard }}">{{ group.name }}</a>
+      <div class="card__body">
+        <div class="voting_mechanism">
+          {{> molecules-temperature-check}}
+        </div>
       </div>
     </header>
-    <div class="card__body">
-      <div class="excerpt">
-        {{ excerpt.short }}
-      </div>
-      <div class="voting_mechanism">
-        {{# voting_mechanism.consensus}}
-          {{> molecules-consensus}}
-        {{/ voting_mechanism.consensus}}
-
-        {{# voting_mechanism.temperature_check}}
-          {{> molecules-temperature-check}}
-        {{/voting_mechanism.temperature_check}}
-      </div>
-    </div>
   </div>
 </div>

@@ -75,6 +75,15 @@
       color: $color__text--reverse;
     }
 
+    .card__heading_bookmark {
+      position: absolute;
+      top: -6px;
+      left: auto;
+      right: auto;
+      color:  white;
+      font-size: 25px;
+    }
+
   }
 
   .card__heading_actions {
