@@ -173,6 +173,10 @@
   .proposal__single & {
     padding-bottom: 0;
   }
+
+  .form__start_voting {
+    @extend %offscreen;
+  }
 }
 
 .page__header {

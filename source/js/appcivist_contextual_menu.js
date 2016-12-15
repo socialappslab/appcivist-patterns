@@ -51,13 +51,14 @@
     /* @WARNING - this method is here only for demonstration purposes and is very much only to show the triggering of this modal'
       The prototype is not considering how to handle the triggering of contextual menu item bits.
     */
-    this.menu.querySelector('.action__history').addEventListener('click', function(e){
-      e.preventDefault();
-      vex.open({
-        unsafeContent: document.querySelector('.history-modal').innerHTML
-      });
-    })
-
+    if (this.menu.querySelector('.action__history')) {
+      this.menu.querySelector('.action__history').addEventListener('click', function(e){
+        e.preventDefault();
+        vex.open({
+          unsafeContent: document.querySelector('.history-modal').innerHTML
+        });
+      })
+    }
   }
 
   p.showContextualMenu = function(stay) {

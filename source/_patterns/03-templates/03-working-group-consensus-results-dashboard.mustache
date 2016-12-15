@@ -1,0 +1,134 @@
+<main class="appmain">
+
+  {{> molecules-navigation}}
+
+    <article class="working_group">
+
+        <header class="page__header">
+            <div class="type"><i class="fa fa-group"></i> Working Group</div>
+
+            <div class="title_block">
+                <h1 class="heading--title">Quality of Life</h1>
+
+                <div class="heading_actions">
+                    <ul>
+                        <li class="action__contextual_menu"><a href="#">{{> atoms-icon-cog }}</a></li>
+                    </ul>
+                    <div class="contextual_menu">
+                        <div class="content">
+                          {{> molecules-working-group-menu }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="description">This is the working group dedicated to looking out for the general wellbeing of our citizens.</p>
+
+            {{> molecules-attribution-appcivist }}
+        </header>
+
+        <div class="page__contents">
+            <section class="panel activity-and-members">
+                <section class="latest-activity">
+                    <div class="panel-heading panel-heading-relative">
+                        <h1 class="heading--header">Latest Activity</h1>
+
+                        <p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a></p>
+                    </div>
+                  {{# listItems.ten }}
+                    {{> atoms-activity-stream-list-item }}
+                  {{/ listItems.ten }}
+                </section>
+                <section>
+                    <div class="panel-heading">
+                        <h1 class="heading--header">Members</h1>
+
+                        <p class="heading--small"><a href="{{ link.templates-all-proposals-view }}">See All</a> | <a
+                                href="#">Add New</a></p>
+                    </div>
+                  {{# listItems.nine }}
+                    {{> molecules-user-card }}
+                  {{/ listItems.nine }}
+                </section>
+            </section>
+          <h3>Voting Results</h3>
+          <canvas id="myChart" width="600" height="400"></canvas>
+          <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                labels: ["Proposal 1", "Proposal 2", "Proposal 3", "Proposal 4", "Proposal 5", "Proposal 6 (blocked)"],
+
+                datasets: [{
+                  label: "Yes",
+                  data: [800, 600, 300, 300, 100, 500],
+                  backgroundColor: "#009877",
+                  hoverBackgroundColor: "rgba(50,90,100,1)"
+                },{
+                  label: "NO",
+                  data: [200, 300, 100, 150, 400, 100],
+                  backgroundColor: "rgba(163,103,126,1)",
+                  hoverBackgroundColor: "rgba(140,85,100,1)"
+                },{
+                  label: "Abstain",
+                  data: [50, 70, 60, 20, 50, 40],
+                  backgroundColor: "rgba(63,203,226,1)",
+                  hoverBackgroundColor: "rgba(46,185,235,1)"
+                },{
+                  label: "Block",
+                  data: [10, 5, 20, 10, 10, 100],
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                  hoverBackgroundColor: "rgba(0,0,0,1)"
+                }]
+              },
+
+              options: {
+                scales: {
+                  xAxes: [{
+                    ticks: {
+                      beginAtZero:true,
+                      fontFamily: "'Open Sans Bold', sans-serif",
+                      fontSize:11
+                    },
+                    scaleLabel:{
+                      display:false
+                    },
+                    gridLines: {
+                    },
+                    stacked: true
+                  }],
+                  yAxes: [{
+                    gridLines: {
+                      display:false,
+                      color: "#fff",
+                      zeroLineColor: "#fff",
+                      zeroLineWidth: 0
+                    },
+                    ticks: {
+                      fontFamily: "'Open Sans Bold', sans-serif",
+                      fontSize:11
+                    },
+                    stacked: true
+                  }]
+                },
+                legend:{
+                  display:false
+                }
+              }
+            });
+          </script>
+        </div>
+
+      {{> organisms-proposals-and-ideas}}
+
+      {{> organisms-comment-section}}
+
+    </article>
+
+    <div class="history-modal" style="display: none">
+      {{>organisms-contribution-history}}
+    </div>
+
+  {{> organisms-footer }}
+
+</main>

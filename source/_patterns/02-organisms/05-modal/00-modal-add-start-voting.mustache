@@ -1,0 +1,37 @@
+<div class="modal_content__start_voting">
+
+  <header class="modal-header">
+    <h2 class="modal__title">Configure Voting</h2>
+  </header>
+
+  <div class="modal-body">
+    <fieldset>
+      <div class="field__container assign_proposal_to_wg">
+        <label for='assign-to-wg'>Select Voting System</label>
+        <select id="assign-to-wg">
+          <option value="value1">Plurality (vote with YES, NO, ABSTAIN or BLOCK)</option>
+          <option value="value2">Range (vote with a score within a range)</option>
+          <option value="value3">Ranked (vote with a ranking for each proposal)</option>
+          <option value="value3">Distributed (vote by distributing points among proposals)</option>
+        </select>
+      </div>
+
+      <div class="field__container">
+        <label for="add_proposal__title">Configuration Option 1<abbr title="Required">*</abbr></label>
+        <input id="add_proposal__title" type="text" placeholder="Option Value">
+      </div>
+      <div class="field__container">
+        <label for="add_proposal__title">Configuration Option 2<abbr title="Required">*</abbr></label>
+        <input id="add_proposal__title" type="text" placeholder="Option Value">
+      </div>
+      <div class="field__container">
+        <label for="add_proposal__title">Configuration Option 3<abbr title="Required">*</abbr></label>
+        <input id="add_proposal__title" type="text" placeholder="Option Value">
+      </div>
+
+    </fieldset>
+    <fieldset>
+      <a href="#" class="button__modal_submit">Submit Proposal</a>
+    </fieldset>
+  </div>
+</div>
