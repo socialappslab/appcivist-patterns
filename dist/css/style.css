@@ -5658,6 +5658,7 @@ input[type=text],
 input[type=search],
 input[type=url],
 input[type=number],
+input[type=email],
 textarea {
   border-radius: 0;
   box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
@@ -6449,7 +6450,7 @@ ul.submenu {
     -o-transition-timing-function: ease;
     transition-timing-function: ease; }
 
-.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .title_block .heading_actions .contextual_menu, .card__proposal--selected .title_block .card__heading_actions .contextual_menu, .card__idea--selected .title_block .card__heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .consensus_widget .popover, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
+.screen-reader-only, .screen-reader__label, .user__card .action__menu, .navigation .user__logged_in .action__menu, .navigation-logged-in .user__logged_in .action__menu, .page__header .form__start_voting, .page__header .title_block .heading_actions .contextual_menu, .card__proposal--selected .title_block .card__heading_actions .contextual_menu, .card__idea--selected .title_block .card__heading_actions .contextual_menu, .card__proposal .title_block .card__heading_actions .contextual_menu, .card__idea .title_block .card__heading_actions .contextual_menu, .popover, .consensus_widget .accessible_data, .consensus_widget .popover, .navigation .nav__footer, .navigation-logged-in .nav__footer, .campaign_cards .form__add_proposal, .campaign_cards .form__add_idea {
   position: absolute;
   left: -10000px;
   opacity: 0;

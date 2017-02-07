@@ -155,13 +155,14 @@
     /* @WARNING - this method is here only for demonstration purposes and is very much only to show the triggering of this modal'
       The prototype is not considering how to handle the triggering of contextual menu item bits.
     */
-    this.menu.querySelector('.action__history').addEventListener('click', function(e){
-      e.preventDefault();
-      vex.open({
-        unsafeContent: document.querySelector('.history-modal').innerHTML
-      });
-    })
-
+    if (this.menu.querySelector('.action__history')) {
+      this.menu.querySelector('.action__history').addEventListener('click', function(e){
+        e.preventDefault();
+        vex.open({
+          unsafeContent: document.querySelector('.history-modal').innerHTML
+        });
+      })
+    }
   }
 
   p.showContextualMenu = function(stay) {
@@ -712,10 +713,26 @@
   p.initialize = function(appContainerSelector) {
 
     this.appEl = document.querySelector(appContainerSelector);
+
     if( this.appEl == null ) return;
-    this.contextualMenu = new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
+    this.startVotingButton = this.appEl.querySelector('.action__startvoting');
+    this.votingEnabled = false;
+    new appcvui.ContextualMenu(this.appEl.querySelector('.heading_actions'));
+    console.log("Initializing Group Menu")
+    var self = this;
+
+    if( this.startVotingButton != null ) {
+      this.startVotingButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        self.startVoting(self);
+      });
+    };
     appcvui.paceLoader.stop();
-
   }
-
+  p.startVoting = function(inst){
+    inst.votingEnabled = true;
+    vex.open({
+      unsafeContent: inst.appEl.querySelector('.form__start_voting').innerHTML
+    });
+  };
 }( window.appcvui =  window.appcvui || {}, document, window ));
