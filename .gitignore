@@ -8,7 +8,6 @@ Thumbs.db
 .idea/
 public/
 source/js/vendor/*
-dist/*
 source/favicon.ico.original.ico
 source/images/favicon_16x16.png.original.png
 source/images/favicon_32x32.png.original.png
